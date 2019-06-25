@@ -2,7 +2,7 @@ name: "my-website"
 navbar:
   title: "Beliefs & Emotions"
   left:
-      - text: "Index"
+    - text: "Index"
       href: index.html
     - text: "Sessions - Ztree"
       href: R_summery_investors_and_observers.html
