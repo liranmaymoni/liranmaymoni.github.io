@@ -1,2 +1,0 @@
-# liranmaymoni.github.io
-Website
