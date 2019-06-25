@@ -3,9 +3,9 @@ title: "Emotional State and Traders' Expectations in Asset Markets - Experimenta
 author: "Afik, Lahav, Maymoni & Noussair"
 output:
   html_document:
-    highlight: tango
+    highlight: textmate
     number_sections: yes
-    theme: united
+    theme: cosmo
     toc: yes
     toc_depth: 3
     toc_float: yes

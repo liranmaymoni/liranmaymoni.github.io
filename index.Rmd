@@ -1,5 +1,6 @@
 ---
-title: "My HomePage1"
+title: "Emotional State and Traders' Expectations in Asset Markets - Experimental Evidence"
+author: "Afik, Lahav, Maymoni & Noussair"
 output: html_document
 ---
 
