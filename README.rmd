@@ -6,8 +6,8 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "About"
-      href: about.html
+    - text: "Regressions - Period and Market trends (without emotions)"
+      href: p_m_trend.html
 output:
   html_document:
     theme: cosmo
