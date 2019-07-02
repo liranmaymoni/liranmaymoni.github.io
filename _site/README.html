@@ -22,6 +22,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -284,13 +286,27 @@ $(document).ready(function () {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="R_summery_investors_and_observers.html">Sessions - Ztree</a>
+  <a href="R_summery_investors_and_observers.html">Ztree Summary</a>
 </li>
 <li>
   <a href="emotional_state_summery20190702.html">Emotions Summary</a>
 </li>
-<li>
-  <a href="p_m_trend.html">Regressions - Period and Market trends (without emotions)</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-gear"></span>
+     
+    Regressions Summary
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="p_m_trend20190702.html">Regressions - Period and Market trends (without emotions)</a>
+    </li>
+    <li>
+      <a href="p_m_trend_with_emotions20190702.html">Regressions - Period and Market trends (with emotions)</a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -310,7 +326,7 @@ $(document).ready(function () {
 
 <div id="liranmaymoni.github.io" class="section level1">
 <h1>liranmaymoni.github.io</h1>
-<p>Website name: “my-website” navbar: title: “My Website” left: - text: “Home” href: index.html - text: “Regressions - Period and Market trends (without emotions)” href: p_m_trend.html output: html_document: theme: cosmo highlight: textmate</p>
+<p>Website name: “my-website” navbar: title: “My Website” left: - text: “Sessions - Ztree” href: R_summery_investors_and_observers.html - text: “Emotions Summary” href: emotional_state_summery20190702.html - text: “Regressions - Period and Market trends (without emotions)” href: p_m_trend20190702.html - text: “Regressions - Period and Market trends (with emotions)” href: p_m_trend_with_emotions20190702.html output: html_document: theme: cosmo highlight: textmate</p>
 </div>
 
 

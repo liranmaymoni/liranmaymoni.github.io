@@ -2,12 +2,17 @@ name: "my-website"
 navbar:
   title: "Beliefs & Emotions"
   left:
-    - text: "Sessions - Ztree"
+    - text: "Ztree Summary"
       href: R_summery_investors_and_observers.html
     - text: "Emotions Summary"
       href: emotional_state_summery20190702.html
-    - text: "Regressions - Period and Market trends (without emotions)"
-      href: p_m_trend.html
+    - text: "Regressions Summary"
+      icon: fa-gear
+      menu:
+      - text: "Regressions - Period and Market trends (without emotions)"
+        href: p_m_trend20190702.html
+      - text: "Regressions - Period and Market trends (with emotions)"
+        href: p_m_trend_with_emotions20190702.html
 output:
   html_document:
     theme: cosmo
