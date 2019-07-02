@@ -1,6 +1,5 @@
 ---
-title: "Emotional State and Traders' Expectations in Asset Markets - Experimental Evidence"
-author: "Afik, Lahav, Maymoni & Noussair"
+title: "Sessions - Ztree"
 output:
   html_document:
     number_sections: yes

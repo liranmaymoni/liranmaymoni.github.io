@@ -4,6 +4,8 @@ navbar:
   left:
     - text: "Sessions - Ztree"
       href: R_summery_investors_and_observers.html
+    - text: "Emotions Summary"
+      href: emotional_state_summery20190702.html
     - text: "Regressions - Period and Market trends (without emotions)"
       href: p_m_trend.html
 output:

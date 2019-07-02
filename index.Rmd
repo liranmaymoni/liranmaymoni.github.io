@@ -4,7 +4,10 @@ author: "Afik, Lahav, Maymoni & Noussair"
 output: html_document
 ---
 
+Last Update: 07/02/2019
 
-Last Update: 07/01/2019
+"Emotions Summary" added.
 
-"Regressions - Period and Market trends (without emotions)" added
+Update: 07/01/2019
+
+"Regressions - Period and Market trends (without emotions)" added.
