@@ -5,8 +5,14 @@ output: html_document
 ---
 
 
+**Last Update: 07/06/2019**
 
-**Last Update: 07/02/2019 - B**
+Added sessions analysis to "Emotions Summary", include "Peak price period" to graphs.
+
+Added "Difference Between Markets" to "Emotions Summary".
+
+
+**Update: 07/02/2019 - B**
 
 "Regressions - Period and Market trends (witht emotions)" added.
 
