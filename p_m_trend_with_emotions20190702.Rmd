@@ -10,7 +10,7 @@ output:
 ---
 
 
-$B_{i,t}^{t+k} = C_{i} + \beta_1Periodtrend + \beta_2Markettrend + \beta_3Neutrality + \beta_4Happiness_{i,t} + \beta_5Sadness_{i,t} + \beta_6Anger_{i,t} + \beta_7Surprise_{i,t} + \beta_8Fear_{i,t} + \beta_9Disgust_{i,t}$
+$B_{i,t}^{t+k} = C_{i} + \beta_1Periodtrend + \beta_2Markettrend + \beta_3Neutrality_{i,t} + \beta_4Happiness_{i,t} + \beta_5Sadness_{i,t} + \beta_6Anger_{i,t} + \beta_7Surprise_{i,t} + \beta_8Fear_{i,t} + \beta_9Disgust_{i,t}$
 (Fixed effects regression model)
 
 # All sessions – combined {.tabset}

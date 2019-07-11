@@ -13,6 +13,8 @@ navbar:
         href: p_m_trend20190702.html
       - text: "Regressions - Period and Market trends (with emotions)"
         href: p_m_trend_with_emotions20190702.html
+      - text: "Upcoming period beliefs as a function of subjects' average emotions"
+        href: B_compared_to_P20190711.html
 output:
   html_document:
     theme: cosmo

@@ -4,8 +4,12 @@ author: "Afik, Lahav, Maymoni & Noussair"
 output: html_document
 ---
 
+**Last Update: 07/11/2019**
 
-**Last Update: 07/06/2019**
+Added "Upcoming period beliefs as a function of subjects' average emotions" to "Regressions Summary".
+
+
+**Update: 07/06/2019**
 
 Added sessions analysis to "Emotions Summary", include "Peak price period" to graphs.
 
