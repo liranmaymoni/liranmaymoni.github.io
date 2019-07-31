@@ -4,7 +4,12 @@ author: "Afik, Lahav, Maymoni & Noussair"
 output: html_document
 ---
 
-**Last Update: 07/11/2019**
+**Last Update: 07/31/2019**
+
+Fixed "Periodtrend" and "Markettrend" variables.
+
+
+**Update: 07/11/2019**
 
 Added "Upcoming period beliefs as a function of subjects' average emotions" to "Regressions Summary".
 

@@ -10,7 +10,7 @@ navbar:
       icon: fa-gear
       menu:
       - text: "Regressions - Period and Market trends (without emotions)"
-        href: p_m_trend20190702.html
+        href: p_m_trend.html
       - text: "Regressions - Period and Market trends (with emotions)"
         href: p_m_trend_with_emotions20190702.html
       - text: "Upcoming period beliefs as a function of subjects' average emotions"

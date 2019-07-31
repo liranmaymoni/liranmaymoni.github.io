@@ -26,33 +26,16 @@ market1 = subset(mydata, period<=15)
 market2 = subset(mydata, period>15)
 #Fix effect market 1
 Fixed_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k"), model="random")
 #Fix effect market 2
 Fixed_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k"), model="random")
 
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend"),error_format = "({p.value})")
+export_summs(Fixed_effects1, Fixed_effects2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
 ```
 
-
-
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
 
 ## Traders only
 ```{r, echo= FALSE, message=FALSE, warning=FALSE}
@@ -63,32 +46,16 @@ market1 = subset(traders, period<=15)
 market2 = subset(traders, period>15)
 #Fix effect market 1
 Fixed_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k"), model="random")
 #Fix effect market 2
 Fixed_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k"), model="random")
 
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend"),error_format = "({p.value})")
+export_summs(Fixed_effects1, Fixed_effects2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
 ```
 
-
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
 
 ## Observers only
 ```{r, echo= FALSE, message=FALSE, warning=FALSE}
@@ -99,65 +66,17 @@ market1 = subset(Observers, period<=15)
 market2 = subset(Observers, period>15)
 #Fix effect market 1
 Fixed_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k"), model="random")
 #Fix effect market 2
 Fixed_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k"), model="random")
 
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend"),error_format = "({p.value})")
+export_summs(Fixed_effects1, Fixed_effects2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
 ```
 
 
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
-
-## Dummy variable
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-
-market1 = subset(mydata, period<=15)
-market2 = subset(mydata, period>15)
-#Fix effect market 1
-Fixed_effects1 = plm(belief ~ p_trend + traders_1, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend + traders_1, data=market1, index = c("id","t_k"), model="random")
-#Fix effect market 2
-Fixed_effects2 = plm(belief ~ p_trend + m_trend + traders_1, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend + traders_1, data=market2, index = c("id","t_k"), model="random")
-
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend" ,"Dummy(Traders)" = "traders_1" ),error_format = "({p.value})")
-```
-
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
 
 # Session 1 {.tabset}
 
@@ -170,33 +89,16 @@ market2 = subset(market2, s_num == "S1")
 
 #Fix effect market 1
 Fixed_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k"), model="random")
 #Fix effect market 2
 Fixed_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k"), model="random")
 
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend"),error_format = "({p.value})")
+export_summs(Fixed_effects1, Fixed_effects2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
 ```
 
-
-
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
 
 ## Traders only
 ```{r, echo= FALSE, message=FALSE, warning=FALSE}
@@ -209,32 +111,16 @@ market1 = subset(market1, s_num == "S1")
 market2 = subset(market2, s_num == "S1")
 #Fix effect market 1
 Fixed_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k"), model="random")
 #Fix effect market 2
 Fixed_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k"), model="random")
 
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend"),error_format = "({p.value})")
+export_summs(Fixed_effects1, Fixed_effects2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
 ```
 
-
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
 
 ## Observers only
 ```{r, echo= FALSE, message=FALSE, warning=FALSE}
@@ -247,67 +133,17 @@ market1 = subset(market1, s_num == "S1")
 market2 = subset(market2, s_num == "S1")
 #Fix effect market 1
 Fixed_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k"), model="random")
 #Fix effect market 2
 Fixed_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k"), model="random")
 
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend"),error_format = "({p.value})")
+export_summs(Fixed_effects1, Fixed_effects2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
 ```
 
 
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
-
-## Dummy variable
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-
-market1 = subset(mydata, period<=15)
-market2 = subset(mydata, period>15)
-market1 = subset(market1, s_num == "S1")
-market2 = subset(market2, s_num == "S1")
-#Fix effect market 1
-Fixed_effects1 = plm(belief ~ p_trend + traders_1, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend + traders_1, data=market1, index = c("id","t_k"), model="random")
-#Fix effect market 2
-Fixed_effects2 = plm(belief ~ p_trend + m_trend + traders_1, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend + traders_1, data=market2, index = c("id","t_k"), model="random")
-
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend" ,"Dummy(Traders)" = "traders_1" ),error_format = "({p.value})")
-```
-
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
 
 # Session 2 {.tabset}
 
@@ -320,33 +156,17 @@ market2 = subset(market2, s_num == "S2")
 
 #Fix effect market 1
 Fixed_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k"), model="random")
 #Fix effect market 2
 Fixed_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k"), model="random")
 
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend"),error_format = "({p.value})")
+export_summs(Fixed_effects1, Fixed_effects2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
 ```
 
 
-
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
 
 ## Traders only
 ```{r, echo= FALSE, message=FALSE, warning=FALSE}
@@ -359,32 +179,17 @@ market1 = subset(market1, s_num == "S2")
 market2 = subset(market2, s_num == "S2")
 #Fix effect market 1
 Fixed_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k"), model="random")
 #Fix effect market 2
 Fixed_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k"), model="random")
 
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend"),error_format = "({p.value})")
+export_summs(Fixed_effects1, Fixed_effects2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
 ```
 
 
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
 
 ## Observers only
 ```{r, echo= FALSE, message=FALSE, warning=FALSE}
@@ -397,67 +202,17 @@ market1 = subset(market1, s_num == "S2")
 market2 = subset(market2, s_num == "S2")
 #Fix effect market 1
 Fixed_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k"), model="random")
 #Fix effect market 2
 Fixed_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k"), model="random")
 
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend"),error_format = "({p.value})")
+export_summs(Fixed_effects1, Fixed_effects2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
 ```
 
 
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
-
-## Dummy variable
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-
-market1 = subset(mydata, period<=15)
-market2 = subset(mydata, period>15)
-market1 = subset(market1, s_num == "S2")
-market2 = subset(market2, s_num == "S2")
-#Fix effect market 1
-Fixed_effects1 = plm(belief ~ p_trend + traders_1, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend + traders_1, data=market1, index = c("id","t_k"), model="random")
-#Fix effect market 2
-Fixed_effects2 = plm(belief ~ p_trend + m_trend + traders_1, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend + traders_1, data=market2, index = c("id","t_k"), model="random")
-
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend" ,"Dummy(Traders)" = "traders_1" ),error_format = "({p.value})")
-```
-
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
 
 # Session 3 {.tabset}
 
@@ -470,33 +225,18 @@ market2 = subset(market2, s_num == "S3")
 
 #Fix effect market 1
 Fixed_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k"), model="random")
 #Fix effect market 2
 Fixed_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k"), model="random")
 
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend"),error_format = "({p.value})")
+export_summs(Fixed_effects1, Fixed_effects2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
 ```
 
 
 
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
 
 ## Traders only
 ```{r, echo= FALSE, message=FALSE, warning=FALSE}
@@ -509,32 +249,17 @@ market1 = subset(market1, s_num == "S3")
 market2 = subset(market2, s_num == "S3")
 #Fix effect market 1
 Fixed_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k"), model="random")
 #Fix effect market 2
 Fixed_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k"), model="random")
 
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend"),error_format = "({p.value})")
+export_summs(Fixed_effects1, Fixed_effects2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
 ```
 
 
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
 
 ## Observers only
 ```{r, echo= FALSE, message=FALSE, warning=FALSE}
@@ -547,67 +272,17 @@ market1 = subset(market1, s_num == "S3")
 market2 = subset(market2, s_num == "S3")
 #Fix effect market 1
 Fixed_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k"), model="random")
 #Fix effect market 2
 Fixed_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k"), model="random")
 
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend"),error_format = "({p.value})")
+export_summs(Fixed_effects1, Fixed_effects2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
 ```
 
 
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
-
-## Dummy variable
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-
-market1 = subset(mydata, period<=15)
-market2 = subset(mydata, period>15)
-market1 = subset(market1, s_num == "S3")
-market2 = subset(market2, s_num == "S3")
-#Fix effect market 1
-Fixed_effects1 = plm(belief ~ p_trend + traders_1, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend + traders_1, data=market1, index = c("id","t_k"), model="random")
-#Fix effect market 2
-Fixed_effects2 = plm(belief ~ p_trend + m_trend + traders_1, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend + traders_1, data=market2, index = c("id","t_k"), model="random")
-
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend" ,"Dummy(Traders)" = "traders_1" ),error_format = "({p.value})")
-```
-
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
 
 # Session 4 {.tabset}
 
@@ -620,33 +295,17 @@ market2 = subset(market2, s_num == "S4")
 
 #Fix effect market 1
 Fixed_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k"), model="random")
 #Fix effect market 2
 Fixed_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k"), model="random")
 
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend"),error_format = "({p.value})")
+export_summs(Fixed_effects1, Fixed_effects2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
 ```
 
 
-
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
 
 ## Traders only
 ```{r, echo= FALSE, message=FALSE, warning=FALSE}
@@ -659,32 +318,17 @@ market1 = subset(market1, s_num == "S4")
 market2 = subset(market2, s_num == "S4")
 #Fix effect market 1
 Fixed_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k"), model="random")
 #Fix effect market 2
 Fixed_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k"), model="random")
 
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend"),error_format = "({p.value})")
+export_summs(Fixed_effects1, Fixed_effects2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
 ```
 
 
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
 
 ## Observers only
 ```{r, echo= FALSE, message=FALSE, warning=FALSE}
@@ -697,67 +341,17 @@ market1 = subset(market1, s_num == "S4")
 market2 = subset(market2, s_num == "S4")
 #Fix effect market 1
 Fixed_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k"), model="random")
 #Fix effect market 2
 Fixed_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k"), model="random")
 
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend"),error_format = "({p.value})")
+export_summs(Fixed_effects1, Fixed_effects2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
 ```
 
 
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
-
-## Dummy variable
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-
-market1 = subset(mydata, period<=15)
-market2 = subset(mydata, period>15)
-market1 = subset(market1, s_num == "S4")
-market2 = subset(market2, s_num == "S4")
-#Fix effect market 1
-Fixed_effects1 = plm(belief ~ p_trend + traders_1, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend + traders_1, data=market1, index = c("id","t_k"), model="random")
-#Fix effect market 2
-Fixed_effects2 = plm(belief ~ p_trend + m_trend + traders_1, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend + traders_1, data=market2, index = c("id","t_k"), model="random")
-
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend" ,"Dummy(Traders)" = "traders_1" ),error_format = "({p.value})")
-```
-
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
 
 # Session 5 {.tabset}
 
@@ -770,33 +364,17 @@ market2 = subset(market2, s_num == "S5")
 
 #Fix effect market 1
 Fixed_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k"), model="random")
 #Fix effect market 2
 Fixed_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k"), model="random")
 
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend"),error_format = "({p.value})")
+export_summs(Fixed_effects1, Fixed_effects2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
 ```
 
 
-
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
 
 ## Traders only
 ```{r, echo= FALSE, message=FALSE, warning=FALSE}
@@ -809,32 +387,17 @@ market1 = subset(market1, s_num == "S5")
 market2 = subset(market2, s_num == "S5")
 #Fix effect market 1
 Fixed_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k"), model="random")
 #Fix effect market 2
 Fixed_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k"), model="random")
 
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend"),error_format = "({p.value})")
+export_summs(Fixed_effects1, Fixed_effects2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
 ```
 
 
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
 
 ## Observers only
 ```{r, echo= FALSE, message=FALSE, warning=FALSE}
@@ -847,67 +410,17 @@ market1 = subset(market1, s_num == "S5")
 market2 = subset(market2, s_num == "S5")
 #Fix effect market 1
 Fixed_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k"), model="random")
 #Fix effect market 2
 Fixed_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k"), model="random")
 
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend"),error_format = "({p.value})")
+export_summs(Fixed_effects1, Fixed_effects2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
 ```
 
 
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
-
-## Dummy variable
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-
-market1 = subset(mydata, period<=15)
-market2 = subset(mydata, period>15)
-market1 = subset(market1, s_num == "S5")
-market2 = subset(market2, s_num == "S5")
-#Fix effect market 1
-Fixed_effects1 = plm(belief ~ p_trend + traders_1, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend + traders_1, data=market1, index = c("id","t_k"), model="random")
-#Fix effect market 2
-Fixed_effects2 = plm(belief ~ p_trend + m_trend + traders_1, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend + traders_1, data=market2, index = c("id","t_k"), model="random")
-
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend" ,"Dummy(Traders)" = "traders_1" ),error_format = "({p.value})")
-```
-
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
 
 # Session 6 {.tabset}
 
@@ -920,33 +433,17 @@ market2 = subset(market2, s_num == "S6")
 
 #Fix effect market 1
 Fixed_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k"), model="random")
 #Fix effect market 2
 Fixed_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k"), model="random")
 
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend"),error_format = "({p.value})")
+export_summs(Fixed_effects1, Fixed_effects2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
 ```
 
 
-
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
 
 ## Traders only
 ```{r, echo= FALSE, message=FALSE, warning=FALSE}
@@ -959,32 +456,17 @@ market1 = subset(market1, s_num == "S6")
 market2 = subset(market2, s_num == "S6")
 #Fix effect market 1
 Fixed_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k"), model="random")
 #Fix effect market 2
 Fixed_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k"), model="random")
 
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend"),error_format = "({p.value})")
+export_summs(Fixed_effects1, Fixed_effects2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
 ```
 
 
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
 
 ## Observers only
 ```{r, echo= FALSE, message=FALSE, warning=FALSE}
@@ -997,64 +479,14 @@ market1 = subset(market1, s_num == "S6")
 market2 = subset(market2, s_num == "S6")
 #Fix effect market 1
 Fixed_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend, data=market1, index = c("id","t_k"), model="random")
 #Fix effect market 2
 Fixed_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend, data=market2, index = c("id","t_k"), model="random")
 
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend"),error_format = "({p.value})")
+export_summs(Fixed_effects1, Fixed_effects2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
 ```
 
 
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
-
-## Dummy variable
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-
-market1 = subset(mydata, period<=15)
-market2 = subset(mydata, period>15)
-market1 = subset(market1, s_num == "S6")
-market2 = subset(market2, s_num == "S6")
-#Fix effect market 1
-Fixed_effects1 = plm(belief ~ p_trend + traders_1, data=market1, index = c("id","t_k") , model="within")
-#Random effect market 1
-Random_effects1 = plm(belief ~ p_trend + traders_1, data=market1, index = c("id","t_k"), model="random")
-#Fix effect market 2
-Fixed_effects2 = plm(belief ~ p_trend + m_trend + traders_1, data=market2, index = c("id","t_k") , model="within")
-#Random effect market 2
-Random_effects2 = plm(belief ~ p_trend + m_trend + traders_1, data=market2, index = c("id","t_k"), model="random")
-
-export_summs(Fixed_effects1, Random_effects1, Fixed_effects2,Random_effects2,scale = TRUE,
-             model.names = c("(Market1) Fixed effects","(Market1) Random effects","(Market2) Fixed effects","(Market2) Random effects"),
-             statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Constant" = "(Intercept)", "Periodtrend" = "p_trend",
-                                                                       "Markettrend" = "m_trend" ,"Dummy(Traders)" = "traders_1" ),error_format = "({p.value})")
-```
-
-Hausman Test - Market 1
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-
-Hausman Test - Market 2
-
-```{r, echo= FALSE, message=FALSE, warning=FALSE}
-(hausma  = phtest(Fixed_effects1,Random_effects1))
-```
-(If the null is rejected, the Fixed effects method is chosen to model the data instead of the Random effects method)
