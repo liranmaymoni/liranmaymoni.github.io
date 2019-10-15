@@ -4,7 +4,12 @@ author: "Afik, Lahav, Maymoni & Noussair"
 output: html_document
 ---
 
-**Last Update: 07/31/2019**
+**Update: 10/15/2019**
+
+Fixed code error.
+
+
+**Update: 07/31/2019**
 
 Fixed "Periodtrend" and "Markettrend" variables.
 
