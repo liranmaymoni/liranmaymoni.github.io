@@ -4,17 +4,20 @@ navbar:
   left:
     - text: "Ztree Summary"
       href: R_summery_investors_and_observers.html
-    - text: "Emotions Summary"
-      href: emotional_state_summery20190706.html
-    - text: "Regressions Summary"
+    - text: "Belief Stage"
       icon: fa-gear
       menu:
-      - text: "Regressions - Period and Market trends (without emotions)"
+      - text: "Emotions Summary"
+        href: emotional_state_summery20190706.html
+      - text: "Regressions - Period beliefs as a function of subjects' average emotions"
+        href: emotions_without_p_m_trend.html
+      - text: "Regressions - Period beliefs as a function of Period and Market trends (without emotions)"
         href: p_m_trend.html
-      - text: "Regressions - Period and Market trends (with emotions)"
+      - text: "Regressions - Period beliefs as a function of Period and Market trends (with emotions)"
         href: p_m_trend_with_emotions20190702.html
-      - text: "Upcoming period beliefs as a function of subjects' average emotions"
+      - text: "Regressions - Upcoming period beliefs as a function of subjects' average emotions"
         href: B_compared_to_P20190711.html
+
 output:
   html_document:
     theme: cosmo

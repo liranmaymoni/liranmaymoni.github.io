@@ -4,6 +4,11 @@ author: "Afik, Lahav, Maymoni & Noussair"
 output: html_document
 ---
 
+**Update: 10/16/2019**
+
+Added "Regressions - Period beliefs as a function of subjects' average emotions".
+Changed site layout.
+
 **Update: 10/15/2019**
 
 Fixed code error.
