@@ -4,9 +4,24 @@ author: "Afik, Lahav, Maymoni & Noussair"
 output: html_document
 ---
 
+**Update: 10/17/2019**
+
+Added "Regressions - Upcoming period beliefs as a function of subjects' average emotions - percentage difference" to "Belief stage"
+
+Added "Regressions - Percision in beliefs as a function of subjects' average emotions" to "Belief stage"
+
+Added "Emotions Summary" to "Record stage"
+
+Added "Regressions - Percision in beliefs as a function of subjects' average emotions" to "Record stage"
+
+Added "Regressions - Total dividends received as a function of subjects' average emotions (traders only)" to "Record stage"
+
+Added "Regression - Protfolio value as a function of subjects' average emotions (Traders only)" to "Record stage"
+
 **Update: 10/16/2019**
 
 Added "Regressions - Period beliefs as a function of subjects' average emotions".
+
 Changed site layout.
 
 **Update: 10/15/2019**
