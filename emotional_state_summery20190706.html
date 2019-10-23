@@ -1,0 +1,4278 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Emotions summary</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Beliefs & Emotions</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="R_summery_investors_and_observers.html">Ztree Summary</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-gear"></span>
+     
+    Belief Stage
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="emotional_state_summery20190706.html">Emotions Summary</a>
+    </li>
+    <li>
+      <a href="emotions_without_p_m_trend.html">Regressions - Period beliefs as a function of subjects' average emotions</a>
+    </li>
+    <li>
+      <a href="p_m_trend.html">Regressions - Period beliefs as a function of Period and Market trends (without emotions)</a>
+    </li>
+    <li>
+      <a href="p_m_trend_with_emotions20190702.html">Regressions - Period beliefs as a function of Period and Market trends (with emotions)</a>
+    </li>
+    <li>
+      <a href="B_compared_to_P20190711.html">Regressions - Upcoming period beliefs as a function of subjects' average emotions</a>
+    </li>
+    <li>
+      <a href="B_compared_to_P_pct.html">Regressions - Upcoming period beliefs as a function of subjects' average emotions - percentage difference</a>
+    </li>
+    <li>
+      <a href="Belief_percision_belief_stage.html">Regressions - Percision in beliefs as a function of subjects' average emotions</a>
+    </li>
+    <li>
+      <a href="AER_table5.html">Relationship between predicted and actual price change between periods t-1 and t</a>
+    </li>
+    <li>
+      <a href="belief_fundamental.html">Beliefs as a function of fundamental value</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-gear"></span>
+     
+    Record Stage
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="emotional_state_summery_record_stage.html">Emotions Summary</a>
+    </li>
+    <li>
+      <a href="Belief_percision_record_stage.html">Regressions - Percision in beliefs as a function of subjects' average emotions</a>
+    </li>
+    <li>
+      <a href="Div_and_shares.html">Regressions - Total dividends received as a function of subjects' average emotions (traders only)</a>
+    </li>
+    <li>
+      <a href="protfolio_value_record_stage.html">Regression - Protfolio value as a function of subjects' average emotions (Traders only)</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Emotions summary</h1>
+
+</div>
+
+
+<div id="all-sessions" class="section level1">
+<h1><span class="header-section-number">1</span> All sessions</h1>
+<div id="emotions-mean-and-s.d" class="section level2 tabset">
+<h2><span class="header-section-number">1.1</span> Emotions Mean and S.D</h2>
+<p>Mean and standard deviation of emotions across subjects and 10-s interbals (in the belief stage)</p>
+<div id="mean---markets-12" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> Mean - Markets 1+2</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.3486388</td>
+<td align="right">0.0327480</td>
+<td align="right">0.0226809</td>
+<td align="right">0.2330014</td>
+<td align="right">0.1920439</td>
+<td align="right">0.0254000</td>
+<td align="right">0.0710058</td>
+<td align="right">-0.2828471</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.3406073</td>
+<td align="right">0.0347585</td>
+<td align="right">0.0208093</td>
+<td align="right">0.2302148</td>
+<td align="right">0.2023802</td>
+<td align="right">0.0302724</td>
+<td align="right">0.0593231</td>
+<td align="right">-0.2715429</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.3582933</td>
+<td align="right">0.0303312</td>
+<td align="right">0.0249307</td>
+<td align="right">0.2363512</td>
+<td align="right">0.1796189</td>
+<td align="right">0.0195430</td>
+<td align="right">0.0850494</td>
+<td align="right">-0.2964356</td>
+</tr>
+<tr class="even">
+<td>P-Value</td>
+<td align="right">0.0131634</td>
+<td align="right">0.0763495</td>
+<td align="right">0.1552451</td>
+<td align="right">0.5241798</td>
+<td align="right">0.0072141</td>
+<td align="right">0.0006093</td>
+<td align="right">0.0000002</td>
+<td align="right">0.0186765</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s.d-markets-12" class="section level3">
+<h3><span class="header-section-number">1.1.2</span> S.D Markets 1+2</h3>
+<table>
+<caption>S.D</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.1943261</td>
+<td align="right">0.0692131</td>
+<td align="right">0.0785531</td>
+<td align="right">0.2621836</td>
+<td align="right">0.2312439</td>
+<td align="right">0.0874766</td>
+<td align="right">0.1327936</td>
+<td align="right">0.2892188</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.1986278</td>
+<td align="right">0.0761760</td>
+<td align="right">0.0783242</td>
+<td align="right">0.2675128</td>
+<td align="right">0.2384429</td>
+<td align="right">0.0990490</td>
+<td align="right">0.1182712</td>
+<td align="right">0.2999670</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.1886468</td>
+<td align="right">0.0597181</td>
+<td align="right">0.0787977</td>
+<td align="right">0.2556893</td>
+<td align="right">0.2217327</td>
+<td align="right">0.0707099</td>
+<td align="right">0.1472042</td>
+<td align="right">0.2752414</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mean---markets-1" class="section level3">
+<h3><span class="header-section-number">1.1.3</span> Mean - Markets 1</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.3522268</td>
+<td align="right">0.0334527</td>
+<td align="right">0.0223608</td>
+<td align="right">0.2313135</td>
+<td align="right">0.1848415</td>
+<td align="right">0.0226901</td>
+<td align="right">0.0718915</td>
+<td align="right">-0.2779381</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.3422914</td>
+<td align="right">0.0364840</td>
+<td align="right">0.0215563</td>
+<td align="right">0.2263018</td>
+<td align="right">0.1963122</td>
+<td align="right">0.0289427</td>
+<td align="right">0.0602588</td>
+<td align="right">-0.2652471</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.3641522</td>
+<td align="right">0.0298141</td>
+<td align="right">0.0233265</td>
+<td align="right">0.2373290</td>
+<td align="right">0.1710732</td>
+<td align="right">0.0151851</td>
+<td align="right">0.0858542</td>
+<td align="right">-0.2931710</td>
+</tr>
+<tr class="even">
+<td>P-Value</td>
+<td align="right">0.0318058</td>
+<td align="right">0.0615724</td>
+<td align="right">0.6526580</td>
+<td align="right">0.4290359</td>
+<td align="right">0.0262160</td>
+<td align="right">0.0002807</td>
+<td align="right">0.0003091</td>
+<td align="right">0.0677769</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s.d-markets-1" class="section level3">
+<h3><span class="header-section-number">1.1.4</span> S.D Markets 1</h3>
+<table>
+<caption>S.D</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.1959519</td>
+<td align="right">0.0700972</td>
+<td align="right">0.0763019</td>
+<td align="right">0.2677954</td>
+<td align="right">0.2195009</td>
+<td align="right">0.0765218</td>
+<td align="right">0.1331759</td>
+<td align="right">0.2950259</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.1989257</td>
+<td align="right">0.0778769</td>
+<td align="right">0.0807640</td>
+<td align="right">0.2705000</td>
+<td align="right">0.2276493</td>
+<td align="right">0.0929835</td>
+<td align="right">0.1161758</td>
+<td align="right">0.3039188</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.1917897</td>
+<td align="right">0.0592833</td>
+<td align="right">0.0706222</td>
+<td align="right">0.2645877</td>
+<td align="right">0.2086379</td>
+<td align="right">0.0491000</td>
+<td align="right">0.1499786</td>
+<td align="right">0.2834588</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mean---markets-2" class="section level3">
+<h3><span class="header-section-number">1.1.5</span> Mean - Markets 2</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.3450459</td>
+<td align="right">0.0320424</td>
+<td align="right">0.0230013</td>
+<td align="right">0.2346916</td>
+<td align="right">0.1992560</td>
+<td align="right">0.0281136</td>
+<td align="right">0.0701189</td>
+<td align="right">-0.2877628</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.3389231</td>
+<td align="right">0.0330330</td>
+<td align="right">0.0200623</td>
+<td align="right">0.2341278</td>
+<td align="right">0.2084481</td>
+<td align="right">0.0316021</td>
+<td align="right">0.0583873</td>
+<td align="right">-0.2778387</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.3524169</td>
+<td align="right">0.0308499</td>
+<td align="right">0.0265396</td>
+<td align="right">0.2353704</td>
+<td align="right">0.1881900</td>
+<td align="right">0.0239139</td>
+<td align="right">0.0842422</td>
+<td align="right">-0.2997100</td>
+</tr>
+<tr class="even">
+<td>P-Value</td>
+<td align="right">0.1770429</td>
+<td align="right">0.5327590</td>
+<td align="right">0.1289639</td>
+<td align="right">0.9256094</td>
+<td align="right">0.1072076</td>
+<td align="right">0.1231187</td>
+<td align="right">0.0002295</td>
+<td align="right">0.1354094</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s.d-markets-2" class="section level3">
+<h3><span class="header-section-number">1.1.6</span> S.D Markets 2</h3>
+<table>
+<caption>S.D</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.1926835</td>
+<td align="right">0.0683327</td>
+<td align="right">0.0807691</td>
+<td align="right">0.2565206</td>
+<td align="right">0.2422934</td>
+<td align="right">0.0971679</td>
+<td align="right">0.1324486</td>
+<td align="right">0.2832990</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.1984382</td>
+<td align="right">0.0744445</td>
+<td align="right">0.0758486</td>
+<td align="right">0.2646014</td>
+<td align="right">0.2487618</td>
+<td align="right">0.1048049</td>
+<td align="right">0.1203947</td>
+<td align="right">0.2960166</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.1853977</td>
+<td align="right">0.0601908</td>
+<td align="right">0.0862461</td>
+<td align="right">0.2466356</td>
+<td align="right">0.2339747</td>
+<td align="right">0.0869824</td>
+<td align="right">0.1444753</td>
+<td align="right">0.2669167</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="difference-between-markets" class="section level2 tabset">
+<h2><span class="header-section-number">1.2</span> Difference Between Markets</h2>
+<div id="all-participants" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> All Participants</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Market 1</td>
+<td align="right">0.3522268</td>
+<td align="right">0.0334527</td>
+<td align="right">0.0223608</td>
+<td align="right">0.2313135</td>
+<td align="right">0.1848415</td>
+<td align="right">0.0226901</td>
+<td align="right">0.0718915</td>
+<td align="right">-0.2779381</td>
+</tr>
+<tr class="even">
+<td>Market 2</td>
+<td align="right">0.3450459</td>
+<td align="right">0.0320424</td>
+<td align="right">0.0230013</td>
+<td align="right">0.2346916</td>
+<td align="right">0.1992560</td>
+<td align="right">0.0281136</td>
+<td align="right">0.0701189</td>
+<td align="right">-0.2877628</td>
+</tr>
+<tr class="odd">
+<td>P-Value</td>
+<td align="right">0.3145369</td>
+<td align="right">0.5792148</td>
+<td align="right">0.8243931</td>
+<td align="right">0.7258435</td>
+<td align="right">0.0897536</td>
+<td align="right">0.0915296</td>
+<td align="right">0.7163977</td>
+<td align="right">0.3551968</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="traders-only" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> Traders Only</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Market 1</td>
+<td align="right">0.3422914</td>
+<td align="right">0.0364840</td>
+<td align="right">0.0215563</td>
+<td align="right">0.2263018</td>
+<td align="right">0.1963122</td>
+<td align="right">0.0289427</td>
+<td align="right">0.0602588</td>
+<td align="right">-0.2652471</td>
+</tr>
+<tr class="even">
+<td>Market 2</td>
+<td align="right">0.3389231</td>
+<td align="right">0.0330330</td>
+<td align="right">0.0200623</td>
+<td align="right">0.2341278</td>
+<td align="right">0.2084481</td>
+<td align="right">0.0316021</td>
+<td align="right">0.0583873</td>
+<td align="right">-0.2778387</td>
+</tr>
+<tr class="odd">
+<td>P-Value</td>
+<td align="right">0.7331750</td>
+<td align="right">0.3623769</td>
+<td align="right">0.7013701</td>
+<td align="right">0.5564457</td>
+<td align="right">0.3061549</td>
+<td align="right">0.5893632</td>
+<td align="right">0.7504001</td>
+<td align="right">0.3987011</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="observers-only" class="section level3">
+<h3><span class="header-section-number">1.2.3</span> Observers Only</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Market 1</td>
+<td align="right">0.3641522</td>
+<td align="right">0.0298141</td>
+<td align="right">0.0233265</td>
+<td align="right">0.2373290</td>
+<td align="right">0.1710732</td>
+<td align="right">0.0151851</td>
+<td align="right">0.0858542</td>
+<td align="right">-0.2931710</td>
+</tr>
+<tr class="even">
+<td>Market 2</td>
+<td align="right">0.3524169</td>
+<td align="right">0.0308499</td>
+<td align="right">0.0265396</td>
+<td align="right">0.2353704</td>
+<td align="right">0.1881900</td>
+<td align="right">0.0239139</td>
+<td align="right">0.0842422</td>
+<td align="right">-0.2997100</td>
+</tr>
+<tr class="odd">
+<td>P-Value</td>
+<td align="right">0.2539395</td>
+<td align="right">0.7505007</td>
+<td align="right">0.4547979</td>
+<td align="right">0.8883050</td>
+<td align="right">0.1569051</td>
+<td align="right">0.0236392</td>
+<td align="right">0.8408749</td>
+<td align="right">0.6631195</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="emotions-progression" class="section level2 tabset">
+<h2><span class="header-section-number">1.3</span> Emotions Progression</h2>
+<div id="all-participants-1" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> All participants</h3>
+<p><img src="emotional_state_summery20190706_files/figure-html/unnamed-chunk-10-1.png" width="864" /></p>
+</div>
+<div id="investors-observers" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Investors / Observers</h3>
+<p><img src="emotional_state_summery20190706_files/figure-html/unnamed-chunk-11-1.png" width="864" /></p>
+</div>
+</div>
+</div>
+<div id="session-1" class="section level1">
+<h1><span class="header-section-number">2</span> Session 1</h1>
+<div id="emotions-mean-and-s.d-1" class="section level2 tabset">
+<h2><span class="header-section-number">2.1</span> Emotions Mean and S.D</h2>
+<p>Mean and standard deviation of emotions across subjects and 10-s interbals (in the belief stage)</p>
+<div id="mean---markets-12-1" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Mean - Markets 1+2</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.2910520</td>
+<td align="right">0.0321330</td>
+<td align="right">0.0201914</td>
+<td align="right">0.3439184</td>
+<td align="right">0.1589508</td>
+<td align="right">0.0340110</td>
+<td align="right">0.0451100</td>
+<td align="right">-0.3740570</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.2910647</td>
+<td align="right">0.0385446</td>
+<td align="right">0.0185070</td>
+<td align="right">0.3276013</td>
+<td align="right">0.1490468</td>
+<td align="right">0.0490155</td>
+<td align="right">0.0355334</td>
+<td align="right">-0.3570728</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.2910292</td>
+<td align="right">0.0205576</td>
+<td align="right">0.0232323</td>
+<td align="right">0.3733770</td>
+<td align="right">0.1768313</td>
+<td align="right">0.0069224</td>
+<td align="right">0.0623995</td>
+<td align="right">-0.4047197</td>
+</tr>
+<tr class="even">
+<td>P-Value</td>
+<td align="right">0.9982306</td>
+<td align="right">0.0012197</td>
+<td align="right">0.3965934</td>
+<td align="right">0.1198459</td>
+<td align="right">0.1639237</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0017093</td>
+<td align="right">0.0994176</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s.d-markets-12-1" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> S.D Markets 1+2</h3>
+<table>
+<caption>S.D</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.1617215</td>
+<td align="right">0.0626650</td>
+<td align="right">0.0541835</td>
+<td align="right">0.3007191</td>
+<td align="right">0.1901310</td>
+<td align="right">0.0904722</td>
+<td align="right">0.0761234</td>
+<td align="right">0.3000518</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.1683065</td>
+<td align="right">0.0708520</td>
+<td align="right">0.0538226</td>
+<td align="right">0.3153914</td>
+<td align="right">0.1834489</td>
+<td align="right">0.1090315</td>
+<td align="right">0.0642191</td>
+<td align="right">0.3194212</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.1496504</td>
+<td align="right">0.0420051</td>
+<td align="right">0.0548798</td>
+<td align="right">0.2707697</td>
+<td align="right">0.2010329</td>
+<td align="right">0.0196917</td>
+<td align="right">0.0916057</td>
+<td align="right">0.2596940</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mean---markets-1-1" class="section level3">
+<h3><span class="header-section-number">2.1.3</span> Mean - Markets 1</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.2715015</td>
+<td align="right">0.0372686</td>
+<td align="right">0.0214898</td>
+<td align="right">0.3482645</td>
+<td align="right">0.1623008</td>
+<td align="right">0.0304070</td>
+<td align="right">0.0470242</td>
+<td align="right">-0.3720571</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.2663939</td>
+<td align="right">0.0463282</td>
+<td align="right">0.0200708</td>
+<td align="right">0.3184437</td>
+<td align="right">0.1585351</td>
+<td align="right">0.0436425</td>
+<td align="right">0.0377320</td>
+<td align="right">-0.3409330</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.2806270</td>
+<td align="right">0.0210820</td>
+<td align="right">0.0240251</td>
+<td align="right">0.4015443</td>
+<td align="right">0.1690287</td>
+<td align="right">0.0067596</td>
+<td align="right">0.0636263</td>
+<td align="right">-0.4276655</td>
+</tr>
+<tr class="even">
+<td>P-Value</td>
+<td align="right">0.4830921</td>
+<td align="right">0.0048228</td>
+<td align="right">0.6148035</td>
+<td align="right">0.0497124</td>
+<td align="right">0.7049088</td>
+<td align="right">0.0000690</td>
+<td align="right">0.0485216</td>
+<td align="right">0.0441054</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s.d-markets-1-1" class="section level3">
+<h3><span class="header-section-number">2.1.4</span> S.D Markets 1</h3>
+<table>
+<caption>S.D</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.1413486</td>
+<td align="right">0.0715066</td>
+<td align="right">0.0573070</td>
+<td align="right">0.3065466</td>
+<td align="right">0.1876462</td>
+<td align="right">0.0837872</td>
+<td align="right">0.0835528</td>
+<td align="right">0.3171964</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.1429344</td>
+<td align="right">0.0807538</td>
+<td align="right">0.0610055</td>
+<td align="right">0.3203781</td>
+<td align="right">0.1832122</td>
+<td align="right">0.1015800</td>
+<td align="right">0.0726261</td>
+<td align="right">0.3370900</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.1389514</td>
+<td align="right">0.0473026</td>
+<td align="right">0.0503177</td>
+<td align="right">0.2741685</td>
+<td align="right">0.1963945</td>
+<td align="right">0.0174173</td>
+<td align="right">0.0985231</td>
+<td align="right">0.2714610</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mean---markets-2-1" class="section level3">
+<h3><span class="header-section-number">2.1.5</span> Mean - Markets 2</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.3106025</td>
+<td align="right">0.0269974</td>
+<td align="right">0.0188930</td>
+<td align="right">0.3395724</td>
+<td align="right">0.1556009</td>
+<td align="right">0.0376150</td>
+<td align="right">0.0431959</td>
+<td align="right">-0.3760568</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.3155526</td>
+<td align="right">0.0308187</td>
+<td align="right">0.0169548</td>
+<td align="right">0.3366910</td>
+<td align="right">0.1396287</td>
+<td align="right">0.0543486</td>
+<td align="right">0.0333510</td>
+<td align="right">-0.3730930</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.3015719</td>
+<td align="right">0.0200260</td>
+<td align="right">0.0224288</td>
+<td align="right">0.3448290</td>
+<td align="right">0.1847392</td>
+<td align="right">0.0070875</td>
+<td align="right">0.0611562</td>
+<td align="right">-0.3814638</td>
+</tr>
+<tr class="even">
+<td>P-Value</td>
+<td align="right">0.5709956</td>
+<td align="right">0.1021700</td>
+<td align="right">0.4928664</td>
+<td align="right">0.8426008</td>
+<td align="right">0.1191897</td>
+<td align="right">0.0000095</td>
+<td align="right">0.0122709</td>
+<td align="right">0.8288974</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s.d-markets-2-1" class="section level3">
+<h3><span class="header-section-number">2.1.6</span> S.D Markets 2</h3>
+<table>
+<caption>S.D</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.1780053</td>
+<td align="right">0.0520241</td>
+<td align="right">0.0509738</td>
+<td align="right">0.2954488</td>
+<td align="right">0.1929760</td>
+<td align="right">0.0967646</td>
+<td align="right">0.0680367</td>
+<td align="right">0.2826189</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.1875196</td>
+<td align="right">0.0587093</td>
+<td align="right">0.0457709</td>
+<td align="right">0.3112879</td>
+<td align="right">0.1838787</td>
+<td align="right">0.1160893</td>
+<td align="right">0.0548028</td>
+<td align="right">0.3012624</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.1600257</td>
+<td align="right">0.0361725</td>
+<td align="right">0.0594833</td>
+<td align="right">0.2660860</td>
+<td align="right">0.2066654</td>
+<td align="right">0.0218764</td>
+<td align="right">0.0846771</td>
+<td align="right">0.2468601</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="difference-between-markets-1" class="section level2 tabset">
+<h2><span class="header-section-number">2.2</span> Difference Between Markets</h2>
+<div id="all-participants-2" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> All Participants</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Market 1</td>
+<td align="right">0.2715015</td>
+<td align="right">0.0372686</td>
+<td align="right">0.0214898</td>
+<td align="right">0.3482645</td>
+<td align="right">0.1623008</td>
+<td align="right">0.0304070</td>
+<td align="right">0.0470242</td>
+<td align="right">-0.3720571</td>
+</tr>
+<tr class="even">
+<td>Market 2</td>
+<td align="right">0.3106025</td>
+<td align="right">0.0269974</td>
+<td align="right">0.0188930</td>
+<td align="right">0.3395724</td>
+<td align="right">0.1556009</td>
+<td align="right">0.0376150</td>
+<td align="right">0.0431959</td>
+<td align="right">-0.3760568</td>
+</tr>
+<tr class="odd">
+<td>P-Value</td>
+<td align="right">0.0132968</td>
+<td align="right">0.0939364</td>
+<td align="right">0.6247633</td>
+<td align="right">0.7680244</td>
+<td align="right">0.7191432</td>
+<td align="right">0.4160593</td>
+<td align="right">0.6077873</td>
+<td align="right">0.8918042</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="traders-only-1" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Traders Only</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Market 1</td>
+<td align="right">0.2663939</td>
+<td align="right">0.0463282</td>
+<td align="right">0.0200708</td>
+<td align="right">0.3184437</td>
+<td align="right">0.1585351</td>
+<td align="right">0.0436425</td>
+<td align="right">0.0377320</td>
+<td align="right">-0.3409330</td>
+</tr>
+<tr class="even">
+<td>Market 2</td>
+<td align="right">0.3155526</td>
+<td align="right">0.0308187</td>
+<td align="right">0.0169548</td>
+<td align="right">0.3366910</td>
+<td align="right">0.1396287</td>
+<td align="right">0.0543486</td>
+<td align="right">0.0333510</td>
+<td align="right">-0.3730930</td>
+</tr>
+<tr class="odd">
+<td>P-Value</td>
+<td align="right">0.0162713</td>
+<td align="right">0.0730150</td>
+<td align="right">0.6362252</td>
+<td align="right">0.6360927</td>
+<td align="right">0.3990256</td>
+<td align="right">0.4214885</td>
+<td align="right">0.5772538</td>
+<td align="right">0.4102248</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="observers-only-1" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Observers Only</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Market 1</td>
+<td align="right">0.2806270</td>
+<td align="right">0.0210820</td>
+<td align="right">0.0240251</td>
+<td align="right">0.4015443</td>
+<td align="right">0.1690287</td>
+<td align="right">0.0067596</td>
+<td align="right">0.0636263</td>
+<td align="right">-0.4276655</td>
+</tr>
+<tr class="even">
+<td>Market 2</td>
+<td align="right">0.3015719</td>
+<td align="right">0.0200260</td>
+<td align="right">0.0224288</td>
+<td align="right">0.3448290</td>
+<td align="right">0.1847392</td>
+<td align="right">0.0070875</td>
+<td align="right">0.0611562</td>
+<td align="right">-0.3814638</td>
+</tr>
+<tr class="odd">
+<td>P-Value</td>
+<td align="right">0.3953029</td>
+<td align="right">0.8784641</td>
+<td align="right">0.8599593</td>
+<td align="right">0.2020761</td>
+<td align="right">0.6351088</td>
+<td align="right">0.9195890</td>
+<td align="right">0.8698076</td>
+<td align="right">0.2787585</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="emotions-progression-1" class="section level2 tabset">
+<h2><span class="header-section-number">2.3</span> Emotions Progression</h2>
+<div id="all-participants-3" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> All participants</h3>
+<p><img src="emotional_state_summery20190706_files/figure-html/unnamed-chunk-21-1.png" width="864" /></p>
+</div>
+<div id="investors-observers-1" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Investors / Observers</h3>
+<p><img src="emotional_state_summery20190706_files/figure-html/unnamed-chunk-22-1.png" width="864" /></p>
+</div>
+</div>
+</div>
+<div id="session-2" class="section level1">
+<h1><span class="header-section-number">3</span> Session 2</h1>
+<div id="emotions-mean-and-s.d-2" class="section level2 tabset">
+<h2><span class="header-section-number">3.1</span> Emotions Mean and S.D</h2>
+<p>Mean and standard deviation of emotions across subjects and 10-s interbals (in the belief stage)</p>
+<div id="mean---markets-12-2" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Mean - Markets 1+2</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.3303164</td>
+<td align="right">0.0345316</td>
+<td align="right">0.0183824</td>
+<td align="right">0.2482870</td>
+<td align="right">0.1727836</td>
+<td align="right">0.0266046</td>
+<td align="right">0.0839115</td>
+<td align="right">-0.2915595</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.3305255</td>
+<td align="right">0.0362310</td>
+<td align="right">0.0038635</td>
+<td align="right">0.2654748</td>
+<td align="right">0.1771279</td>
+<td align="right">0.0283513</td>
+<td align="right">0.0969010</td>
+<td align="right">-0.3024182</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.3299400</td>
+<td align="right">0.0314728</td>
+<td align="right">0.0445164</td>
+<td align="right">0.2173490</td>
+<td align="right">0.1649638</td>
+<td align="right">0.0234605</td>
+<td align="right">0.0605303</td>
+<td align="right">-0.2720137</td>
+</tr>
+<tr class="even">
+<td>P-Value</td>
+<td align="right">0.9633251</td>
+<td align="right">0.4673846</td>
+<td align="right">0.0000097</td>
+<td align="right">0.0195254</td>
+<td align="right">0.4735361</td>
+<td align="right">0.4554910</td>
+<td align="right">0.0002703</td>
+<td align="right">0.1648638</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s.d-markets-12-2" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> S.D Markets 1+2</h3>
+<table>
+<caption>S.D</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.1281203</td>
+<td align="right">0.0711206</td>
+<td align="right">0.0684305</td>
+<td align="right">0.2035326</td>
+<td align="right">0.1686800</td>
+<td align="right">0.0699045</td>
+<td align="right">0.1058170</td>
+<td align="right">0.2246820</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.1323009</td>
+<td align="right">0.0789562</td>
+<td align="right">0.0148202</td>
+<td align="right">0.2038718</td>
+<td align="right">0.1716262</td>
+<td align="right">0.0764101</td>
+<td align="right">0.1129898</td>
+<td align="right">0.2362858</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.1206615</td>
+<td align="right">0.0543545</td>
+<td align="right">0.1081764</td>
+<td align="right">0.1998878</td>
+<td align="right">0.1635176</td>
+<td align="right">0.0564402</td>
+<td align="right">0.0870795</td>
+<td align="right">0.2014091</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mean---markets-1-2" class="section level3">
+<h3><span class="header-section-number">3.1.3</span> Mean - Markets 1</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.3328506</td>
+<td align="right">0.0322769</td>
+<td align="right">0.0185908</td>
+<td align="right">0.2511606</td>
+<td align="right">0.1582174</td>
+<td align="right">0.0318782</td>
+<td align="right">0.0818498</td>
+<td align="right">-0.2955225</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.3293261</td>
+<td align="right">0.0314596</td>
+<td align="right">0.0028202</td>
+<td align="right">0.2765498</td>
+<td align="right">0.1612487</td>
+<td align="right">0.0372788</td>
+<td align="right">0.0911276</td>
+<td align="right">-0.3158681</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.3391949</td>
+<td align="right">0.0337482</td>
+<td align="right">0.0469778</td>
+<td align="right">0.2054601</td>
+<td align="right">0.1527612</td>
+<td align="right">0.0221570</td>
+<td align="right">0.0651499</td>
+<td align="right">-0.2589003</td>
+</tr>
+<tr class="even">
+<td>P-Value</td>
+<td align="right">0.5913867</td>
+<td align="right">0.8066462</td>
+<td align="right">0.0001357</td>
+<td align="right">0.0166789</td>
+<td align="right">0.7090861</td>
+<td align="right">0.1432513</td>
+<td align="right">0.0713232</td>
+<td align="right">0.0664974</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s.d-markets-1-2" class="section level3">
+<h3><span class="header-section-number">3.1.4</span> S.D Markets 1</h3>
+<table>
+<caption>S.D</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.1293678</td>
+<td align="right">0.0644035</td>
+<td align="right">0.0607461</td>
+<td align="right">0.2054872</td>
+<td align="right">0.1555262</td>
+<td align="right">0.0839573</td>
+<td align="right">0.1017721</td>
+<td align="right">0.2238498</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.1322644</td>
+<td align="right">0.0642195</td>
+<td align="right">0.0097301</td>
+<td align="right">0.2021142</td>
+<td align="right">0.1535663</td>
+<td align="right">0.0970199</td>
+<td align="right">0.1035334</td>
+<td align="right">0.2328308</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.1246051</td>
+<td align="right">0.0651408</td>
+<td align="right">0.0947635</td>
+<td align="right">0.2049206</td>
+<td align="right">0.1598916</td>
+<td align="right">0.0520986</td>
+<td align="right">0.0969692</td>
+<td align="right">0.2030873</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mean---markets-2-2" class="section level3">
+<h3><span class="header-section-number">3.1.5</span> Mean - Markets 2</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.3277821</td>
+<td align="right">0.0367863</td>
+<td align="right">0.0181741</td>
+<td align="right">0.2454134</td>
+<td align="right">0.1873497</td>
+<td align="right">0.0213310</td>
+<td align="right">0.0859731</td>
+<td align="right">-0.2875965</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.3317249</td>
+<td align="right">0.0410024</td>
+<td align="right">0.0049069</td>
+<td align="right">0.2543998</td>
+<td align="right">0.1930070</td>
+<td align="right">0.0194237</td>
+<td align="right">0.1026745</td>
+<td align="right">-0.2889683</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.3206851</td>
+<td align="right">0.0291974</td>
+<td align="right">0.0420550</td>
+<td align="right">0.2292378</td>
+<td align="right">0.1771665</td>
+<td align="right">0.0247640</td>
+<td align="right">0.0559107</td>
+<td align="right">-0.2851272</td>
+</tr>
+<tr class="even">
+<td>P-Value</td>
+<td align="right">0.5329422</td>
+<td align="right">0.2003093</td>
+<td align="right">0.0098443</td>
+<td align="right">0.3816337</td>
+<td align="right">0.5296452</td>
+<td align="right">0.5095907</td>
+<td align="right">0.0007701</td>
+<td align="right">0.9014996</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s.d-markets-2-2" class="section level3">
+<h3><span class="header-section-number">3.1.6</span> S.D Markets 2</h3>
+<table>
+<caption>S.D</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.1271189</td>
+<td align="right">0.0773463</td>
+<td align="right">0.0754831</td>
+<td align="right">0.2020090</td>
+<td align="right">0.1800756</td>
+<td align="right">0.0518840</td>
+<td align="right">0.1099179</td>
+<td align="right">0.2259761</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.1328191</td>
+<td align="right">0.0913493</td>
+<td align="right">0.0185485</td>
+<td align="right">0.2057676</td>
+<td align="right">0.1871905</td>
+<td align="right">0.0463370</td>
+<td align="right">0.1218291</td>
+<td align="right">0.2397997</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.1166838</td>
+<td align="right">0.0411696</td>
+<td align="right">0.1207063</td>
+<td align="right">0.1953746</td>
+<td align="right">0.1672428</td>
+<td align="right">0.0607976</td>
+<td align="right">0.0763011</td>
+<td align="right">0.2002160</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="difference-between-markets-2" class="section level2 tabset">
+<h2><span class="header-section-number">3.2</span> Difference Between Markets</h2>
+<div id="all-participants-4" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> All Participants</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Market 1</td>
+<td align="right">0.3328506</td>
+<td align="right">0.0322769</td>
+<td align="right">0.0185908</td>
+<td align="right">0.2511606</td>
+<td align="right">0.1582174</td>
+<td align="right">0.0318782</td>
+<td align="right">0.0818498</td>
+<td align="right">-0.2955225</td>
+</tr>
+<tr class="even">
+<td>Market 2</td>
+<td align="right">0.3277821</td>
+<td align="right">0.0367863</td>
+<td align="right">0.0181741</td>
+<td align="right">0.2454134</td>
+<td align="right">0.1873497</td>
+<td align="right">0.0213310</td>
+<td align="right">0.0859731</td>
+<td align="right">-0.2875965</td>
+</tr>
+<tr class="odd">
+<td>P-Value</td>
+<td align="right">0.6857061</td>
+<td align="right">0.5165396</td>
+<td align="right">0.9503298</td>
+<td align="right">0.7727005</td>
+<td align="right">0.0767644</td>
+<td align="right">0.1223760</td>
+<td align="right">0.6901857</td>
+<td align="right">0.7182060</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="traders-only-2" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> Traders Only</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Market 1</td>
+<td align="right">0.3293261</td>
+<td align="right">0.0314596</td>
+<td align="right">0.0028202</td>
+<td align="right">0.2765498</td>
+<td align="right">0.1612487</td>
+<td align="right">0.0372788</td>
+<td align="right">0.0911276</td>
+<td align="right">-0.3158681</td>
+</tr>
+<tr class="even">
+<td>Market 2</td>
+<td align="right">0.3317249</td>
+<td align="right">0.0410024</td>
+<td align="right">0.0049069</td>
+<td align="right">0.2543998</td>
+<td align="right">0.1930070</td>
+<td align="right">0.0194237</td>
+<td align="right">0.1026745</td>
+<td align="right">-0.2889683</td>
+</tr>
+<tr class="odd">
+<td>P-Value</td>
+<td align="right">0.8819059</td>
+<td align="right">0.3217285</td>
+<td align="right">0.2484328</td>
+<td align="right">0.3730406</td>
+<td align="right">0.1287276</td>
+<td align="right">0.0551391</td>
+<td align="right">0.4021538</td>
+<td align="right">0.3505751</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="observers-only-2" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> Observers Only</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Market 1</td>
+<td align="right">0.3391949</td>
+<td align="right">0.0337482</td>
+<td align="right">0.0469778</td>
+<td align="right">0.2054601</td>
+<td align="right">0.1527612</td>
+<td align="right">0.0221570</td>
+<td align="right">0.0651499</td>
+<td align="right">-0.2589003</td>
+</tr>
+<tr class="even">
+<td>Market 2</td>
+<td align="right">0.3206851</td>
+<td align="right">0.0291974</td>
+<td align="right">0.0420550</td>
+<td align="right">0.2292378</td>
+<td align="right">0.1771665</td>
+<td align="right">0.0247640</td>
+<td align="right">0.0559107</td>
+<td align="right">-0.2851272</td>
+</tr>
+<tr class="odd">
+<td>P-Value</td>
+<td align="right">0.3492573</td>
+<td align="right">0.6099527</td>
+<td align="right">0.7815661</td>
+<td align="right">0.4681958</td>
+<td align="right">0.3624833</td>
+<td align="right">0.7783661</td>
+<td align="right">0.5177402</td>
+<td align="right">0.4270571</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="emotions-progression-2" class="section level2 tabset">
+<h2><span class="header-section-number">3.3</span> Emotions Progression</h2>
+<div id="all-participants-5" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> All participants</h3>
+<p><img src="emotional_state_summery20190706_files/figure-html/unnamed-chunk-32-1.png" width="864" /></p>
+</div>
+<div id="investors-observers-2" class="section level3">
+<h3><span class="header-section-number">3.3.2</span> Investors / Observers</h3>
+<p><img src="emotional_state_summery20190706_files/figure-html/unnamed-chunk-33-1.png" width="864" /></p>
+</div>
+</div>
+</div>
+<div id="session-3" class="section level1">
+<h1><span class="header-section-number">4</span> Session 3</h1>
+<div id="emotions-mean-and-s.d-3" class="section level2 tabset">
+<h2><span class="header-section-number">4.1</span> Emotions Mean and S.D</h2>
+<p>Mean and standard deviation of emotions across subjects and 10-s interbals (in the belief stage)</p>
+<div id="mean---markets-12-3" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Mean - Markets 1+2</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.3349814</td>
+<td align="right">0.0257608</td>
+<td align="right">0.0056844</td>
+<td align="right">0.2448129</td>
+<td align="right">0.1794894</td>
+<td align="right">0.0216922</td>
+<td align="right">0.1194191</td>
+<td align="right">-0.3291737</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.3030719</td>
+<td align="right">0.0196850</td>
+<td align="right">0.0074690</td>
+<td align="right">0.2404858</td>
+<td align="right">0.2460714</td>
+<td align="right">0.0111701</td>
+<td align="right">0.1105854</td>
+<td align="right">-0.3146204</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.3758559</td>
+<td align="right">0.0335437</td>
+<td align="right">0.0033983</td>
+<td align="right">0.2503556</td>
+<td align="right">0.0942010</td>
+<td align="right">0.0351706</td>
+<td align="right">0.1307346</td>
+<td align="right">-0.3478157</td>
+</tr>
+<tr class="even">
+<td>P-Value</td>
+<td align="right">0.0002844</td>
+<td align="right">0.0026052</td>
+<td align="right">0.0285697</td>
+<td align="right">0.6886274</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0026860</td>
+<td align="right">0.3019831</td>
+<td align="right">0.2312517</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s.d-markets-12-3" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> S.D Markets 1+2</h3>
+<table>
+<caption>S.D</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.2230410</td>
+<td align="right">0.0504348</td>
+<td align="right">0.0206037</td>
+<td align="right">0.2684348</td>
+<td align="right">0.2640754</td>
+<td align="right">0.0786757</td>
+<td align="right">0.2102773</td>
+<td align="right">0.3014018</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.2344779</td>
+<td align="right">0.0510748</td>
+<td align="right">0.0218733</td>
+<td align="right">0.2734592</td>
+<td align="right">0.3133314</td>
+<td align="right">0.0367400</td>
+<td align="right">0.2049153</td>
+<td align="right">0.3031897</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.2007147</td>
+<td align="right">0.0486225</td>
+<td align="right">0.0186560</td>
+<td align="right">0.2624038</td>
+<td align="right">0.1434757</td>
+<td align="right">0.1100037</td>
+<td align="right">0.2169189</td>
+<td align="right">0.2987805</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mean---markets-1-3" class="section level3">
+<h3><span class="header-section-number">4.1.3</span> Mean - Markets 1</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.3391186</td>
+<td align="right">0.0274280</td>
+<td align="right">0.0043029</td>
+<td align="right">0.2376256</td>
+<td align="right">0.1722084</td>
+<td align="right">0.0166554</td>
+<td align="right">0.1240545</td>
+<td align="right">-0.3233391</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.3032482</td>
+<td align="right">0.0203685</td>
+<td align="right">0.0062985</td>
+<td align="right">0.2449666</td>
+<td align="right">0.2359942</td>
+<td align="right">0.0124723</td>
+<td align="right">0.1081179</td>
+<td align="right">-0.3175471</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.3852376</td>
+<td align="right">0.0365044</td>
+<td align="right">0.0017372</td>
+<td align="right">0.2281872</td>
+<td align="right">0.0901981</td>
+<td align="right">0.0220336</td>
+<td align="right">0.1445445</td>
+<td align="right">-0.3307860</td>
+</tr>
+<tr class="even">
+<td>P-Value</td>
+<td align="right">0.0044607</td>
+<td align="right">0.0142781</td>
+<td align="right">0.0156813</td>
+<td align="right">0.6403036</td>
+<td align="right">0.0000011</td>
+<td align="right">0.2925993</td>
+<td align="right">0.2023431</td>
+<td align="right">0.7446679</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s.d-markets-1-3" class="section level3">
+<h3><span class="header-section-number">4.1.4</span> S.D Markets 1</h3>
+<table>
+<caption>S.D</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.2249023</td>
+<td align="right">0.0517315</td>
+<td align="right">0.0161877</td>
+<td align="right">0.2767729</td>
+<td align="right">0.2524655</td>
+<td align="right">0.0650243</td>
+<td align="right">0.2147807</td>
+<td align="right">0.3103866</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.2292397</td>
+<td align="right">0.0544786</td>
+<td align="right">0.0209682</td>
+<td align="right">0.2828145</td>
+<td align="right">0.2999310</td>
+<td align="right">0.0455299</td>
+<td align="right">0.1983520</td>
+<td align="right">0.3072919</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.2114516</td>
+<td align="right">0.0466698</td>
+<td align="right">0.0048872</td>
+<td align="right">0.2698591</td>
+<td align="right">0.1360029</td>
+<td align="right">0.0836288</td>
+<td align="right">0.2335934</td>
+<td align="right">0.3156415</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mean---markets-2-3" class="section level3">
+<h3><span class="header-section-number">4.1.5</span> Mean - Markets 2</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.3308269</td>
+<td align="right">0.0240867</td>
+<td align="right">0.0070716</td>
+<td align="right">0.2520302</td>
+<td align="right">0.1868008</td>
+<td align="right">0.0267502</td>
+<td align="right">0.1147642</td>
+<td align="right">-0.3350326</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.3028943</td>
+<td align="right">0.0189963</td>
+<td align="right">0.0086483</td>
+<td align="right">0.2359716</td>
+<td align="right">0.2562237</td>
+<td align="right">0.0098582</td>
+<td align="right">0.1130713</td>
+<td align="right">-0.3116719</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.3664742</td>
+<td align="right">0.0305831</td>
+<td align="right">0.0050594</td>
+<td align="right">0.2725241</td>
+<td align="right">0.0982039</td>
+<td align="right">0.0483076</td>
+<td align="right">0.1169247</td>
+<td align="right">-0.3648453</td>
+</tr>
+<tr class="even">
+<td>P-Value</td>
+<td align="right">0.0232809</td>
+<td align="right">0.0725796</td>
+<td align="right">0.2635580</td>
+<td align="right">0.2796424</td>
+<td align="right">0.0000015</td>
+<td align="right">0.0035370</td>
+<td align="right">0.8853605</td>
+<td align="right">0.1605001</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s.d-markets-2-3" class="section level3">
+<h3><span class="header-section-number">4.1.6</span> S.D Markets 2</h3>
+<table>
+<caption>S.D</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.2215502</td>
+<td align="right">0.0491498</td>
+<td align="right">0.0241991</td>
+<td align="right">0.2601739</td>
+<td align="right">0.2755792</td>
+<td align="right">0.0901917</td>
+<td align="right">0.2060016</td>
+<td align="right">0.2926363</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.2405005</td>
+<td align="right">0.0475952</td>
+<td align="right">0.0227665</td>
+<td align="right">0.2646848</td>
+<td align="right">0.3270896</td>
+<td align="right">0.0250586</td>
+<td align="right">0.2120383</td>
+<td align="right">0.3001242</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.1899227</td>
+<td align="right">0.0505496</td>
+<td align="right">0.0258840</td>
+<td align="right">0.2540813</td>
+<td align="right">0.1511269</td>
+<td align="right">0.1302909</td>
+<td align="right">0.1990203</td>
+<td align="right">0.2813943</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="difference-between-markets-3" class="section level2 tabset">
+<h2><span class="header-section-number">4.2</span> Difference Between Markets</h2>
+<div id="all-participants-6" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> All Participants</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Market 1</td>
+<td align="right">0.3391186</td>
+<td align="right">0.0274280</td>
+<td align="right">0.0043029</td>
+<td align="right">0.2376256</td>
+<td align="right">0.1722084</td>
+<td align="right">0.0166554</td>
+<td align="right">0.1240545</td>
+<td align="right">-0.3233391</td>
+</tr>
+<tr class="even">
+<td>Market 2</td>
+<td align="right">0.3308269</td>
+<td align="right">0.0240867</td>
+<td align="right">0.0070716</td>
+<td align="right">0.2520302</td>
+<td align="right">0.1868008</td>
+<td align="right">0.0267502</td>
+<td align="right">0.1147642</td>
+<td align="right">-0.3350326</td>
+</tr>
+<tr class="odd">
+<td>P-Value</td>
+<td align="right">0.6845796</td>
+<td align="right">0.4690071</td>
+<td align="right">0.1420258</td>
+<td align="right">0.5575546</td>
+<td align="right">0.5460130</td>
+<td align="right">0.1608602</td>
+<td align="right">0.6292263</td>
+<td align="right">0.6715796</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="traders-only-3" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Traders Only</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Market 1</td>
+<td align="right">0.3032482</td>
+<td align="right">0.0203685</td>
+<td align="right">0.0062985</td>
+<td align="right">0.2449666</td>
+<td align="right">0.2359942</td>
+<td align="right">0.0124723</td>
+<td align="right">0.1081179</td>
+<td align="right">-0.3175471</td>
+</tr>
+<tr class="even">
+<td>Market 2</td>
+<td align="right">0.3028943</td>
+<td align="right">0.0189963</td>
+<td align="right">0.0086483</td>
+<td align="right">0.2359716</td>
+<td align="right">0.2562237</td>
+<td align="right">0.0098582</td>
+<td align="right">0.1130713</td>
+<td align="right">-0.3116719</td>
+</tr>
+<tr class="odd">
+<td>P-Value</td>
+<td align="right">0.9901534</td>
+<td align="right">0.8260129</td>
+<td align="right">0.3794914</td>
+<td align="right">0.7878746</td>
+<td align="right">0.5975487</td>
+<td align="right">0.5599012</td>
+<td align="right">0.8433313</td>
+<td align="right">0.8740771</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="observers-only-3" class="section level3">
+<h3><span class="header-section-number">4.2.3</span> Observers Only</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Market 1</td>
+<td align="right">0.3852376</td>
+<td align="right">0.0365044</td>
+<td align="right">0.0017372</td>
+<td align="right">0.2281872</td>
+<td align="right">0.0901981</td>
+<td align="right">0.0220336</td>
+<td align="right">0.1445445</td>
+<td align="right">-0.3307860</td>
+</tr>
+<tr class="even">
+<td>Market 2</td>
+<td align="right">0.3664742</td>
+<td align="right">0.0305831</td>
+<td align="right">0.0050594</td>
+<td align="right">0.2725241</td>
+<td align="right">0.0982039</td>
+<td align="right">0.0483076</td>
+<td align="right">0.1169247</td>
+<td align="right">-0.3648453</td>
+</tr>
+<tr class="odd">
+<td>P-Value</td>
+<td align="right">0.4995035</td>
+<td align="right">0.3788433</td>
+<td align="right">0.1989067</td>
+<td align="right">0.2216895</td>
+<td align="right">0.6870055</td>
+<td align="right">0.0837771</td>
+<td align="right">0.3574956</td>
+<td align="right">0.4101379</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="emotions-progression-3" class="section level2 tabset">
+<h2><span class="header-section-number">4.3</span> Emotions Progression</h2>
+<div id="all-participants-7" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> All participants</h3>
+<p><img src="emotional_state_summery20190706_files/figure-html/unnamed-chunk-43-1.png" width="864" /></p>
+</div>
+<div id="investors-observers-3" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Investors / Observers</h3>
+<p><img src="emotional_state_summery20190706_files/figure-html/unnamed-chunk-44-1.png" width="864" /></p>
+</div>
+</div>
+</div>
+<div id="session-4" class="section level1">
+<h1><span class="header-section-number">5</span> Session 4</h1>
+<div id="emotions-mean-and-s.d-4" class="section level2 tabset">
+<h2><span class="header-section-number">5.1</span> Emotions Mean and S.D</h2>
+<p>Mean and standard deviation of emotions across subjects and 10-s interbals (in the belief stage)</p>
+<div id="mean---markets-12-4" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Mean - Markets 1+2</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.3642939</td>
+<td align="right">0.0293587</td>
+<td align="right">0.0157464</td>
+<td align="right">0.2080675</td>
+<td align="right">0.2166689</td>
+<td align="right">0.0240792</td>
+<td align="right">0.0586478</td>
+<td align="right">-0.2490718</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.3821495</td>
+<td align="right">0.0199359</td>
+<td align="right">0.0152346</td>
+<td align="right">0.1914570</td>
+<td align="right">0.2441965</td>
+<td align="right">0.0333935</td>
+<td align="right">0.0309957</td>
+<td align="right">-0.2323116</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.3464383</td>
+<td align="right">0.0387815</td>
+<td align="right">0.0162582</td>
+<td align="right">0.2246779</td>
+<td align="right">0.1891412</td>
+<td align="right">0.0147649</td>
+<td align="right">0.0862998</td>
+<td align="right">-0.2658320</td>
+</tr>
+<tr class="even">
+<td>P-Value</td>
+<td align="right">0.0421167</td>
+<td align="right">0.0017733</td>
+<td align="right">0.7955093</td>
+<td align="right">0.1513698</td>
+<td align="right">0.0060034</td>
+<td align="right">0.0142588</td>
+<td align="right">0.0000001</td>
+<td align="right">0.1830710</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s.d-markets-12-4" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> S.D Markets 1+2</h3>
+<table>
+<caption>S.D</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.2042394</td>
+<td align="right">0.0702473</td>
+<td align="right">0.0458248</td>
+<td align="right">0.2689181</td>
+<td align="right">0.2332596</td>
+<td align="right">0.0882593</td>
+<td align="right">0.1198444</td>
+<td align="right">0.2923665</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.2267021</td>
+<td align="right">0.0596570</td>
+<td align="right">0.0490035</td>
+<td align="right">0.2564536</td>
+<td align="right">0.2572866</td>
+<td align="right">0.1180028</td>
+<td align="right">0.0722733</td>
+<td align="right">0.2761540</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.1776195</td>
+<td align="right">0.0784252</td>
+<td align="right">0.0424942</td>
+<td align="right">0.2803220</td>
+<td align="right">0.2032359</td>
+<td align="right">0.0388529</td>
+<td align="right">0.1483926</td>
+<td align="right">0.3073260</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mean---markets-1-4" class="section level3">
+<h3><span class="header-section-number">5.1.3</span> Mean - Markets 1</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.3676534</td>
+<td align="right">0.0365719</td>
+<td align="right">0.0182106</td>
+<td align="right">0.2007037</td>
+<td align="right">0.2116506</td>
+<td align="right">0.0185903</td>
+<td align="right">0.0525999</td>
+<td align="right">-0.2256296</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.3929584</td>
+<td align="right">0.0321254</td>
+<td align="right">0.0200738</td>
+<td align="right">0.1801651</td>
+<td align="right">0.2204957</td>
+<td align="right">0.0244289</td>
+<td align="right">0.0308230</td>
+<td align="right">-0.2025309</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.3423484</td>
+<td align="right">0.0410183</td>
+<td align="right">0.0163475</td>
+<td align="right">0.2212422</td>
+<td align="right">0.2028055</td>
+<td align="right">0.0127517</td>
+<td align="right">0.0743768</td>
+<td align="right">-0.2487284</td>
+</tr>
+<tr class="even">
+<td>P-Value</td>
+<td align="right">0.0408720</td>
+<td align="right">0.3786786</td>
+<td align="right">0.5810209</td>
+<td align="right">0.2157148</td>
+<td align="right">0.5099013</td>
+<td align="right">0.1830042</td>
+<td align="right">0.0006276</td>
+<td align="right">0.2060346</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s.d-markets-1-4" class="section level3">
+<h3><span class="header-section-number">5.1.4</span> S.D Markets 1</h3>
+<table>
+<caption>S.D</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.2035272</td>
+<td align="right">0.0828220</td>
+<td align="right">0.0553268</td>
+<td align="right">0.2722231</td>
+<td align="right">0.2200146</td>
+<td align="right">0.0718500</td>
+<td align="right">0.1050424</td>
+<td align="right">0.2997509</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.2225386</td>
+<td align="right">0.0812470</td>
+<td align="right">0.0634833</td>
+<td align="right">0.2562553</td>
+<td align="right">0.2375825</td>
+<td align="right">0.0961586</td>
+<td align="right">0.0638971</td>
+<td align="right">0.2839024</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.1798391</td>
+<td align="right">0.0844348</td>
+<td align="right">0.0459111</td>
+<td align="right">0.2867875</td>
+<td align="right">0.2014225</td>
+<td align="right">0.0323761</td>
+<td align="right">0.1308119</td>
+<td align="right">0.3141593</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mean---markets-2-4" class="section level3">
+<h3><span class="header-section-number">5.1.5</span> Mean - Markets 2</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.3609344</td>
+<td align="right">0.0221455</td>
+<td align="right">0.0132822</td>
+<td align="right">0.2154313</td>
+<td align="right">0.2216872</td>
+<td align="right">0.0295681</td>
+<td align="right">0.0646956</td>
+<td align="right">-0.2725140</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.3713406</td>
+<td align="right">0.0077464</td>
+<td align="right">0.0103955</td>
+<td align="right">0.2027489</td>
+<td align="right">0.2678974</td>
+<td align="right">0.0423581</td>
+<td align="right">0.0311685</td>
+<td align="right">-0.2620923</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.3505282</td>
+<td align="right">0.0365447</td>
+<td align="right">0.0161689</td>
+<td align="right">0.2281136</td>
+<td align="right">0.1754770</td>
+<td align="right">0.0167781</td>
+<td align="right">0.0982228</td>
+<td align="right">-0.2829357</td>
+</tr>
+<tr class="even">
+<td>P-Value</td>
+<td align="right">0.4059082</td>
+<td align="right">0.0000121</td>
+<td align="right">0.1595644</td>
+<td align="right">0.4341803</td>
+<td align="right">0.0019218</td>
+<td align="right">0.0395778</td>
+<td align="right">0.0000299</td>
+<td align="right">0.5466803</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s.d-markets-2-4" class="section level3">
+<h3><span class="header-section-number">5.1.6</span> S.D Markets 2</h3>
+<table>
+<caption>S.D</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.2052719</td>
+<td align="right">0.0540720</td>
+<td align="right">0.0336806</td>
+<td align="right">0.2658731</td>
+<td align="right">0.2461004</td>
+<td align="right">0.1019091</td>
+<td align="right">0.1329339</td>
+<td align="right">0.2834086</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.2311112</td>
+<td align="right">0.0156211</td>
+<td align="right">0.0272635</td>
+<td align="right">0.2571070</td>
+<td align="right">0.2744257</td>
+<td align="right">0.1361795</td>
+<td align="right">0.0800184</td>
+<td align="right">0.2659014</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.1759461</td>
+<td align="right">0.0721636</td>
+<td align="right">0.0389506</td>
+<td align="right">0.2747297</td>
+<td align="right">0.2048674</td>
+<td align="right">0.0444296</td>
+<td align="right">0.1637280</td>
+<td align="right">0.3005293</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="difference-between-markets-4" class="section level2 tabset">
+<h2><span class="header-section-number">5.2</span> Difference Between Markets</h2>
+<div id="all-participants-8" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> All Participants</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Market 1</td>
+<td align="right">0.3676534</td>
+<td align="right">0.0365719</td>
+<td align="right">0.0182106</td>
+<td align="right">0.2007037</td>
+<td align="right">0.2116506</td>
+<td align="right">0.0185903</td>
+<td align="right">0.0525999</td>
+<td align="right">-0.2256296</td>
+</tr>
+<tr class="even">
+<td>Market 2</td>
+<td align="right">0.3609344</td>
+<td align="right">0.0221455</td>
+<td align="right">0.0132822</td>
+<td align="right">0.2154313</td>
+<td align="right">0.2216872</td>
+<td align="right">0.0295681</td>
+<td align="right">0.0646956</td>
+<td align="right">-0.2725140</td>
+</tr>
+<tr class="odd">
+<td>P-Value</td>
+<td align="right">0.7026630</td>
+<td align="right">0.0169435</td>
+<td align="right">0.2118566</td>
+<td align="right">0.5250642</td>
+<td align="right">0.6175721</td>
+<td align="right">0.1486447</td>
+<td align="right">0.2413048</td>
+<td align="right">0.0623731</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="traders-only-4" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Traders Only</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Market 1</td>
+<td align="right">0.3929584</td>
+<td align="right">0.0321254</td>
+<td align="right">0.0200738</td>
+<td align="right">0.1801651</td>
+<td align="right">0.2204957</td>
+<td align="right">0.0244289</td>
+<td align="right">0.0308230</td>
+<td align="right">-0.2025309</td>
+</tr>
+<tr class="even">
+<td>Market 2</td>
+<td align="right">0.3713406</td>
+<td align="right">0.0077464</td>
+<td align="right">0.0103955</td>
+<td align="right">0.2027489</td>
+<td align="right">0.2678974</td>
+<td align="right">0.0423581</td>
+<td align="right">0.0311685</td>
+<td align="right">-0.2620923</td>
+</tr>
+<tr class="odd">
+<td>P-Value</td>
+<td align="right">0.4343896</td>
+<td align="right">0.0008049</td>
+<td align="right">0.1053373</td>
+<td align="right">0.4703963</td>
+<td align="right">0.1303884</td>
+<td align="right">0.2126565</td>
+<td align="right">0.9687611</td>
+<td align="right">0.0763573</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="observers-only-4" class="section level3">
+<h3><span class="header-section-number">5.2.3</span> Observers Only</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Market 1</td>
+<td align="right">0.3423484</td>
+<td align="right">0.0410183</td>
+<td align="right">0.0163475</td>
+<td align="right">0.2212422</td>
+<td align="right">0.2028055</td>
+<td align="right">0.0127517</td>
+<td align="right">0.0743768</td>
+<td align="right">-0.2487284</td>
+</tr>
+<tr class="even">
+<td>Market 2</td>
+<td align="right">0.3505282</td>
+<td align="right">0.0365447</td>
+<td align="right">0.0161689</td>
+<td align="right">0.2281136</td>
+<td align="right">0.1754770</td>
+<td align="right">0.0167781</td>
+<td align="right">0.0982228</td>
+<td align="right">-0.2829357</td>
+</tr>
+<tr class="odd">
+<td>P-Value</td>
+<td align="right">0.7059088</td>
+<td align="right">0.6401909</td>
+<td align="right">0.9725295</td>
+<td align="right">0.8408261</td>
+<td align="right">0.2700589</td>
+<td align="right">0.3956017</td>
+<td align="right">0.1873234</td>
+<td align="right">0.3614379</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="emotions-progression-4" class="section level2 tabset">
+<h2><span class="header-section-number">5.3</span> Emotions Progression</h2>
+<div id="all-participants-9" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> All participants</h3>
+<p><img src="emotional_state_summery20190706_files/figure-html/unnamed-chunk-54-1.png" width="864" /></p>
+</div>
+<div id="investors-observers-4" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> Investors / Observers</h3>
+<p><img src="emotional_state_summery20190706_files/figure-html/unnamed-chunk-55-1.png" width="864" /></p>
+</div>
+</div>
+</div>
+<div id="session-5" class="section level1">
+<h1><span class="header-section-number">6</span> Session 5</h1>
+<div id="emotions-mean-and-s.d-5" class="section level2 tabset">
+<h2><span class="header-section-number">6.1</span> Emotions Mean and S.D</h2>
+<p>Mean and standard deviation of emotions across subjects and 10-s interbals (in the belief stage)</p>
+<div id="mean---markets-12-5" class="section level3">
+<h3><span class="header-section-number">6.1.1</span> Mean - Markets 1+2</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.3377761</td>
+<td align="right">0.0373753</td>
+<td align="right">0.0426985</td>
+<td align="right">0.2538047</td>
+<td align="right">0.2065179</td>
+<td align="right">0.0279847</td>
+<td align="right">0.0551353</td>
+<td align="right">-0.3053176</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.2896433</td>
+<td align="right">0.0359509</td>
+<td align="right">0.0527594</td>
+<td align="right">0.2460007</td>
+<td align="right">0.2105402</td>
+<td align="right">0.0449491</td>
+<td align="right">0.0612100</td>
+<td align="right">-0.3245193</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.3864497</td>
+<td align="right">0.0388158</td>
+<td align="right">0.0325246</td>
+<td align="right">0.2616964</td>
+<td align="right">0.2024505</td>
+<td align="right">0.0108297</td>
+<td align="right">0.0489924</td>
+<td align="right">-0.2859001</td>
+</tr>
+<tr class="even">
+<td>P-Value</td>
+<td align="right">0.0000001</td>
+<td align="right">0.6548589</td>
+<td align="right">0.0816975</td>
+<td align="right">0.5261087</td>
+<td align="right">0.7080717</td>
+<td align="right">0.0003882</td>
+<td align="right">0.1850218</td>
+<td align="right">0.1637163</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s.d-markets-12-5" class="section level3">
+<h3><span class="header-section-number">6.1.2</span> S.D Markets 1+2</h3>
+<table>
+<caption>S.D</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.2102428</td>
+<td align="right">0.0742387</td>
+<td align="right">0.1348258</td>
+<td align="right">0.2867710</td>
+<td align="right">0.2499360</td>
+<td align="right">0.1119191</td>
+<td align="right">0.1067573</td>
+<td align="right">0.3214682</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.1975348</td>
+<td align="right">0.0812298</td>
+<td align="right">0.1485474</td>
+<td align="right">0.3092933</td>
+<td align="right">0.2458962</td>
+<td align="right">0.1519253</td>
+<td align="right">0.1083149</td>
+<td align="right">0.3507623</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.2118468</td>
+<td align="right">0.0665492</td>
+<td align="right">0.1187751</td>
+<td align="right">0.2623859</td>
+<td align="right">0.2543530</td>
+<td align="right">0.0362078</td>
+<td align="right">0.1050042</td>
+<td align="right">0.2882067</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mean---markets-1-5" class="section level3">
+<h3><span class="header-section-number">6.1.3</span> Mean - Markets 1</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.3452375</td>
+<td align="right">0.0285703</td>
+<td align="right">0.0350157</td>
+<td align="right">0.2584440</td>
+<td align="right">0.2165569</td>
+<td align="right">0.0261566</td>
+<td align="right">0.0552992</td>
+<td align="right">-0.3066048</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.3003265</td>
+<td align="right">0.0250756</td>
+<td align="right">0.0459674</td>
+<td align="right">0.2340862</td>
+<td align="right">0.2314504</td>
+<td align="right">0.0387869</td>
+<td align="right">0.0734653</td>
+<td align="right">-0.3194414</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.3904837</td>
+<td align="right">0.0320911</td>
+<td align="right">0.0239822</td>
+<td align="right">0.2829836</td>
+<td align="right">0.2015522</td>
+<td align="right">0.0134320</td>
+<td align="right">0.0369976</td>
+<td align="right">-0.2936725</td>
+</tr>
+<tr class="even">
+<td>P-Value</td>
+<td align="right">0.0004183</td>
+<td align="right">0.2417416</td>
+<td align="right">0.1288247</td>
+<td align="right">0.1700374</td>
+<td align="right">0.3371488</td>
+<td align="right">0.0375856</td>
+<td align="right">0.0031263</td>
+<td align="right">0.5010655</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s.d-markets-1-5" class="section level3">
+<h3><span class="header-section-number">6.1.4</span> S.D Markets 1</h3>
+<table>
+<caption>S.D</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.2113526</td>
+<td align="right">0.0490347</td>
+<td align="right">0.1187441</td>
+<td align="right">0.2920465</td>
+<td align="right">0.2549320</td>
+<td align="right">0.1001027</td>
+<td align="right">0.1017621</td>
+<td align="right">0.3134284</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.2009126</td>
+<td align="right">0.0444868</td>
+<td align="right">0.1376086</td>
+<td align="right">0.3061772</td>
+<td align="right">0.2524605</td>
+<td align="right">0.1331799</td>
+<td align="right">0.1174405</td>
+<td align="right">0.3261626</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.2126788</td>
+<td align="right">0.0531613</td>
+<td align="right">0.0953388</td>
+<td align="right">0.2760555</td>
+<td align="right">0.2574692</td>
+<td align="right">0.0446820</td>
+<td align="right">0.0793621</td>
+<td align="right">0.3007229</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mean---markets-2-5" class="section level3">
+<h3><span class="header-section-number">6.1.5</span> Mean - Markets 2</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.3302869</td>
+<td align="right">0.0462132</td>
+<td align="right">0.0504101</td>
+<td align="right">0.2491481</td>
+<td align="right">0.1964416</td>
+<td align="right">0.0298197</td>
+<td align="right">0.0549709</td>
+<td align="right">-0.3040255</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.2789602</td>
+<td align="right">0.0468262</td>
+<td align="right">0.0595514</td>
+<td align="right">0.2579152</td>
+<td align="right">0.1896300</td>
+<td align="right">0.0511113</td>
+<td align="right">0.0489548</td>
+<td align="right">-0.3295973</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.3823854</td>
+<td align="right">0.0455910</td>
+<td align="right">0.0411312</td>
+<td align="right">0.2402493</td>
+<td align="right">0.2033555</td>
+<td align="right">0.0082079</td>
+<td align="right">0.0610774</td>
+<td align="right">-0.2780692</td>
+</tr>
+<tr class="even">
+<td>P-Value</td>
+<td align="right">0.0000422</td>
+<td align="right">0.9127033</td>
+<td align="right">0.3122096</td>
+<td align="right">0.6082418</td>
+<td align="right">0.6474003</td>
+<td align="right">0.0040832</td>
+<td align="right">0.3764491</td>
+<td align="right">0.2007857</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s.d-markets-2-5" class="section level3">
+<h3><span class="header-section-number">6.1.6</span> S.D Markets 2</h3>
+<table>
+<caption>S.D</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.2092500</td>
+<td align="right">0.0921636</td>
+<td align="right">0.1490639</td>
+<td align="right">0.2818460</td>
+<td align="right">0.2448811</td>
+<td align="right">0.1228037</td>
+<td align="right">0.1117375</td>
+<td align="right">0.3299228</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.1942559</td>
+<td align="right">0.1050162</td>
+<td align="right">0.1589599</td>
+<td align="right">0.3130624</td>
+<td align="right">0.2382515</td>
+<td align="right">0.1688828</td>
+<td align="right">0.0972464</td>
+<td align="right">0.3749034</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.2117309</td>
+<td align="right">0.0773629</td>
+<td align="right">0.1382815</td>
+<td align="right">0.2470392</td>
+<td align="right">0.2521447</td>
+<td align="right">0.0248286</td>
+<td align="right">0.1248181</td>
+<td align="right">0.2759387</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="difference-between-markets-5" class="section level2 tabset">
+<h2><span class="header-section-number">6.2</span> Difference Between Markets</h2>
+<div id="all-participants-10" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> All Participants</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Market 1</td>
+<td align="right">0.3452375</td>
+<td align="right">0.0285703</td>
+<td align="right">0.0350157</td>
+<td align="right">0.2584440</td>
+<td align="right">0.2165569</td>
+<td align="right">0.0261566</td>
+<td align="right">0.0552992</td>
+<td align="right">-0.3066048</td>
+</tr>
+<tr class="even">
+<td>Market 2</td>
+<td align="right">0.3302869</td>
+<td align="right">0.0462132</td>
+<td align="right">0.0504101</td>
+<td align="right">0.2491481</td>
+<td align="right">0.1964416</td>
+<td align="right">0.0298197</td>
+<td align="right">0.0549709</td>
+<td align="right">-0.3040255</td>
+</tr>
+<tr class="odd">
+<td>P-Value</td>
+<td align="right">0.4104735</td>
+<td align="right">0.0059018</td>
+<td align="right">0.1863187</td>
+<td align="right">0.7075786</td>
+<td align="right">0.3515160</td>
+<td align="right">0.7050041</td>
+<td align="right">0.9716143</td>
+<td align="right">0.9260407</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="traders-only-5" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> Traders Only</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Market 1</td>
+<td align="right">0.3003265</td>
+<td align="right">0.0250756</td>
+<td align="right">0.0459674</td>
+<td align="right">0.2340862</td>
+<td align="right">0.2314504</td>
+<td align="right">0.0387869</td>
+<td align="right">0.0734653</td>
+<td align="right">-0.3194414</td>
+</tr>
+<tr class="even">
+<td>Market 2</td>
+<td align="right">0.2789602</td>
+<td align="right">0.0468262</td>
+<td align="right">0.0595514</td>
+<td align="right">0.2579152</td>
+<td align="right">0.1896300</td>
+<td align="right">0.0511113</td>
+<td align="right">0.0489548</td>
+<td align="right">-0.3295973</td>
+</tr>
+<tr class="odd">
+<td>P-Value</td>
+<td align="right">0.3751688</td>
+<td align="right">0.0279504</td>
+<td align="right">0.4535082</td>
+<td align="right">0.5277498</td>
+<td align="right">0.1627389</td>
+<td align="right">0.5061482</td>
+<td align="right">0.0629280</td>
+<td align="right">0.8124841</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="observers-only-5" class="section level3">
+<h3><span class="header-section-number">6.2.3</span> Observers Only</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Market 1</td>
+<td align="right">0.3904837</td>
+<td align="right">0.0320911</td>
+<td align="right">0.0239822</td>
+<td align="right">0.2829836</td>
+<td align="right">0.2015522</td>
+<td align="right">0.0134320</td>
+<td align="right">0.0369976</td>
+<td align="right">-0.2936725</td>
+</tr>
+<tr class="even">
+<td>Market 2</td>
+<td align="right">0.3823854</td>
+<td align="right">0.0455910</td>
+<td align="right">0.0411312</td>
+<td align="right">0.2402493</td>
+<td align="right">0.2033555</td>
+<td align="right">0.0082079</td>
+<td align="right">0.0610774</td>
+<td align="right">-0.2780692</td>
+</tr>
+<tr class="odd">
+<td>P-Value</td>
+<td align="right">0.7554449</td>
+<td align="right">0.0981381</td>
+<td align="right">0.2396349</td>
+<td align="right">0.1836469</td>
+<td align="right">0.9539365</td>
+<td align="right">0.2385580</td>
+<td align="right">0.0614773</td>
+<td align="right">0.6590039</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="emotions-progression-5" class="section level2 tabset">
+<h2><span class="header-section-number">6.3</span> Emotions Progression</h2>
+<div id="all-participants-11" class="section level3">
+<h3><span class="header-section-number">6.3.1</span> All participants</h3>
+<p><img src="emotional_state_summery20190706_files/figure-html/unnamed-chunk-65-1.png" width="864" /></p>
+</div>
+<div id="investors-observers-5" class="section level3">
+<h3><span class="header-section-number">6.3.2</span> Investors / Observers</h3>
+<p><img src="emotional_state_summery20190706_files/figure-html/unnamed-chunk-66-1.png" width="864" /></p>
+</div>
+</div>
+</div>
+<div id="session-6" class="section level1">
+<h1><span class="header-section-number">7</span> Session 6</h1>
+<div id="emotions-mean-and-s.d-6" class="section level2 tabset">
+<h2><span class="header-section-number">7.1</span> Emotions Mean and S.D</h2>
+<p>Mean and standard deviation of emotions across subjects and 10-s interbals (in the belief stage)</p>
+<div id="mean---markets-12-6" class="section level3">
+<h3><span class="header-section-number">7.1.1</span> Mean - Markets 1+2</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.4112494</td>
+<td align="right">0.0366079</td>
+<td align="right">0.0296675</td>
+<td align="right">0.1344962</td>
+<td align="right">0.2040891</td>
+<td align="right">0.0201297</td>
+<td align="right">0.0664617</td>
+<td align="right">-0.1814378</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.4468662</td>
+<td align="right">0.0581617</td>
+<td align="right">0.0269642</td>
+<td align="right">0.1106680</td>
+<td align="right">0.1872625</td>
+<td align="right">0.0147535</td>
+<td align="right">0.0208145</td>
+<td align="right">-0.0987916</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.3791943</td>
+<td align="right">0.0172095</td>
+<td align="right">0.0321005</td>
+<td align="right">0.1559416</td>
+<td align="right">0.2192331</td>
+<td align="right">0.0249682</td>
+<td align="right">0.1075441</td>
+<td align="right">-0.2558194</td>
+</tr>
+<tr class="even">
+<td>P-Value</td>
+<td align="right">0.0000125</td>
+<td align="right">0.0000000</td>
+<td align="right">0.4453349</td>
+<td align="right">0.0032865</td>
+<td align="right">0.1155659</td>
+<td align="right">0.0967970</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s.d-markets-12-6" class="section level3">
+<h3><span class="header-section-number">7.1.2</span> S.D Markets 1+2</h3>
+<table>
+<caption>S.D</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.1879723</td>
+<td align="right">0.0790586</td>
+<td align="right">0.0795559</td>
+<td align="right">0.1860793</td>
+<td align="right">0.2447735</td>
+<td align="right">0.0759566</td>
+<td align="right">0.1218887</td>
+<td align="right">0.2407497</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.1631133</td>
+<td align="right">0.0993701</td>
+<td align="right">0.0852122</td>
+<td align="right">0.1632130</td>
+<td align="right">0.2164772</td>
+<td align="right">0.0418699</td>
+<td align="right">0.0388682</td>
+<td align="right">0.2192767</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.2027985</td>
+<td align="right">0.0470487</td>
+<td align="right">0.0741574</td>
+<td align="right">0.2023680</td>
+<td align="right">0.2671531</td>
+<td align="right">0.0967080</td>
+<td align="right">0.1527697</td>
+<td align="right">0.2352069</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mean---markets-1-6" class="section level3">
+<h3><span class="header-section-number">7.1.3</span> Mean - Markets 1</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.4287233</td>
+<td align="right">0.0382472</td>
+<td align="right">0.0329715</td>
+<td align="right">0.1290012</td>
+<td align="right">0.1762945</td>
+<td align="right">0.0159548</td>
+<td align="right">0.0728001</td>
+<td align="right">-0.1802261</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.4609331</td>
+<td align="right">0.0636196</td>
+<td align="right">0.0340961</td>
+<td align="right">0.1042821</td>
+<td align="right">0.1698695</td>
+<td align="right">0.0171557</td>
+<td align="right">0.0201203</td>
+<td align="right">-0.0957229</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.3997345</td>
+<td align="right">0.0154121</td>
+<td align="right">0.0319592</td>
+<td align="right">0.1512483</td>
+<td align="right">0.1820770</td>
+<td align="right">0.0148740</td>
+<td align="right">0.1202119</td>
+<td align="right">-0.2562790</td>
+</tr>
+<tr class="even">
+<td>P-Value</td>
+<td align="right">0.0075922</td>
+<td align="right">0.0000080</td>
+<td align="right">0.8456607</td>
+<td align="right">0.0370362</td>
+<td align="right">0.6233959</td>
+<td align="right">0.6799212</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s.d-markets-1-6" class="section level3">
+<h3><span class="header-section-number">7.1.4</span> S.D Markets 1</h3>
+<table>
+<caption>S.D</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.1951938</td>
+<td align="right">0.0879087</td>
+<td align="right">0.0909213</td>
+<td align="right">0.1915836</td>
+<td align="right">0.2104095</td>
+<td align="right">0.0459720</td>
+<td align="right">0.1316360</td>
+<td align="right">0.2516062</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.1799753</td>
+<td align="right">0.1146694</td>
+<td align="right">0.1038547</td>
+<td align="right">0.1746244</td>
+<td align="right">0.1966295</td>
+<td align="right">0.0510441</td>
+<td align="right">0.0420000</td>
+<td align="right">0.2482216</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.2042182</td>
+<td align="right">0.0423817</td>
+<td align="right">0.0778106</td>
+<td align="right">0.2036766</td>
+<td align="right">0.2225815</td>
+<td align="right">0.0410193</td>
+<td align="right">0.1632916</td>
+<td align="right">0.2301288</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="mean---markets-2-6" class="section level3">
+<h3><span class="header-section-number">7.1.5</span> Mean - Markets 2</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.3937754</td>
+<td align="right">0.0349686</td>
+<td align="right">0.0263636</td>
+<td align="right">0.1399912</td>
+<td align="right">0.2318838</td>
+<td align="right">0.0243046</td>
+<td align="right">0.0601233</td>
+<td align="right">-0.1826495</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.4327993</td>
+<td align="right">0.0527037</td>
+<td align="right">0.0198322</td>
+<td align="right">0.1170538</td>
+<td align="right">0.2046555</td>
+<td align="right">0.0123513</td>
+<td align="right">0.0215088</td>
+<td align="right">-0.1018603</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.3586540</td>
+<td align="right">0.0190069</td>
+<td align="right">0.0322418</td>
+<td align="right">0.1606348</td>
+<td align="right">0.2563892</td>
+<td align="right">0.0350625</td>
+<td align="right">0.0948764</td>
+<td align="right">-0.2553598</td>
+</tr>
+<tr class="even">
+<td>P-Value</td>
+<td align="right">0.0003502</td>
+<td align="right">0.0000515</td>
+<td align="right">0.1118111</td>
+<td align="right">0.0388133</td>
+<td align="right">0.1050234</td>
+<td align="right">0.0390523</td>
+<td align="right">0.0000000</td>
+<td align="right">0.0000000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="s.d-markets-2-6" class="section level3">
+<h3><span class="header-section-number">7.1.6</span> S.D Markets 2</h3>
+<table>
+<caption>S.D</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All Participates</td>
+<td align="right">0.1791037</td>
+<td align="right">0.0692041</td>
+<td align="right">0.0662720</td>
+<td align="right">0.1805770</td>
+<td align="right">0.2724269</td>
+<td align="right">0.0970088</td>
+<td align="right">0.1111635</td>
+<td align="right">0.2298180</td>
+</tr>
+<tr class="even">
+<td>Traders</td>
+<td align="right">0.1435988</td>
+<td align="right">0.0813230</td>
+<td align="right">0.0607299</td>
+<td align="right">0.1513272</td>
+<td align="right">0.2340979</td>
+<td align="right">0.0300354</td>
+<td align="right">0.0356058</td>
+<td align="right">0.1867897</td>
+</tr>
+<tr class="odd">
+<td>Observers</td>
+<td align="right">0.1999399</td>
+<td align="right">0.0513741</td>
+<td align="right">0.0705763</td>
+<td align="right">0.2016234</td>
+<td align="right">0.3014935</td>
+<td align="right">0.1299227</td>
+<td align="right">0.1408778</td>
+<td align="right">0.2409485</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="difference-between-markets-6" class="section level2 tabset">
+<h2><span class="header-section-number">7.2</span> Difference Between Markets</h2>
+<div id="all-participants-12" class="section level3">
+<h3><span class="header-section-number">7.2.1</span> All Participants</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Market 1</td>
+<td align="right">0.4287233</td>
+<td align="right">0.0382472</td>
+<td align="right">0.0329715</td>
+<td align="right">0.1290012</td>
+<td align="right">0.1762945</td>
+<td align="right">0.0159548</td>
+<td align="right">0.0728001</td>
+<td align="right">-0.1802261</td>
+</tr>
+<tr class="even">
+<td>Market 2</td>
+<td align="right">0.3937754</td>
+<td align="right">0.0349686</td>
+<td align="right">0.0263636</td>
+<td align="right">0.1399912</td>
+<td align="right">0.2318838</td>
+<td align="right">0.0243046</td>
+<td align="right">0.0601233</td>
+<td align="right">-0.1826495</td>
+</tr>
+<tr class="odd">
+<td>P-Value</td>
+<td align="right">0.0263345</td>
+<td align="right">0.6209927</td>
+<td align="right">0.3219046</td>
+<td align="right">0.4812769</td>
+<td align="right">0.0066151</td>
+<td align="right">0.1898965</td>
+<td align="right">0.2147227</td>
+<td align="right">0.9044826</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="traders-only-6" class="section level3">
+<h3><span class="header-section-number">7.2.2</span> Traders Only</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Market 1</td>
+<td align="right">0.4609331</td>
+<td align="right">0.0636196</td>
+<td align="right">0.0340961</td>
+<td align="right">0.1042821</td>
+<td align="right">0.1698695</td>
+<td align="right">0.0171557</td>
+<td align="right">0.0201203</td>
+<td align="right">-0.0957229</td>
+</tr>
+<tr class="even">
+<td>Market 2</td>
+<td align="right">0.4327993</td>
+<td align="right">0.0527037</td>
+<td align="right">0.0198322</td>
+<td align="right">0.1170538</td>
+<td align="right">0.2046555</td>
+<td align="right">0.0123513</td>
+<td align="right">0.0215088</td>
+<td align="right">-0.1018603</td>
+</tr>
+<tr class="odd">
+<td>P-Value</td>
+<td align="right">0.1569022</td>
+<td align="right">0.3678484</td>
+<td align="right">0.1697623</td>
+<td align="right">0.5213035</td>
+<td align="right">0.1873135</td>
+<td align="right">0.3469675</td>
+<td align="right">0.7697618</td>
+<td align="right">0.8186319</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="observers-only-6" class="section level3">
+<h3><span class="header-section-number">7.2.3</span> Observers Only</h3>
+<table>
+<caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Neutral</th>
+<th align="right">Happy</th>
+<th align="right">Sad</th>
+<th align="right">Angry</th>
+<th align="right">Surprised</th>
+<th align="right">Scared</th>
+<th align="right">Disgusted</th>
+<th align="right">Valence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Market 1</td>
+<td align="right">0.3997345</td>
+<td align="right">0.0154121</td>
+<td align="right">0.0319592</td>
+<td align="right">0.1512483</td>
+<td align="right">0.1820770</td>
+<td align="right">0.0148740</td>
+<td align="right">0.1202119</td>
+<td align="right">-0.2562790</td>
+</tr>
+<tr class="even">
+<td>Market 2</td>
+<td align="right">0.3586540</td>
+<td align="right">0.0190069</td>
+<td align="right">0.0322418</td>
+<td align="right">0.1606348</td>
+<td align="right">0.2563892</td>
+<td align="right">0.0350625</td>
+<td align="right">0.0948764</td>
+<td align="right">-0.2553598</td>
+</tr>
+<tr class="odd">
+<td>P-Value</td>
+<td align="right">0.0793598</td>
+<td align="right">0.5090968</td>
+<td align="right">0.9737449</td>
+<td align="right">0.6886153</td>
+<td align="right">0.0157996</td>
+<td align="right">0.0712321</td>
+<td align="right">0.1512808</td>
+<td align="right">0.9730674</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="emotions-progression-6" class="section level2 tabset">
+<h2><span class="header-section-number">7.3</span> Emotions Progression</h2>
+<div id="all-participants-13" class="section level3">
+<h3><span class="header-section-number">7.3.1</span> All participants</h3>
+<p><img src="emotional_state_summery20190706_files/figure-html/unnamed-chunk-76-1.png" width="864" /></p>
+</div>
+<div id="investors-observers-6" class="section level3">
+<h3><span class="header-section-number">7.3.2</span> Investors / Observers</h3>
+<p><img src="emotional_state_summery20190706_files/figure-html/unnamed-chunk-77-1.png" width="864" /></p>
+</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
