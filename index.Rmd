@@ -4,6 +4,12 @@ author: "Afik, Lahav, Maymoni & Noussair"
 output: html_document
 ---
 
+**Update: 10/22/2019**
+
+Added "Relationship between predicted and actual price change between periods t-1 and t" to "Belief stage"
+
+Added "Beliefs as a function of fundamental value" to "Belief stage"
+
 **Update: 10/17/2019**
 
 Added "Regressions - Upcoming period beliefs as a function of subjects' average emotions - percentage difference" to "Belief stage"

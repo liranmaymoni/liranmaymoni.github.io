@@ -13,7 +13,7 @@ output:
 # All sessions
 
 ## Emotions Mean and S.D {.tabset}
-Mean and standard deviation of emotions across subjects and 10-s interbals (in the belief stage)
+Mean and standard deviation of emotions across subjects and 10-s interbals (in the record stage)
 
 ### Mean - Markets 1+2
 

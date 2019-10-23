@@ -21,6 +21,10 @@ navbar:
         href: B_compared_to_P_pct.html
       - text: "Regressions - Percision in beliefs as a function of subjects' average emotions"
         href: Belief_percision_belief_stage.html
+      - text: "Relationship between predicted and actual price change between periods t-1 and t"
+        href: AER_table5.html
+      - text: "Beliefs as a function of fundamental value"
+        href: belief_fundamental.html
     - text: "Record Stage"
       icon: fa-gear
       menu:
