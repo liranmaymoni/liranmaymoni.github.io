@@ -1,5 +1,5 @@
 ---
-title: "Regressions results - Long term beliefs"
+title: "Regressions results - b(t) - b(t-1)"
 author: "(Using previous record stage emotions)"
 output:
   html_document:
@@ -14,7 +14,7 @@ $B_{t,i}-B_{t-1,i} = C_{i} + \beta_1(P_{t}-P_{t-1}) + \beta_2(B_{t-1,i}-B_{t-2,i
 
 
 (Fixed effects regression model)
-(Periods 2-14 only)
+(Periods 2-15 only)
 
 # Without Emotions {.tabset}
 
