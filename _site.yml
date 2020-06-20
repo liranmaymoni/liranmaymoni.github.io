@@ -25,6 +25,12 @@ navbar:
         href: AER_table5.html
       - text: "Beliefs as a function of fundamental value"
         href: belief_fundamental.html
+      - text: "Long term beliefs using record stage emotions of t-1"
+        href: long_term_using_record_stage_emotions_of_t_1.html
+      - text: "Short term beliefs using record stage emotions of t-1"
+        href: short_term_using_record_stage_emotions_of_t_1.html
+      - text: "b(t) - b(t-1) regression"
+        href: b(t)_b(t_1).html
     - text: "Record Stage"
       icon: fa-gear
       menu:

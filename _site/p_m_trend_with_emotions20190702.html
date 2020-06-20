@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="(With emotions)" />
@@ -89,7 +89,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -238,6 +237,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -250,48 +250,9 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -305,6 +266,12 @@ $(document).ready(function ()  {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -421,6 +388,15 @@ div.tocify {
     </li>
     <li>
       <a href="belief_fundamental.html">Beliefs as a function of fundamental value</a>
+    </li>
+    <li>
+      <a href="long_term_using_record_stage_emotions_of_t_1.html">Long term beliefs using record stage emotions of t-1</a>
+    </li>
+    <li>
+      <a href="short_term_using_record_stage_emotions_of_t_1.html">Short term beliefs using record stage emotions of t-1</a>
+    </li>
+    <li>
+      <a href="b(t)_b(t_1).html">b(t) - b(t-1) regression</a>
     </li>
   </ul>
 </li>
@@ -577,7 +553,7 @@ div.tocify {
 <td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt; padding: 4pt 4pt 4pt 4pt;">0.74&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;"> *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
+<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;">All continuous predictors are mean-centered and scaled by 1 standard deviation.  *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
 </tr>
 </table>
 
@@ -691,7 +667,7 @@ div.tocify {
 <td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt; padding: 4pt 4pt 4pt 4pt;">0.71&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;"> *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
+<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;">All continuous predictors are mean-centered and scaled by 1 standard deviation.  *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
 </tr>
 </table>
 
@@ -805,7 +781,7 @@ div.tocify {
 <td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt; padding: 4pt 4pt 4pt 4pt;">0.77&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;"> *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
+<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;">All continuous predictors are mean-centered and scaled by 1 standard deviation.  *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
 </tr>
 </table>
 
@@ -922,7 +898,7 @@ div.tocify {
 <td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt; padding: 4pt 4pt 4pt 4pt;">0.77&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;"> *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
+<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;">All continuous predictors are mean-centered and scaled by 1 standard deviation.  *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
 </tr>
 </table>
 
@@ -1036,7 +1012,7 @@ div.tocify {
 <td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt; padding: 4pt 4pt 4pt 4pt;">0.73&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;"> *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
+<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;">All continuous predictors are mean-centered and scaled by 1 standard deviation.  *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
 </tr>
 </table>
 
@@ -1150,7 +1126,7 @@ div.tocify {
 <td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt; padding: 4pt 4pt 4pt 4pt;">0.92&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;"> *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
+<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;">All continuous predictors are mean-centered and scaled by 1 standard deviation.  *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
 </tr>
 </table>
 
@@ -1267,7 +1243,7 @@ div.tocify {
 <td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt; padding: 4pt 4pt 4pt 4pt;">0.68&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;"> *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
+<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;">All continuous predictors are mean-centered and scaled by 1 standard deviation.  *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
 </tr>
 </table>
 
@@ -1381,7 +1357,7 @@ div.tocify {
 <td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt; padding: 4pt 4pt 4pt 4pt;">0.58&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;"> *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
+<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;">All continuous predictors are mean-centered and scaled by 1 standard deviation.  *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
 </tr>
 </table>
 
@@ -1495,7 +1471,7 @@ div.tocify {
 <td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt; padding: 4pt 4pt 4pt 4pt;">0.98&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;"> *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
+<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;">All continuous predictors are mean-centered and scaled by 1 standard deviation.  *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
 </tr>
 </table>
 
@@ -1612,7 +1588,7 @@ div.tocify {
 <td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt; padding: 4pt 4pt 4pt 4pt;">0.72&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;"> *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
+<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;">All continuous predictors are mean-centered and scaled by 1 standard deviation.  *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
 </tr>
 </table>
 
@@ -1726,7 +1702,7 @@ div.tocify {
 <td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt; padding: 4pt 4pt 4pt 4pt;">0.90&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;"> *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
+<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;">All continuous predictors are mean-centered and scaled by 1 standard deviation.  *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
 </tr>
 </table>
 
@@ -1840,7 +1816,7 @@ div.tocify {
 <td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt; padding: 4pt 4pt 4pt 4pt;">0.57&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;"> *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
+<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;">All continuous predictors are mean-centered and scaled by 1 standard deviation.  *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
 </tr>
 </table>
 
@@ -1957,7 +1933,7 @@ div.tocify {
 <td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt; padding: 4pt 4pt 4pt 4pt;">0.81&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;"> *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
+<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;">All continuous predictors are mean-centered and scaled by 1 standard deviation.  *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
 </tr>
 </table>
 
@@ -2071,7 +2047,7 @@ div.tocify {
 <td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt; padding: 4pt 4pt 4pt 4pt;">0.76&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;"> *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
+<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;">All continuous predictors are mean-centered and scaled by 1 standard deviation.  *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
 </tr>
 </table>
 
@@ -2185,7 +2161,7 @@ div.tocify {
 <td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt; padding: 4pt 4pt 4pt 4pt;">0.92&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;"> *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
+<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;">All continuous predictors are mean-centered and scaled by 1 standard deviation.  *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
 </tr>
 </table>
 
@@ -2302,7 +2278,7 @@ div.tocify {
 <td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt; padding: 4pt 4pt 4pt 4pt;">0.92&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;"> *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
+<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;">All continuous predictors are mean-centered and scaled by 1 standard deviation.  *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
 </tr>
 </table>
 
@@ -2416,7 +2392,7 @@ div.tocify {
 <td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt; padding: 4pt 4pt 4pt 4pt;">0.90&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;"> *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
+<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;">All continuous predictors are mean-centered and scaled by 1 standard deviation.  *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
 </tr>
 </table>
 
@@ -2530,7 +2506,7 @@ div.tocify {
 <td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt; padding: 4pt 4pt 4pt 4pt;">0.93&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;"> *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
+<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;">All continuous predictors are mean-centered and scaled by 1 standard deviation.  *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
 </tr>
 </table>
 
@@ -2647,7 +2623,7 @@ div.tocify {
 <td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt; padding: 4pt 4pt 4pt 4pt;">0.75&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;"> *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
+<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;">All continuous predictors are mean-centered and scaled by 1 standard deviation.  *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
 </tr>
 </table>
 
@@ -2761,7 +2737,7 @@ div.tocify {
 <td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt; padding: 4pt 4pt 4pt 4pt;">0.60&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;"> *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
+<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;">All continuous predictors are mean-centered and scaled by 1 standard deviation.  *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
 </tr>
 </table>
 
@@ -2875,7 +2851,7 @@ div.tocify {
 <td style="vertical-align: top; text-align: right; white-space: nowrap; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt; padding: 4pt 4pt 4pt 4pt;">0.86&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <tr>
-<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;"> *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
+<td colspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 4pt 4pt 4pt 4pt;">All continuous predictors are mean-centered and scaled by 1 standard deviation.  *** p &lt; 0.01;  ** p &lt; 0.05;  * p &lt; 0.1.</td>
 </tr>
 </table>
 
@@ -2900,6 +2876,49 @@ $(document).ready(function () {
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->

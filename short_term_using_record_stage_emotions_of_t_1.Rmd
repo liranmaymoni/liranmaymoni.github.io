@@ -1,0 +1,1066 @@
+---
+title: "Regressions results - Short term beliefs - Without Period and Market trend"
+author: "(Using previous record stage emotions)"
+output:
+  html_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+---
+
+
+$STB_{i,t} = C_{i} + \beta_1Neutrality_{i,t-1} + \beta_2Happiness_{i,t-1} + \beta_3Sadness_{i,t-1} + \beta_4Anger_{i,t-1} + \beta_5Surprise_{i,t-1} + \beta_6Fear_{i,t-1} + \beta_7Disgust_{i,t-1}$
+(Fixed effects regression model)
+(Periods 2-15 only)
+
+# All Emotions {.tabset}
+
+## All subjects
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+library(plm)
+library(tidyverse)
+library(jtools)
+library(huxtable)
+mydata <- read.csv(file="C:/Users/Liran/Google Drive/Study/PhD/Face_Reader/The_Experiment/Regressions/short_term_belief_using_record_stage_emotions_of_t-1/S1_S6_transpose_with_t-1_record_stage_emotions_short_term.csv", header=TRUE, sep=",")
+
+market1 = subset(mydata, period<=15)
+market2 = subset(mydata, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ neutral + happy + sad + angry + surprised + scared + disgusted, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ neutral + happy + sad + angry + surprised + scared + disgusted, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Neutrality" = "neutral" , "Happiness" = "happy", "Sadness" = "sad", "Anger" = "angry","Surprise" = "surprised", "Fear" = "scared", "Disgust" = "disgusted" ),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+## Traders only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+traders  <- subset(mydata, traders_1==1)
+
+market1 = subset(traders, period<=15)
+market2 = subset(traders, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ neutral + happy + sad + angry + surprised + scared + disgusted, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ neutral + happy + sad + angry + surprised + scared + disgusted, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Neutrality" = "neutral" , "Happiness" = "happy", "Sadness" = "sad", "Anger" = "angry","Surprise" = "surprised", "Fear" = "scared", "Disgust" = "disgusted" ),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+## Observers only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+Observers <- subset(mydata, traders_1==0)
+
+market1 = subset(Observers, period<=15)
+market2 = subset(Observers, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ neutral + happy + sad + angry + surprised + scared + disgusted, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ neutral + happy + sad + angry + surprised + scared + disgusted, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Neutrality" = "neutral" , "Happiness" = "happy", "Sadness" = "sad", "Anger" = "angry","Surprise" = "surprised", "Fear" = "scared", "Disgust" = "disgusted" ),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+# Valence Only {.tabset}
+
+## All subjects
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata, period<=15)
+market2 = subset(mydata, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + valence, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + valence, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Valence" = "valence"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+## Traders only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+traders  <- subset(mydata, traders_1==1)
+
+market1 = subset(traders, period<=15)
+market2 = subset(traders, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + valence, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + valence, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Valence" = "valence"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+## Observers only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+Observers <- subset(mydata, traders_1==0)
+
+market1 = subset(Observers, period<=15)
+market2 = subset(Observers, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + valence, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + valence, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Valence" = "valence"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+# Neutrality Only {.tabset}
+
+## All subjects
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata, period<=15)
+market2 = subset(mydata, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + neutral, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + neutral, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Neutrality" = "neutral"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+## Traders only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+traders  <- subset(mydata, traders_1==1)
+
+market1 = subset(traders, period<=15)
+market2 = subset(traders, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + neutral, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + neutral, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Neutrality" = "neutral"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+## Observers only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+Observers <- subset(mydata, traders_1==0)
+
+market1 = subset(Observers, period<=15)
+market2 = subset(Observers, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + neutral, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + neutral, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Neutrality" = "neutral"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+# Happiness Only {.tabset}
+
+## All subjects
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata, period<=15)
+market2 = subset(mydata, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + happy, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + happy, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Happiness" = "happy"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+## Traders only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+traders  <- subset(mydata, traders_1==1)
+
+market1 = subset(traders, period<=15)
+market2 = subset(traders, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + happy, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + happy, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Happiness" = "happy"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+## Observers only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+Observers <- subset(mydata, traders_1==0)
+
+market1 = subset(Observers, period<=15)
+market2 = subset(Observers, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + happy, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + happy, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Happiness" = "happy"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+# Sadness Only {.tabset}
+
+## All subjects
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata, period<=15)
+market2 = subset(mydata, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + sad, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + sad, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Sadness" = "sad"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+## Traders only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+traders  <- subset(mydata, traders_1==1)
+
+market1 = subset(traders, period<=15)
+market2 = subset(traders, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + sad, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + sad, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Sadness" = "sad"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+## Observers only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+Observers <- subset(mydata, traders_1==0)
+
+market1 = subset(Observers, period<=15)
+market2 = subset(Observers, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + sad, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + sad, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Sadness" = "sad"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+# Anger Only {.tabset}
+
+## All subjects
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata, period<=15)
+market2 = subset(mydata, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + angry, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + angry, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Anger" = "angry"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+## Traders only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+traders  <- subset(mydata, traders_1==1)
+
+market1 = subset(traders, period<=15)
+market2 = subset(traders, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + angry, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + angry, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Anger" = "angry"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+## Observers only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+Observers <- subset(mydata, traders_1==0)
+
+market1 = subset(Observers, period<=15)
+market2 = subset(Observers, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + angry, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + angry, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Anger" = "angry"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+# Surprise Only {.tabset}
+
+## All subjects
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata, period<=15)
+market2 = subset(mydata, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + surprised, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + surprised, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Surprise" = "surprised"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+## Traders only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+traders  <- subset(mydata, traders_1==1)
+
+market1 = subset(traders, period<=15)
+market2 = subset(traders, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + surprised, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + surprised, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Surprise" = "surprised"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+## Observers only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+Observers <- subset(mydata, traders_1==0)
+
+market1 = subset(Observers, period<=15)
+market2 = subset(Observers, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + surprised, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + surprised, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Surprise" = "surprised"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+# Fear Only {.tabset}
+
+## All subjects
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata, period<=15)
+market2 = subset(mydata, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + scared, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + scared, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Fear" = "scared"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+## Traders only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+traders  <- subset(mydata, traders_1==1)
+
+market1 = subset(traders, period<=15)
+market2 = subset(traders, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + scared, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + scared, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Fear" = "scared"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+## Observers only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+Observers <- subset(mydata, traders_1==0)
+
+market1 = subset(Observers, period<=15)
+market2 = subset(Observers, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + scared, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + scared, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Fear" = "scared"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+# Disgust Only {.tabset}
+
+## All subjects
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata, period<=15)
+market2 = subset(mydata, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + disgusted, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + disgusted, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Disgust" = "disgusted"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+## Traders only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+traders  <- subset(mydata, traders_1==1)
+
+market1 = subset(traders, period<=15)
+market2 = subset(traders, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + disgusted, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + disgusted, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Disgust" = "disgusted"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+## Observers only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+Observers <- subset(mydata, traders_1==0)
+
+market1 = subset(Observers, period<=15)
+market2 = subset(Observers, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ + disgusted, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ + disgusted, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Disgust" = "disgusted"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+# All Emotions + P&M Trend {.tabset}
+
+## All subjects
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata, period<=15)
+market2 = subset(mydata, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + neutral + happy + sad + angry + surprised + scared + disgusted, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + neutral + happy + sad + angry + surprised + scared + disgusted, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Neutrality" = "neutral" , "Happiness" = "happy", "Sadness" = "sad", "Anger" = "angry","Surprise" = "surprised", "Fear" = "scared", "Disgust" = "disgusted" ),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+## Traders only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+traders  <- subset(mydata, traders_1==1)
+
+market1 = subset(traders, period<=15)
+market2 = subset(traders, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + neutral + happy + sad + angry + surprised + scared + disgusted, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + neutral + happy + sad + angry + surprised + scared + disgusted, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Neutrality" = "neutral" , "Happiness" = "happy", "Sadness" = "sad", "Anger" = "angry","Surprise" = "surprised", "Fear" = "scared", "Disgust" = "disgusted" ),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+## Observers only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+Observers <- subset(mydata, traders_1==0)
+
+market1 = subset(Observers, period<=15)
+market2 = subset(Observers, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + neutral + happy + sad + angry + surprised + scared + disgusted, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + neutral + happy + sad + angry + surprised + scared + disgusted, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Neutrality" = "neutral" , "Happiness" = "happy", "Sadness" = "sad", "Anger" = "angry","Surprise" = "surprised", "Fear" = "scared", "Disgust" = "disgusted" ),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+# Valence Only + P&M Trend {.tabset}
+
+## All subjects
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata, period<=15)
+market2 = subset(mydata, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + valence, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + valence, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Valence" = "valence"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+## Traders only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+traders  <- subset(mydata, traders_1==1)
+
+market1 = subset(traders, period<=15)
+market2 = subset(traders, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + valence, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + valence, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Valence" = "valence"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+## Observers only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+Observers <- subset(mydata, traders_1==0)
+
+market1 = subset(Observers, period<=15)
+market2 = subset(Observers, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + valence, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + valence, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Valence" = "valence"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+# Neutrality Only + P&M Trend {.tabset}
+
+## All subjects
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata, period<=15)
+market2 = subset(mydata, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + neutral, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + neutral, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Neutrality" = "neutral"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+## Traders only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+traders  <- subset(mydata, traders_1==1)
+
+market1 = subset(traders, period<=15)
+market2 = subset(traders, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + neutral, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + neutral, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Neutrality" = "neutral"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+## Observers only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+Observers <- subset(mydata, traders_1==0)
+
+market1 = subset(Observers, period<=15)
+market2 = subset(Observers, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + neutral, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + neutral, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Neutrality" = "neutral"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+# Happiness Only + P&M Trend {.tabset}
+
+## All subjects
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata, period<=15)
+market2 = subset(mydata, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + happy, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + happy, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Happiness" = "happy"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+## Traders only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+traders  <- subset(mydata, traders_1==1)
+
+market1 = subset(traders, period<=15)
+market2 = subset(traders, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + happy, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + happy, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Happiness" = "happy"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+## Observers only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+Observers <- subset(mydata, traders_1==0)
+
+market1 = subset(Observers, period<=15)
+market2 = subset(Observers, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + happy, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + happy, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Happiness" = "happy"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+# Sadness Only + P&M Trend {.tabset}
+
+## All subjects
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata, period<=15)
+market2 = subset(mydata, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + sad, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + sad, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Sadness" = "sad"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+## Traders only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+traders  <- subset(mydata, traders_1==1)
+
+market1 = subset(traders, period<=15)
+market2 = subset(traders, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + sad, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + sad, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Sadness" = "sad"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+## Observers only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+Observers <- subset(mydata, traders_1==0)
+
+market1 = subset(Observers, period<=15)
+market2 = subset(Observers, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + sad, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + sad, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Sadness" = "sad"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+# Anger Only + P&M Trend {.tabset}
+
+## All subjects
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata, period<=15)
+market2 = subset(mydata, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + angry, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + angry, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Anger" = "angry"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+## Traders only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+traders  <- subset(mydata, traders_1==1)
+
+market1 = subset(traders, period<=15)
+market2 = subset(traders, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + angry, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + angry, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Anger" = "angry"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+## Observers only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+Observers <- subset(mydata, traders_1==0)
+
+market1 = subset(Observers, period<=15)
+market2 = subset(Observers, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + angry, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + angry, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Anger" = "angry"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+# Surprise Only + P&M Trend {.tabset}
+
+## All subjects
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata, period<=15)
+market2 = subset(mydata, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + surprised, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + surprised, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Surprise" = "surprised"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+## Traders only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+traders  <- subset(mydata, traders_1==1)
+
+market1 = subset(traders, period<=15)
+market2 = subset(traders, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + surprised, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + surprised, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Surprise" = "surprised"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+## Observers only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+Observers <- subset(mydata, traders_1==0)
+
+market1 = subset(Observers, period<=15)
+market2 = subset(Observers, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + surprised, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + surprised, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Surprise" = "surprised"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+# Fear Only + P&M Trend {.tabset}
+
+## All subjects
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata, period<=15)
+market2 = subset(mydata, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + scared, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + scared, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Fear" = "scared"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+## Traders only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+traders  <- subset(mydata, traders_1==1)
+
+market1 = subset(traders, period<=15)
+market2 = subset(traders, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + scared, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + scared, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Fear" = "scared"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+## Observers only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+Observers <- subset(mydata, traders_1==0)
+
+market1 = subset(Observers, period<=15)
+market2 = subset(Observers, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + scared, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + scared, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Fear" = "scared"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+# Disgust Only + P&M Trend {.tabset}
+
+## All subjects
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata, period<=15)
+market2 = subset(mydata, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + disgusted, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + disgusted, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Disgust" = "disgusted"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+## Traders only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+traders  <- subset(mydata, traders_1==1)
+
+market1 = subset(traders, period<=15)
+market2 = subset(traders, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + disgusted, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + disgusted, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Disgust" = "disgusted"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```
+
+
+
+## Observers only
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+Observers <- subset(mydata, traders_1==0)
+
+market1 = subset(Observers, period<=15)
+market2 = subset(Observers, period>15)
+#Fix effect market 1
+Fixed_effects1 = plm(belief ~ p_trend + disgusted, data=market1, index = c("id","t_k") , model="within")
+#Fix effect market 2
+Fixed_effects2 = plm(belief ~ p_trend + m_trend + disgusted, data=market2, index = c("id","t_k") , model="within")
+
+export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Periodtrend" = "p_trend","Markettrend" = "m_trend","Disgust" = "disgusted"),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+
+```

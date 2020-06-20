@@ -4,6 +4,14 @@ author: "Afik, Lahav, Maymoni & Noussair"
 output: html_document
 ---
 
+**Update: 06/20/2020**
+
+Added "Short term beliefs using record stage emotions of t-1"
+
+Added "Long term beliefs using record stage emotions of t-1"
+
+Added "b(t) - b(t-1) regression"
+
 **Update: 10/22/2019**
 
 Added "Relationship between predicted and actual price change between periods t-1 and t" to "Belief stage"
