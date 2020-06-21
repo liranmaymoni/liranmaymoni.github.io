@@ -1,0 +1,646 @@
+---
+title: "Relationship between predicted and actual price change between periods t-1 and t"
+author: "(Without emotions)"
+output:
+  html_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+---
+
+
+$P_{t}-P_{t-1} = \alpha + \beta(B_{t}^t-P_{t-1})$
+
+# Without Emotions {.tabset}
+
+## All subjects
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+library(plm)
+library(tidyverse)
+library(jtools)
+library(huxtable)
+library(ggplot2)
+library(ggpubr)
+
+mydata <- read.csv(file="C:/Users/Liran/Google Drive/Study/PhD/Face_Reader/The_Experiment/Regressions/p(t)-p(t-1)/S1_S6_transpose.csv", header=TRUE, sep=",")
+
+market1 = subset(mydata,to_run_1==1)
+market2 = subset(mydata,to_run_1==1)
+market1 = subset(market1, period<=15)
+market2 = subset(market2, period>15)
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+plot1 = ggplot(market1, aes(x=belief_minus_price_t_minus_1, y=delta_price))+
+  geom_point(shape = 21,color = "blue", size = 2) + 
+  geom_hline(yintercept=0, linetype="dashed", color = "red", size=1) + 
+  geom_vline(xintercept = 0, linetype="dashed", color = "red", size=1)+
+  scale_x_continuous(name="B-P", limits=c(-46, 127)) +
+  scale_y_continuous(name="P-P", limits=c(-249, 81))
+
+
+plot2 = ggplot(market2, aes(x=belief_minus_price_t_minus_1, y=delta_price))+
+  geom_point(shape = 21,color = "blue", size = 2) + 
+  geom_hline(yintercept=0, linetype="dashed", color = "red", size=1) + 
+  geom_vline(xintercept = 0, linetype="dashed", color = "red", size=1)+
+  scale_x_continuous(name="B-P", limits=c(-46, 127))+
+  scale_y_continuous(name="P-P", limits=c(-249, 81))
+
+ggarrange(plot1, plot2, 
+          labels = c("Market 1", "Market 2"),
+          ncol = 2, nrow = 1)
+```
+
+
+## Traders only
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+
+
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1_traders, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1_traders, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1_traders"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+plot1 = ggplot(market1, aes(x=belief_minus_price_t_minus_1_traders, y=delta_price))+
+  geom_point(shape = 21,color = "blue", size = 2) + 
+  geom_hline(yintercept=0, linetype="dashed", color = "red", size=1) + 
+  geom_vline(xintercept = 0, linetype="dashed", color = "red", size=1)+
+  scale_x_continuous(name="B-P", limits=c(-46, 127)) +
+  scale_y_continuous(name="P-P", limits=c(-249, 81))
+
+
+plot2 = ggplot(market2, aes(x=belief_minus_price_t_minus_1_traders, y=delta_price))+
+  geom_point(shape = 21,color = "blue", size = 2) + 
+  geom_hline(yintercept=0, linetype="dashed", color = "red", size=1) + 
+  geom_vline(xintercept = 0, linetype="dashed", color = "red", size=1)+
+  scale_x_continuous(name="B-P", limits=c(-46, 127))+
+  scale_y_continuous(name="P-P", limits=c(-249, 81))
+
+ggarrange(plot1, plot2, 
+          labels = c("Market 1", "Market 2"),
+          ncol = 2, nrow = 1)
+```
+
+
+## Observers only
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1_obs, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1_obs, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1_obs"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+plot1 = ggplot(market1, aes(x=belief_minus_price_t_minus_1_obs, y=delta_price))+
+  geom_point(shape = 21,color = "blue", size = 2) + 
+  geom_hline(yintercept=0, linetype="dashed", color = "red", size=1) + 
+  geom_vline(xintercept = 0, linetype="dashed", color = "red", size=1)+
+  scale_x_continuous(name="B-P", limits=c(-46, 127)) +
+  scale_y_continuous(name="P-P", limits=c(-249, 81))
+
+
+plot2 = ggplot(market2, aes(x=belief_minus_price_t_minus_1_obs, y=delta_price))+
+  geom_point(shape = 21,color = "blue", size = 2) + 
+  geom_hline(yintercept=0, linetype="dashed", color = "red", size=1) + 
+  geom_vline(xintercept = 0, linetype="dashed", color = "red", size=1)+
+  scale_x_continuous(name="B-P", limits=c(-46, 127))+
+  scale_y_continuous(name="P-P", limits=c(-249, 81))
+
+ggarrange(plot1, plot2, 
+          labels = c("Market 1", "Market 2"),
+          ncol = 2, nrow = 1)
+```
+
+
+
+# All Emotions {.tabset}
+
+## All subjects
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata,to_run_1==1)
+market2 = subset(mydata,to_run_1==1)
+market1 = subset(market1, period<=15)
+market2 = subset(market2, period>15)
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + neutral_all + happy_all + sad_all + angry_all + surprised_all + scared_all + disgusted_all
+, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + neutral_all + happy_all + sad_all + angry_all + surprised_all + scared_all + disgusted_all, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" , "Neutrality" = "neutral_all" , "Happiness" = "happy_all", "Sadness" = "sad_all", "Anger" = "angry_all","Surprise" = "surprised_all", "Fear" = "scared_all", "Disgust" = "disgusted_all"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+## Traders only
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+
+
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1_traders + neutral_traders + happy_traders + sad_traders + angry_traders + surprised_traders + scared_traders + disgusted_traders, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1_traders + neutral_traders + happy_traders + sad_traders + angry_traders + surprised_traders + scared_traders + disgusted_traders, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1_traders", "Neutrality" = "neutral_traders" , "Happiness" = "happy_traders", "Sadness" = "sad_traders", "Anger" = "angry_traders","Surprise" = "surprised_traders", "Fear" = "scared_traders", "Disgust" = "disgusted_traders"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+## Observers only
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1_obs + neutral_observers + happy_observers + sad_observers + angry_observers + surprised_observers + scared_observers + disgusted_observers, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1_obs + neutral_observers + happy_observers + sad_observers + angry_observers + surprised_observers + scared_observers + disgusted_observers, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1_obs", "Neutrality" = "neutral_observers" , "Happiness" = "happy_observers", "Sadness" = "sad_observers", "Anger" = "angry_observers","Surprise" = "surprised_observers", "Fear" = "scared_observers", "Disgust" = "disgusted_observers"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+
+# Valence Only {.tabset}
+
+## All subjects
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata,to_run_1==1)
+market2 = subset(mydata,to_run_1==1)
+market1 = subset(market1, period<=15)
+market2 = subset(market2, period>15)
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + valence_all, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + valence_all, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Valence" = "valence_all"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+## Traders only
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+
+
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + valence_traders, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + valence_traders, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Valence" = "valence_traders"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+## Observers only
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + valence_observers, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + valence_observers, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Valence" = "valence_observers"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+
+
+# Neutrality Only {.tabset}
+
+## All subjects
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata,to_run_1==1)
+market2 = subset(mydata,to_run_1==1)
+market1 = subset(market1, period<=15)
+market2 = subset(market2, period>15)
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + neutral_all, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + neutral_all, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Neutrality" = "neutral_all"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+## Traders only
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+
+
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + neutral_traders, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + neutral_traders, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Neutrality" = "neutral_traders"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+## Observers only
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + neutral_observers, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + neutral_observers, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Neutrality" = "neutral_observers"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+
+# Happiness Only {.tabset}
+
+## All subjects
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata,to_run_1==1)
+market2 = subset(mydata,to_run_1==1)
+market1 = subset(market1, period<=15)
+market2 = subset(market2, period>15)
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + happy_all, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + happy_all, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Happiness" = "happy_all"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+## Traders only
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+
+
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + happy_traders, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + happy_traders, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Happiness" = "happy_traders"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+## Observers only
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + happy_observers, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + happy_observers, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Happiness" = "happy_observers"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+
+# Sadness Only {.tabset}
+
+## All subjects
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata,to_run_1==1)
+market2 = subset(mydata,to_run_1==1)
+market1 = subset(market1, period<=15)
+market2 = subset(market2, period>15)
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + sad_all, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + sad_all, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Sadness" = "sad_all"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+## Traders only
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+
+
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + sad_traders, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + sad_traders, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Sadness" = "sad_traders"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+## Observers only
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + sad_observers, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + sad_observers, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Sadness" = "sad_observers"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+
+# Anger Only {.tabset}
+
+## All subjects
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata,to_run_1==1)
+market2 = subset(mydata,to_run_1==1)
+market1 = subset(market1, period<=15)
+market2 = subset(market2, period>15)
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + angry_all, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + angry_all, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Anger" = "angry_all"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+## Traders only
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+
+
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + angry_traders, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + angry_traders, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Anger" = "angry_traders"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+## Observers only
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + angry_observers, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + angry_observers, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Anger" = "angry_observers"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+
+# Surprise Only {.tabset}
+
+## All subjects
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata,to_run_1==1)
+market2 = subset(mydata,to_run_1==1)
+market1 = subset(market1, period<=15)
+market2 = subset(market2, period>15)
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + surprised_all, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + surprised_all, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Surprise" = "surprised_all"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+## Traders only
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+
+
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + surprised_traders, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + surprised_traders, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Surprise" = "surprised_traders"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+## Observers only
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + surprised_observers, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + surprised_observers, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Surprise" = "surprised_observers"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+
+# Fear Only {.tabset}
+
+## All subjects
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata,to_run_1==1)
+market2 = subset(mydata,to_run_1==1)
+market1 = subset(market1, period<=15)
+market2 = subset(market2, period>15)
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + scared_all, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + scared_all, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Fear" = "scared_all"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+## Traders only
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+
+
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + scared_traders, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + scared_traders, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Fear" = "scared_traders"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+## Observers only
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + scared_observers, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + scared_observers, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Fear" = "scared_observers"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+
+# Disgust Only {.tabset}
+
+## All subjects
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+market1 = subset(mydata,to_run_1==1)
+market2 = subset(mydata,to_run_1==1)
+market1 = subset(market1, period<=15)
+market2 = subset(market2, period>15)
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + disgusted_all, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + disgusted_all, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Disgust" = "disgusted_all"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+## Traders only
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+
+
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + disgusted_traders, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + disgusted_traders, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Disgust" = "disgusted_traders"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+
+
+## Observers only
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+
+#OLS market 1
+OLS1 = lm(delta_price ~ belief_minus_price_t_minus_1 + disgusted_observers, data=market1)
+#OLS market 2
+OLS2 = lm(delta_price ~ belief_minus_price_t_minus_1 + disgusted_observers, data=market2)
+
+export_summs(OLS1, OLS2, digits = 4,
+             model.names = c("Market1","Market2"),
+             statistics = c(N = "nobs", Adj_R2 = "adj.r.squared", R2 = "r.squared") ,
+            coefs =  c("Intercept" = "(Intercept)","X" = "belief_minus_price_t_minus_1" ,"Disgust" = "disgusted_observers"),
+             error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+```
+

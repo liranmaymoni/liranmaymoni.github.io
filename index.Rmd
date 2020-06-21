@@ -4,6 +4,14 @@ author: "Afik, Lahav, Maymoni & Noussair"
 output: html_document
 ---
 
+**Update: 06/21/2020**
+
+Edited "Regressions - Period beliefs as a function of Period and Market trends (with emotions - same belief stage emotions)"
+
+Added "Period beliefs as a function of Period and Market trends (with stage emotions of t-1)"
+
+Added "Relationship between predicted and actual price change between periods t-1 and t - including record stage emotions of t-1"
+
 **Update: 06/20/2020**
 
 Added "Short term beliefs using record stage emotions of t-1"
