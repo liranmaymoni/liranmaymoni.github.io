@@ -23,8 +23,19 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -275,7 +286,7 @@ $(document).ready(function () {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="R_summery_investors_and_observers.html">Ztree Summary</a>
+  <a href="R_summery_investors_and_observers20201026.html">Ztree Summary</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -320,10 +331,13 @@ $(document).ready(function () {
       <a href="b_t_b_t_1.html">b(t) - b(t-1) regression</a>
     </li>
     <li>
-      <a href="p_m_trend_with_emotions_using_record_stage_emotions_of_t_1.html">Period beliefs as a function of Period and Market trends (with stage emotions of t-1)</a>
+      <a href="p_m_trend_with_emotions_using_record_stage_emotions_of_t_1.html">Period beliefs as a function of Period and Market trends (with record stage emotions of t-1)</a>
     </li>
     <li>
       <a href="p_t_p_t_1.html">Relationship between predicted and actual price change between periods t-1 and t - including record stage emotions of t-1</a>
+    </li>
+    <li>
+      <a href="average_short_term_belief_and_prior_emotions.html">Average short turm belief and prior market emotions</a>
     </li>
   </ul>
 </li>
@@ -347,6 +361,26 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="protfolio_value_record_stage.html">Regression - Protfolio value as a function of subjects' average emotions (Traders only)</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-gear"></span>
+     
+    CDA Sessions
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="emotional_state_summery_record_stage.html">Emotions Summary</a>
+    </li>
+    <li>
+      <a href="CDA_p_m_trend.html">Regressions - Period beliefs as a function of Period and Market trends (without emotions)</a>
+    </li>
+    <li>
+      <a href="CDA_p_m_trend_with_emotions_using_record_stage_emotions_of_t_1.html">Period beliefs as a function of Period and Market trends (with record stage emotions of t-1)</a>
     </li>
   </ul>
 </li>
@@ -398,7 +432,7 @@ $(document).ready(function () {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();

@@ -1,5 +1,5 @@
 ---
-title: "Regressions results"
+title: "Regressions results (p_m_trend)"
 author: "(Without emotions)"
 output:
   html_document:

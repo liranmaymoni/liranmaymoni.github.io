@@ -25,8 +25,19 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -350,7 +361,7 @@ div.tocify {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="R_summery_investors_and_observers.html">Ztree Summary</a>
+  <a href="R_summery_investors_and_observers20201026.html">Ztree Summary</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -395,10 +406,13 @@ div.tocify {
       <a href="b_t_b_t_1.html">b(t) - b(t-1) regression</a>
     </li>
     <li>
-      <a href="p_m_trend_with_emotions_using_record_stage_emotions_of_t_1.html">Period beliefs as a function of Period and Market trends (with stage emotions of t-1)</a>
+      <a href="p_m_trend_with_emotions_using_record_stage_emotions_of_t_1.html">Period beliefs as a function of Period and Market trends (with record stage emotions of t-1)</a>
     </li>
     <li>
       <a href="p_t_p_t_1.html">Relationship between predicted and actual price change between periods t-1 and t - including record stage emotions of t-1</a>
+    </li>
+    <li>
+      <a href="average_short_term_belief_and_prior_emotions.html">Average short turm belief and prior market emotions</a>
     </li>
   </ul>
 </li>
@@ -422,6 +436,26 @@ div.tocify {
     </li>
     <li>
       <a href="protfolio_value_record_stage.html">Regression - Protfolio value as a function of subjects' average emotions (Traders only)</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    <span class="fa fa-gear"></span>
+     
+    CDA Sessions
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="emotional_state_summery_record_stage.html">Emotions Summary</a>
+    </li>
+    <li>
+      <a href="CDA_p_m_trend.html">Regressions - Period beliefs as a function of Period and Market trends (without emotions)</a>
+    </li>
+    <li>
+      <a href="CDA_p_m_trend_with_emotions_using_record_stage_emotions_of_t_1.html">Period beliefs as a function of Period and Market trends (with record stage emotions of t-1)</a>
     </li>
   </ul>
 </li>
@@ -451,9 +485,20 @@ div.tocify {
 <h3><span class="header-section-number">1.1.1</span> Mean - Markets 1+2</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -466,7 +511,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.3486388</td>
 <td align="right">0.0327480</td>
 <td align="right">0.0226809</td>
@@ -477,7 +522,7 @@ div.tocify {
 <td align="right">-0.2828471</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.3406073</td>
 <td align="right">0.0347585</td>
 <td align="right">0.0208093</td>
@@ -488,7 +533,7 @@ div.tocify {
 <td align="right">-0.2715429</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.3582933</td>
 <td align="right">0.0303312</td>
 <td align="right">0.0249307</td>
@@ -499,7 +544,7 @@ div.tocify {
 <td align="right">-0.2964356</td>
 </tr>
 <tr class="even">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.0131634</td>
 <td align="right">0.0763495</td>
 <td align="right">0.1552451</td>
@@ -514,11 +559,22 @@ div.tocify {
 </div>
 <div id="s.d-markets-12" class="section level3">
 <h3><span class="header-section-number">1.1.2</span> S.D Markets 1+2</h3>
-<table>
+<table style="width:100%;">
 <caption>S.D</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -531,7 +587,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.1943261</td>
 <td align="right">0.0692131</td>
 <td align="right">0.0785531</td>
@@ -542,7 +598,7 @@ div.tocify {
 <td align="right">0.2892188</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.1986278</td>
 <td align="right">0.0761760</td>
 <td align="right">0.0783242</td>
@@ -553,7 +609,7 @@ div.tocify {
 <td align="right">0.2999670</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.1886468</td>
 <td align="right">0.0597181</td>
 <td align="right">0.0787977</td>
@@ -570,9 +626,20 @@ div.tocify {
 <h3><span class="header-section-number">1.1.3</span> Mean - Markets 1</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -585,7 +652,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.3522268</td>
 <td align="right">0.0334527</td>
 <td align="right">0.0223608</td>
@@ -596,7 +663,7 @@ div.tocify {
 <td align="right">-0.2779381</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.3422914</td>
 <td align="right">0.0364840</td>
 <td align="right">0.0215563</td>
@@ -607,7 +674,7 @@ div.tocify {
 <td align="right">-0.2652471</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.3641522</td>
 <td align="right">0.0298141</td>
 <td align="right">0.0233265</td>
@@ -618,7 +685,7 @@ div.tocify {
 <td align="right">-0.2931710</td>
 </tr>
 <tr class="even">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.0318058</td>
 <td align="right">0.0615724</td>
 <td align="right">0.6526580</td>
@@ -633,11 +700,22 @@ div.tocify {
 </div>
 <div id="s.d-markets-1" class="section level3">
 <h3><span class="header-section-number">1.1.4</span> S.D Markets 1</h3>
-<table>
+<table style="width:100%;">
 <caption>S.D</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -650,7 +728,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.1959519</td>
 <td align="right">0.0700972</td>
 <td align="right">0.0763019</td>
@@ -661,7 +739,7 @@ div.tocify {
 <td align="right">0.2950259</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.1989257</td>
 <td align="right">0.0778769</td>
 <td align="right">0.0807640</td>
@@ -672,7 +750,7 @@ div.tocify {
 <td align="right">0.3039188</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.1917897</td>
 <td align="right">0.0592833</td>
 <td align="right">0.0706222</td>
@@ -689,9 +767,20 @@ div.tocify {
 <h3><span class="header-section-number">1.1.5</span> Mean - Markets 2</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -704,7 +793,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.3450459</td>
 <td align="right">0.0320424</td>
 <td align="right">0.0230013</td>
@@ -715,7 +804,7 @@ div.tocify {
 <td align="right">-0.2877628</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.3389231</td>
 <td align="right">0.0330330</td>
 <td align="right">0.0200623</td>
@@ -726,7 +815,7 @@ div.tocify {
 <td align="right">-0.2778387</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.3524169</td>
 <td align="right">0.0308499</td>
 <td align="right">0.0265396</td>
@@ -737,7 +826,7 @@ div.tocify {
 <td align="right">-0.2997100</td>
 </tr>
 <tr class="even">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.1770429</td>
 <td align="right">0.5327590</td>
 <td align="right">0.1289639</td>
@@ -752,11 +841,22 @@ div.tocify {
 </div>
 <div id="s.d-markets-2" class="section level3">
 <h3><span class="header-section-number">1.1.6</span> S.D Markets 2</h3>
-<table>
+<table style="width:100%;">
 <caption>S.D</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -769,7 +869,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.1926835</td>
 <td align="right">0.0683327</td>
 <td align="right">0.0807691</td>
@@ -780,7 +880,7 @@ div.tocify {
 <td align="right">0.2832990</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.1984382</td>
 <td align="right">0.0744445</td>
 <td align="right">0.0758486</td>
@@ -791,7 +891,7 @@ div.tocify {
 <td align="right">0.2960166</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.1853977</td>
 <td align="right">0.0601908</td>
 <td align="right">0.0862461</td>
@@ -811,9 +911,20 @@ div.tocify {
 <h3><span class="header-section-number">1.2.1</span> All Participants</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<colgroup>
+<col width="10%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -826,7 +937,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Market 1</td>
+<td align="left">Market 1</td>
 <td align="right">0.3522268</td>
 <td align="right">0.0334527</td>
 <td align="right">0.0223608</td>
@@ -837,7 +948,7 @@ div.tocify {
 <td align="right">-0.2779381</td>
 </tr>
 <tr class="even">
-<td>Market 2</td>
+<td align="left">Market 2</td>
 <td align="right">0.3450459</td>
 <td align="right">0.0320424</td>
 <td align="right">0.0230013</td>
@@ -848,7 +959,7 @@ div.tocify {
 <td align="right">-0.2877628</td>
 </tr>
 <tr class="odd">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.3145369</td>
 <td align="right">0.5792148</td>
 <td align="right">0.8243931</td>
@@ -865,9 +976,20 @@ div.tocify {
 <h3><span class="header-section-number">1.2.2</span> Traders Only</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<colgroup>
+<col width="10%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -880,7 +1002,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Market 1</td>
+<td align="left">Market 1</td>
 <td align="right">0.3422914</td>
 <td align="right">0.0364840</td>
 <td align="right">0.0215563</td>
@@ -891,7 +1013,7 @@ div.tocify {
 <td align="right">-0.2652471</td>
 </tr>
 <tr class="even">
-<td>Market 2</td>
+<td align="left">Market 2</td>
 <td align="right">0.3389231</td>
 <td align="right">0.0330330</td>
 <td align="right">0.0200623</td>
@@ -902,7 +1024,7 @@ div.tocify {
 <td align="right">-0.2778387</td>
 </tr>
 <tr class="odd">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.7331750</td>
 <td align="right">0.3623769</td>
 <td align="right">0.7013701</td>
@@ -919,9 +1041,20 @@ div.tocify {
 <h3><span class="header-section-number">1.2.3</span> Observers Only</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<colgroup>
+<col width="10%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -934,7 +1067,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Market 1</td>
+<td align="left">Market 1</td>
 <td align="right">0.3641522</td>
 <td align="right">0.0298141</td>
 <td align="right">0.0233265</td>
@@ -945,7 +1078,7 @@ div.tocify {
 <td align="right">-0.2931710</td>
 </tr>
 <tr class="even">
-<td>Market 2</td>
+<td align="left">Market 2</td>
 <td align="right">0.3524169</td>
 <td align="right">0.0308499</td>
 <td align="right">0.0265396</td>
@@ -956,7 +1089,7 @@ div.tocify {
 <td align="right">-0.2997100</td>
 </tr>
 <tr class="odd">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.2539395</td>
 <td align="right">0.7505007</td>
 <td align="right">0.4547979</td>
@@ -991,9 +1124,20 @@ div.tocify {
 <h3><span class="header-section-number">2.1.1</span> Mean - Markets 1+2</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -1006,7 +1150,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.2910520</td>
 <td align="right">0.0321330</td>
 <td align="right">0.0201914</td>
@@ -1017,7 +1161,7 @@ div.tocify {
 <td align="right">-0.3740570</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.2910647</td>
 <td align="right">0.0385446</td>
 <td align="right">0.0185070</td>
@@ -1028,7 +1172,7 @@ div.tocify {
 <td align="right">-0.3570728</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.2910292</td>
 <td align="right">0.0205576</td>
 <td align="right">0.0232323</td>
@@ -1039,7 +1183,7 @@ div.tocify {
 <td align="right">-0.4047197</td>
 </tr>
 <tr class="even">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.9982306</td>
 <td align="right">0.0012197</td>
 <td align="right">0.3965934</td>
@@ -1054,11 +1198,22 @@ div.tocify {
 </div>
 <div id="s.d-markets-12-1" class="section level3">
 <h3><span class="header-section-number">2.1.2</span> S.D Markets 1+2</h3>
-<table>
+<table style="width:100%;">
 <caption>S.D</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -1071,7 +1226,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.1617215</td>
 <td align="right">0.0626650</td>
 <td align="right">0.0541835</td>
@@ -1082,7 +1237,7 @@ div.tocify {
 <td align="right">0.3000518</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.1683065</td>
 <td align="right">0.0708520</td>
 <td align="right">0.0538226</td>
@@ -1093,7 +1248,7 @@ div.tocify {
 <td align="right">0.3194212</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.1496504</td>
 <td align="right">0.0420051</td>
 <td align="right">0.0548798</td>
@@ -1110,9 +1265,20 @@ div.tocify {
 <h3><span class="header-section-number">2.1.3</span> Mean - Markets 1</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -1125,7 +1291,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.2715015</td>
 <td align="right">0.0372686</td>
 <td align="right">0.0214898</td>
@@ -1136,7 +1302,7 @@ div.tocify {
 <td align="right">-0.3720571</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.2663939</td>
 <td align="right">0.0463282</td>
 <td align="right">0.0200708</td>
@@ -1147,7 +1313,7 @@ div.tocify {
 <td align="right">-0.3409330</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.2806270</td>
 <td align="right">0.0210820</td>
 <td align="right">0.0240251</td>
@@ -1158,7 +1324,7 @@ div.tocify {
 <td align="right">-0.4276655</td>
 </tr>
 <tr class="even">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.4830921</td>
 <td align="right">0.0048228</td>
 <td align="right">0.6148035</td>
@@ -1173,11 +1339,22 @@ div.tocify {
 </div>
 <div id="s.d-markets-1-1" class="section level3">
 <h3><span class="header-section-number">2.1.4</span> S.D Markets 1</h3>
-<table>
+<table style="width:100%;">
 <caption>S.D</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -1190,7 +1367,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.1413486</td>
 <td align="right">0.0715066</td>
 <td align="right">0.0573070</td>
@@ -1201,7 +1378,7 @@ div.tocify {
 <td align="right">0.3171964</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.1429344</td>
 <td align="right">0.0807538</td>
 <td align="right">0.0610055</td>
@@ -1212,7 +1389,7 @@ div.tocify {
 <td align="right">0.3370900</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.1389514</td>
 <td align="right">0.0473026</td>
 <td align="right">0.0503177</td>
@@ -1229,9 +1406,20 @@ div.tocify {
 <h3><span class="header-section-number">2.1.5</span> Mean - Markets 2</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -1244,7 +1432,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.3106025</td>
 <td align="right">0.0269974</td>
 <td align="right">0.0188930</td>
@@ -1255,7 +1443,7 @@ div.tocify {
 <td align="right">-0.3760568</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.3155526</td>
 <td align="right">0.0308187</td>
 <td align="right">0.0169548</td>
@@ -1266,7 +1454,7 @@ div.tocify {
 <td align="right">-0.3730930</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.3015719</td>
 <td align="right">0.0200260</td>
 <td align="right">0.0224288</td>
@@ -1277,7 +1465,7 @@ div.tocify {
 <td align="right">-0.3814638</td>
 </tr>
 <tr class="even">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.5709956</td>
 <td align="right">0.1021700</td>
 <td align="right">0.4928664</td>
@@ -1292,11 +1480,22 @@ div.tocify {
 </div>
 <div id="s.d-markets-2-1" class="section level3">
 <h3><span class="header-section-number">2.1.6</span> S.D Markets 2</h3>
-<table>
+<table style="width:100%;">
 <caption>S.D</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -1309,7 +1508,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.1780053</td>
 <td align="right">0.0520241</td>
 <td align="right">0.0509738</td>
@@ -1320,7 +1519,7 @@ div.tocify {
 <td align="right">0.2826189</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.1875196</td>
 <td align="right">0.0587093</td>
 <td align="right">0.0457709</td>
@@ -1331,7 +1530,7 @@ div.tocify {
 <td align="right">0.3012624</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.1600257</td>
 <td align="right">0.0361725</td>
 <td align="right">0.0594833</td>
@@ -1351,9 +1550,20 @@ div.tocify {
 <h3><span class="header-section-number">2.2.1</span> All Participants</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<colgroup>
+<col width="10%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -1366,7 +1576,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Market 1</td>
+<td align="left">Market 1</td>
 <td align="right">0.2715015</td>
 <td align="right">0.0372686</td>
 <td align="right">0.0214898</td>
@@ -1377,7 +1587,7 @@ div.tocify {
 <td align="right">-0.3720571</td>
 </tr>
 <tr class="even">
-<td>Market 2</td>
+<td align="left">Market 2</td>
 <td align="right">0.3106025</td>
 <td align="right">0.0269974</td>
 <td align="right">0.0188930</td>
@@ -1388,7 +1598,7 @@ div.tocify {
 <td align="right">-0.3760568</td>
 </tr>
 <tr class="odd">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.0132968</td>
 <td align="right">0.0939364</td>
 <td align="right">0.6247633</td>
@@ -1405,9 +1615,20 @@ div.tocify {
 <h3><span class="header-section-number">2.2.2</span> Traders Only</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<colgroup>
+<col width="10%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -1420,7 +1641,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Market 1</td>
+<td align="left">Market 1</td>
 <td align="right">0.2663939</td>
 <td align="right">0.0463282</td>
 <td align="right">0.0200708</td>
@@ -1431,7 +1652,7 @@ div.tocify {
 <td align="right">-0.3409330</td>
 </tr>
 <tr class="even">
-<td>Market 2</td>
+<td align="left">Market 2</td>
 <td align="right">0.3155526</td>
 <td align="right">0.0308187</td>
 <td align="right">0.0169548</td>
@@ -1442,7 +1663,7 @@ div.tocify {
 <td align="right">-0.3730930</td>
 </tr>
 <tr class="odd">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.0162713</td>
 <td align="right">0.0730150</td>
 <td align="right">0.6362252</td>
@@ -1459,9 +1680,20 @@ div.tocify {
 <h3><span class="header-section-number">2.2.3</span> Observers Only</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<colgroup>
+<col width="10%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -1474,7 +1706,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Market 1</td>
+<td align="left">Market 1</td>
 <td align="right">0.2806270</td>
 <td align="right">0.0210820</td>
 <td align="right">0.0240251</td>
@@ -1485,7 +1717,7 @@ div.tocify {
 <td align="right">-0.4276655</td>
 </tr>
 <tr class="even">
-<td>Market 2</td>
+<td align="left">Market 2</td>
 <td align="right">0.3015719</td>
 <td align="right">0.0200260</td>
 <td align="right">0.0224288</td>
@@ -1496,7 +1728,7 @@ div.tocify {
 <td align="right">-0.3814638</td>
 </tr>
 <tr class="odd">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.3953029</td>
 <td align="right">0.8784641</td>
 <td align="right">0.8599593</td>
@@ -1531,9 +1763,20 @@ div.tocify {
 <h3><span class="header-section-number">3.1.1</span> Mean - Markets 1+2</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -1546,7 +1789,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.3303164</td>
 <td align="right">0.0345316</td>
 <td align="right">0.0183824</td>
@@ -1557,7 +1800,7 @@ div.tocify {
 <td align="right">-0.2915595</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.3305255</td>
 <td align="right">0.0362310</td>
 <td align="right">0.0038635</td>
@@ -1568,7 +1811,7 @@ div.tocify {
 <td align="right">-0.3024182</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.3299400</td>
 <td align="right">0.0314728</td>
 <td align="right">0.0445164</td>
@@ -1579,7 +1822,7 @@ div.tocify {
 <td align="right">-0.2720137</td>
 </tr>
 <tr class="even">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.9633251</td>
 <td align="right">0.4673846</td>
 <td align="right">0.0000097</td>
@@ -1594,11 +1837,22 @@ div.tocify {
 </div>
 <div id="s.d-markets-12-2" class="section level3">
 <h3><span class="header-section-number">3.1.2</span> S.D Markets 1+2</h3>
-<table>
+<table style="width:100%;">
 <caption>S.D</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -1611,7 +1865,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.1281203</td>
 <td align="right">0.0711206</td>
 <td align="right">0.0684305</td>
@@ -1622,7 +1876,7 @@ div.tocify {
 <td align="right">0.2246820</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.1323009</td>
 <td align="right">0.0789562</td>
 <td align="right">0.0148202</td>
@@ -1633,7 +1887,7 @@ div.tocify {
 <td align="right">0.2362858</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.1206615</td>
 <td align="right">0.0543545</td>
 <td align="right">0.1081764</td>
@@ -1650,9 +1904,20 @@ div.tocify {
 <h3><span class="header-section-number">3.1.3</span> Mean - Markets 1</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -1665,7 +1930,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.3328506</td>
 <td align="right">0.0322769</td>
 <td align="right">0.0185908</td>
@@ -1676,7 +1941,7 @@ div.tocify {
 <td align="right">-0.2955225</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.3293261</td>
 <td align="right">0.0314596</td>
 <td align="right">0.0028202</td>
@@ -1687,7 +1952,7 @@ div.tocify {
 <td align="right">-0.3158681</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.3391949</td>
 <td align="right">0.0337482</td>
 <td align="right">0.0469778</td>
@@ -1698,7 +1963,7 @@ div.tocify {
 <td align="right">-0.2589003</td>
 </tr>
 <tr class="even">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.5913867</td>
 <td align="right">0.8066462</td>
 <td align="right">0.0001357</td>
@@ -1713,11 +1978,22 @@ div.tocify {
 </div>
 <div id="s.d-markets-1-2" class="section level3">
 <h3><span class="header-section-number">3.1.4</span> S.D Markets 1</h3>
-<table>
+<table style="width:100%;">
 <caption>S.D</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -1730,7 +2006,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.1293678</td>
 <td align="right">0.0644035</td>
 <td align="right">0.0607461</td>
@@ -1741,7 +2017,7 @@ div.tocify {
 <td align="right">0.2238498</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.1322644</td>
 <td align="right">0.0642195</td>
 <td align="right">0.0097301</td>
@@ -1752,7 +2028,7 @@ div.tocify {
 <td align="right">0.2328308</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.1246051</td>
 <td align="right">0.0651408</td>
 <td align="right">0.0947635</td>
@@ -1769,9 +2045,20 @@ div.tocify {
 <h3><span class="header-section-number">3.1.5</span> Mean - Markets 2</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -1784,7 +2071,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.3277821</td>
 <td align="right">0.0367863</td>
 <td align="right">0.0181741</td>
@@ -1795,7 +2082,7 @@ div.tocify {
 <td align="right">-0.2875965</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.3317249</td>
 <td align="right">0.0410024</td>
 <td align="right">0.0049069</td>
@@ -1806,7 +2093,7 @@ div.tocify {
 <td align="right">-0.2889683</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.3206851</td>
 <td align="right">0.0291974</td>
 <td align="right">0.0420550</td>
@@ -1817,7 +2104,7 @@ div.tocify {
 <td align="right">-0.2851272</td>
 </tr>
 <tr class="even">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.5329422</td>
 <td align="right">0.2003093</td>
 <td align="right">0.0098443</td>
@@ -1832,11 +2119,22 @@ div.tocify {
 </div>
 <div id="s.d-markets-2-2" class="section level3">
 <h3><span class="header-section-number">3.1.6</span> S.D Markets 2</h3>
-<table>
+<table style="width:100%;">
 <caption>S.D</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -1849,7 +2147,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.1271189</td>
 <td align="right">0.0773463</td>
 <td align="right">0.0754831</td>
@@ -1860,7 +2158,7 @@ div.tocify {
 <td align="right">0.2259761</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.1328191</td>
 <td align="right">0.0913493</td>
 <td align="right">0.0185485</td>
@@ -1871,7 +2169,7 @@ div.tocify {
 <td align="right">0.2397997</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.1166838</td>
 <td align="right">0.0411696</td>
 <td align="right">0.1207063</td>
@@ -1891,9 +2189,20 @@ div.tocify {
 <h3><span class="header-section-number">3.2.1</span> All Participants</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<colgroup>
+<col width="10%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -1906,7 +2215,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Market 1</td>
+<td align="left">Market 1</td>
 <td align="right">0.3328506</td>
 <td align="right">0.0322769</td>
 <td align="right">0.0185908</td>
@@ -1917,7 +2226,7 @@ div.tocify {
 <td align="right">-0.2955225</td>
 </tr>
 <tr class="even">
-<td>Market 2</td>
+<td align="left">Market 2</td>
 <td align="right">0.3277821</td>
 <td align="right">0.0367863</td>
 <td align="right">0.0181741</td>
@@ -1928,7 +2237,7 @@ div.tocify {
 <td align="right">-0.2875965</td>
 </tr>
 <tr class="odd">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.6857061</td>
 <td align="right">0.5165396</td>
 <td align="right">0.9503298</td>
@@ -1945,9 +2254,20 @@ div.tocify {
 <h3><span class="header-section-number">3.2.2</span> Traders Only</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<colgroup>
+<col width="10%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -1960,7 +2280,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Market 1</td>
+<td align="left">Market 1</td>
 <td align="right">0.3293261</td>
 <td align="right">0.0314596</td>
 <td align="right">0.0028202</td>
@@ -1971,7 +2291,7 @@ div.tocify {
 <td align="right">-0.3158681</td>
 </tr>
 <tr class="even">
-<td>Market 2</td>
+<td align="left">Market 2</td>
 <td align="right">0.3317249</td>
 <td align="right">0.0410024</td>
 <td align="right">0.0049069</td>
@@ -1982,7 +2302,7 @@ div.tocify {
 <td align="right">-0.2889683</td>
 </tr>
 <tr class="odd">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.8819059</td>
 <td align="right">0.3217285</td>
 <td align="right">0.2484328</td>
@@ -1999,9 +2319,20 @@ div.tocify {
 <h3><span class="header-section-number">3.2.3</span> Observers Only</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<colgroup>
+<col width="10%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -2014,7 +2345,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Market 1</td>
+<td align="left">Market 1</td>
 <td align="right">0.3391949</td>
 <td align="right">0.0337482</td>
 <td align="right">0.0469778</td>
@@ -2025,7 +2356,7 @@ div.tocify {
 <td align="right">-0.2589003</td>
 </tr>
 <tr class="even">
-<td>Market 2</td>
+<td align="left">Market 2</td>
 <td align="right">0.3206851</td>
 <td align="right">0.0291974</td>
 <td align="right">0.0420550</td>
@@ -2036,7 +2367,7 @@ div.tocify {
 <td align="right">-0.2851272</td>
 </tr>
 <tr class="odd">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.3492573</td>
 <td align="right">0.6099527</td>
 <td align="right">0.7815661</td>
@@ -2071,9 +2402,20 @@ div.tocify {
 <h3><span class="header-section-number">4.1.1</span> Mean - Markets 1+2</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -2086,7 +2428,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.3349814</td>
 <td align="right">0.0257608</td>
 <td align="right">0.0056844</td>
@@ -2097,7 +2439,7 @@ div.tocify {
 <td align="right">-0.3291737</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.3030719</td>
 <td align="right">0.0196850</td>
 <td align="right">0.0074690</td>
@@ -2108,7 +2450,7 @@ div.tocify {
 <td align="right">-0.3146204</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.3758559</td>
 <td align="right">0.0335437</td>
 <td align="right">0.0033983</td>
@@ -2119,7 +2461,7 @@ div.tocify {
 <td align="right">-0.3478157</td>
 </tr>
 <tr class="even">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.0002844</td>
 <td align="right">0.0026052</td>
 <td align="right">0.0285697</td>
@@ -2134,11 +2476,22 @@ div.tocify {
 </div>
 <div id="s.d-markets-12-3" class="section level3">
 <h3><span class="header-section-number">4.1.2</span> S.D Markets 1+2</h3>
-<table>
+<table style="width:100%;">
 <caption>S.D</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -2151,7 +2504,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.2230410</td>
 <td align="right">0.0504348</td>
 <td align="right">0.0206037</td>
@@ -2162,7 +2515,7 @@ div.tocify {
 <td align="right">0.3014018</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.2344779</td>
 <td align="right">0.0510748</td>
 <td align="right">0.0218733</td>
@@ -2173,7 +2526,7 @@ div.tocify {
 <td align="right">0.3031897</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.2007147</td>
 <td align="right">0.0486225</td>
 <td align="right">0.0186560</td>
@@ -2190,9 +2543,20 @@ div.tocify {
 <h3><span class="header-section-number">4.1.3</span> Mean - Markets 1</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -2205,7 +2569,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.3391186</td>
 <td align="right">0.0274280</td>
 <td align="right">0.0043029</td>
@@ -2216,7 +2580,7 @@ div.tocify {
 <td align="right">-0.3233391</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.3032482</td>
 <td align="right">0.0203685</td>
 <td align="right">0.0062985</td>
@@ -2227,7 +2591,7 @@ div.tocify {
 <td align="right">-0.3175471</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.3852376</td>
 <td align="right">0.0365044</td>
 <td align="right">0.0017372</td>
@@ -2238,7 +2602,7 @@ div.tocify {
 <td align="right">-0.3307860</td>
 </tr>
 <tr class="even">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.0044607</td>
 <td align="right">0.0142781</td>
 <td align="right">0.0156813</td>
@@ -2253,11 +2617,22 @@ div.tocify {
 </div>
 <div id="s.d-markets-1-3" class="section level3">
 <h3><span class="header-section-number">4.1.4</span> S.D Markets 1</h3>
-<table>
+<table style="width:100%;">
 <caption>S.D</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -2270,7 +2645,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.2249023</td>
 <td align="right">0.0517315</td>
 <td align="right">0.0161877</td>
@@ -2281,7 +2656,7 @@ div.tocify {
 <td align="right">0.3103866</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.2292397</td>
 <td align="right">0.0544786</td>
 <td align="right">0.0209682</td>
@@ -2292,7 +2667,7 @@ div.tocify {
 <td align="right">0.3072919</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.2114516</td>
 <td align="right">0.0466698</td>
 <td align="right">0.0048872</td>
@@ -2309,9 +2684,20 @@ div.tocify {
 <h3><span class="header-section-number">4.1.5</span> Mean - Markets 2</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -2324,7 +2710,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.3308269</td>
 <td align="right">0.0240867</td>
 <td align="right">0.0070716</td>
@@ -2335,7 +2721,7 @@ div.tocify {
 <td align="right">-0.3350326</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.3028943</td>
 <td align="right">0.0189963</td>
 <td align="right">0.0086483</td>
@@ -2346,7 +2732,7 @@ div.tocify {
 <td align="right">-0.3116719</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.3664742</td>
 <td align="right">0.0305831</td>
 <td align="right">0.0050594</td>
@@ -2357,7 +2743,7 @@ div.tocify {
 <td align="right">-0.3648453</td>
 </tr>
 <tr class="even">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.0232809</td>
 <td align="right">0.0725796</td>
 <td align="right">0.2635580</td>
@@ -2372,11 +2758,22 @@ div.tocify {
 </div>
 <div id="s.d-markets-2-3" class="section level3">
 <h3><span class="header-section-number">4.1.6</span> S.D Markets 2</h3>
-<table>
+<table style="width:100%;">
 <caption>S.D</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -2389,7 +2786,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.2215502</td>
 <td align="right">0.0491498</td>
 <td align="right">0.0241991</td>
@@ -2400,7 +2797,7 @@ div.tocify {
 <td align="right">0.2926363</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.2405005</td>
 <td align="right">0.0475952</td>
 <td align="right">0.0227665</td>
@@ -2411,7 +2808,7 @@ div.tocify {
 <td align="right">0.3001242</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.1899227</td>
 <td align="right">0.0505496</td>
 <td align="right">0.0258840</td>
@@ -2431,9 +2828,20 @@ div.tocify {
 <h3><span class="header-section-number">4.2.1</span> All Participants</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<colgroup>
+<col width="10%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -2446,7 +2854,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Market 1</td>
+<td align="left">Market 1</td>
 <td align="right">0.3391186</td>
 <td align="right">0.0274280</td>
 <td align="right">0.0043029</td>
@@ -2457,7 +2865,7 @@ div.tocify {
 <td align="right">-0.3233391</td>
 </tr>
 <tr class="even">
-<td>Market 2</td>
+<td align="left">Market 2</td>
 <td align="right">0.3308269</td>
 <td align="right">0.0240867</td>
 <td align="right">0.0070716</td>
@@ -2468,7 +2876,7 @@ div.tocify {
 <td align="right">-0.3350326</td>
 </tr>
 <tr class="odd">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.6845796</td>
 <td align="right">0.4690071</td>
 <td align="right">0.1420258</td>
@@ -2485,9 +2893,20 @@ div.tocify {
 <h3><span class="header-section-number">4.2.2</span> Traders Only</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<colgroup>
+<col width="10%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -2500,7 +2919,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Market 1</td>
+<td align="left">Market 1</td>
 <td align="right">0.3032482</td>
 <td align="right">0.0203685</td>
 <td align="right">0.0062985</td>
@@ -2511,7 +2930,7 @@ div.tocify {
 <td align="right">-0.3175471</td>
 </tr>
 <tr class="even">
-<td>Market 2</td>
+<td align="left">Market 2</td>
 <td align="right">0.3028943</td>
 <td align="right">0.0189963</td>
 <td align="right">0.0086483</td>
@@ -2522,7 +2941,7 @@ div.tocify {
 <td align="right">-0.3116719</td>
 </tr>
 <tr class="odd">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.9901534</td>
 <td align="right">0.8260129</td>
 <td align="right">0.3794914</td>
@@ -2539,9 +2958,20 @@ div.tocify {
 <h3><span class="header-section-number">4.2.3</span> Observers Only</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<colgroup>
+<col width="10%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -2554,7 +2984,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Market 1</td>
+<td align="left">Market 1</td>
 <td align="right">0.3852376</td>
 <td align="right">0.0365044</td>
 <td align="right">0.0017372</td>
@@ -2565,7 +2995,7 @@ div.tocify {
 <td align="right">-0.3307860</td>
 </tr>
 <tr class="even">
-<td>Market 2</td>
+<td align="left">Market 2</td>
 <td align="right">0.3664742</td>
 <td align="right">0.0305831</td>
 <td align="right">0.0050594</td>
@@ -2576,7 +3006,7 @@ div.tocify {
 <td align="right">-0.3648453</td>
 </tr>
 <tr class="odd">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.4995035</td>
 <td align="right">0.3788433</td>
 <td align="right">0.1989067</td>
@@ -2611,9 +3041,20 @@ div.tocify {
 <h3><span class="header-section-number">5.1.1</span> Mean - Markets 1+2</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -2626,7 +3067,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.3642939</td>
 <td align="right">0.0293587</td>
 <td align="right">0.0157464</td>
@@ -2637,7 +3078,7 @@ div.tocify {
 <td align="right">-0.2490718</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.3821495</td>
 <td align="right">0.0199359</td>
 <td align="right">0.0152346</td>
@@ -2648,7 +3089,7 @@ div.tocify {
 <td align="right">-0.2323116</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.3464383</td>
 <td align="right">0.0387815</td>
 <td align="right">0.0162582</td>
@@ -2659,7 +3100,7 @@ div.tocify {
 <td align="right">-0.2658320</td>
 </tr>
 <tr class="even">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.0421167</td>
 <td align="right">0.0017733</td>
 <td align="right">0.7955093</td>
@@ -2674,11 +3115,22 @@ div.tocify {
 </div>
 <div id="s.d-markets-12-4" class="section level3">
 <h3><span class="header-section-number">5.1.2</span> S.D Markets 1+2</h3>
-<table>
+<table style="width:100%;">
 <caption>S.D</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -2691,7 +3143,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.2042394</td>
 <td align="right">0.0702473</td>
 <td align="right">0.0458248</td>
@@ -2702,7 +3154,7 @@ div.tocify {
 <td align="right">0.2923665</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.2267021</td>
 <td align="right">0.0596570</td>
 <td align="right">0.0490035</td>
@@ -2713,7 +3165,7 @@ div.tocify {
 <td align="right">0.2761540</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.1776195</td>
 <td align="right">0.0784252</td>
 <td align="right">0.0424942</td>
@@ -2730,9 +3182,20 @@ div.tocify {
 <h3><span class="header-section-number">5.1.3</span> Mean - Markets 1</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -2745,7 +3208,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.3676534</td>
 <td align="right">0.0365719</td>
 <td align="right">0.0182106</td>
@@ -2756,7 +3219,7 @@ div.tocify {
 <td align="right">-0.2256296</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.3929584</td>
 <td align="right">0.0321254</td>
 <td align="right">0.0200738</td>
@@ -2767,7 +3230,7 @@ div.tocify {
 <td align="right">-0.2025309</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.3423484</td>
 <td align="right">0.0410183</td>
 <td align="right">0.0163475</td>
@@ -2778,7 +3241,7 @@ div.tocify {
 <td align="right">-0.2487284</td>
 </tr>
 <tr class="even">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.0408720</td>
 <td align="right">0.3786786</td>
 <td align="right">0.5810209</td>
@@ -2793,11 +3256,22 @@ div.tocify {
 </div>
 <div id="s.d-markets-1-4" class="section level3">
 <h3><span class="header-section-number">5.1.4</span> S.D Markets 1</h3>
-<table>
+<table style="width:100%;">
 <caption>S.D</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -2810,7 +3284,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.2035272</td>
 <td align="right">0.0828220</td>
 <td align="right">0.0553268</td>
@@ -2821,7 +3295,7 @@ div.tocify {
 <td align="right">0.2997509</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.2225386</td>
 <td align="right">0.0812470</td>
 <td align="right">0.0634833</td>
@@ -2832,7 +3306,7 @@ div.tocify {
 <td align="right">0.2839024</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.1798391</td>
 <td align="right">0.0844348</td>
 <td align="right">0.0459111</td>
@@ -2849,9 +3323,20 @@ div.tocify {
 <h3><span class="header-section-number">5.1.5</span> Mean - Markets 2</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -2864,7 +3349,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.3609344</td>
 <td align="right">0.0221455</td>
 <td align="right">0.0132822</td>
@@ -2875,7 +3360,7 @@ div.tocify {
 <td align="right">-0.2725140</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.3713406</td>
 <td align="right">0.0077464</td>
 <td align="right">0.0103955</td>
@@ -2886,7 +3371,7 @@ div.tocify {
 <td align="right">-0.2620923</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.3505282</td>
 <td align="right">0.0365447</td>
 <td align="right">0.0161689</td>
@@ -2897,7 +3382,7 @@ div.tocify {
 <td align="right">-0.2829357</td>
 </tr>
 <tr class="even">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.4059082</td>
 <td align="right">0.0000121</td>
 <td align="right">0.1595644</td>
@@ -2912,11 +3397,22 @@ div.tocify {
 </div>
 <div id="s.d-markets-2-4" class="section level3">
 <h3><span class="header-section-number">5.1.6</span> S.D Markets 2</h3>
-<table>
+<table style="width:100%;">
 <caption>S.D</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -2929,7 +3425,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.2052719</td>
 <td align="right">0.0540720</td>
 <td align="right">0.0336806</td>
@@ -2940,7 +3436,7 @@ div.tocify {
 <td align="right">0.2834086</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.2311112</td>
 <td align="right">0.0156211</td>
 <td align="right">0.0272635</td>
@@ -2951,7 +3447,7 @@ div.tocify {
 <td align="right">0.2659014</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.1759461</td>
 <td align="right">0.0721636</td>
 <td align="right">0.0389506</td>
@@ -2971,9 +3467,20 @@ div.tocify {
 <h3><span class="header-section-number">5.2.1</span> All Participants</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<colgroup>
+<col width="10%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -2986,7 +3493,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Market 1</td>
+<td align="left">Market 1</td>
 <td align="right">0.3676534</td>
 <td align="right">0.0365719</td>
 <td align="right">0.0182106</td>
@@ -2997,7 +3504,7 @@ div.tocify {
 <td align="right">-0.2256296</td>
 </tr>
 <tr class="even">
-<td>Market 2</td>
+<td align="left">Market 2</td>
 <td align="right">0.3609344</td>
 <td align="right">0.0221455</td>
 <td align="right">0.0132822</td>
@@ -3008,7 +3515,7 @@ div.tocify {
 <td align="right">-0.2725140</td>
 </tr>
 <tr class="odd">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.7026630</td>
 <td align="right">0.0169435</td>
 <td align="right">0.2118566</td>
@@ -3025,9 +3532,20 @@ div.tocify {
 <h3><span class="header-section-number">5.2.2</span> Traders Only</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<colgroup>
+<col width="10%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -3040,7 +3558,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Market 1</td>
+<td align="left">Market 1</td>
 <td align="right">0.3929584</td>
 <td align="right">0.0321254</td>
 <td align="right">0.0200738</td>
@@ -3051,7 +3569,7 @@ div.tocify {
 <td align="right">-0.2025309</td>
 </tr>
 <tr class="even">
-<td>Market 2</td>
+<td align="left">Market 2</td>
 <td align="right">0.3713406</td>
 <td align="right">0.0077464</td>
 <td align="right">0.0103955</td>
@@ -3062,7 +3580,7 @@ div.tocify {
 <td align="right">-0.2620923</td>
 </tr>
 <tr class="odd">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.4343896</td>
 <td align="right">0.0008049</td>
 <td align="right">0.1053373</td>
@@ -3079,9 +3597,20 @@ div.tocify {
 <h3><span class="header-section-number">5.2.3</span> Observers Only</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<colgroup>
+<col width="10%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -3094,7 +3623,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Market 1</td>
+<td align="left">Market 1</td>
 <td align="right">0.3423484</td>
 <td align="right">0.0410183</td>
 <td align="right">0.0163475</td>
@@ -3105,7 +3634,7 @@ div.tocify {
 <td align="right">-0.2487284</td>
 </tr>
 <tr class="even">
-<td>Market 2</td>
+<td align="left">Market 2</td>
 <td align="right">0.3505282</td>
 <td align="right">0.0365447</td>
 <td align="right">0.0161689</td>
@@ -3116,7 +3645,7 @@ div.tocify {
 <td align="right">-0.2829357</td>
 </tr>
 <tr class="odd">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.7059088</td>
 <td align="right">0.6401909</td>
 <td align="right">0.9725295</td>
@@ -3151,9 +3680,20 @@ div.tocify {
 <h3><span class="header-section-number">6.1.1</span> Mean - Markets 1+2</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -3166,7 +3706,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.3377761</td>
 <td align="right">0.0373753</td>
 <td align="right">0.0426985</td>
@@ -3177,7 +3717,7 @@ div.tocify {
 <td align="right">-0.3053176</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.2896433</td>
 <td align="right">0.0359509</td>
 <td align="right">0.0527594</td>
@@ -3188,7 +3728,7 @@ div.tocify {
 <td align="right">-0.3245193</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.3864497</td>
 <td align="right">0.0388158</td>
 <td align="right">0.0325246</td>
@@ -3199,7 +3739,7 @@ div.tocify {
 <td align="right">-0.2859001</td>
 </tr>
 <tr class="even">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.0000001</td>
 <td align="right">0.6548589</td>
 <td align="right">0.0816975</td>
@@ -3214,11 +3754,22 @@ div.tocify {
 </div>
 <div id="s.d-markets-12-5" class="section level3">
 <h3><span class="header-section-number">6.1.2</span> S.D Markets 1+2</h3>
-<table>
+<table style="width:100%;">
 <caption>S.D</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -3231,7 +3782,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.2102428</td>
 <td align="right">0.0742387</td>
 <td align="right">0.1348258</td>
@@ -3242,7 +3793,7 @@ div.tocify {
 <td align="right">0.3214682</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.1975348</td>
 <td align="right">0.0812298</td>
 <td align="right">0.1485474</td>
@@ -3253,7 +3804,7 @@ div.tocify {
 <td align="right">0.3507623</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.2118468</td>
 <td align="right">0.0665492</td>
 <td align="right">0.1187751</td>
@@ -3270,9 +3821,20 @@ div.tocify {
 <h3><span class="header-section-number">6.1.3</span> Mean - Markets 1</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -3285,7 +3847,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.3452375</td>
 <td align="right">0.0285703</td>
 <td align="right">0.0350157</td>
@@ -3296,7 +3858,7 @@ div.tocify {
 <td align="right">-0.3066048</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.3003265</td>
 <td align="right">0.0250756</td>
 <td align="right">0.0459674</td>
@@ -3307,7 +3869,7 @@ div.tocify {
 <td align="right">-0.3194414</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.3904837</td>
 <td align="right">0.0320911</td>
 <td align="right">0.0239822</td>
@@ -3318,7 +3880,7 @@ div.tocify {
 <td align="right">-0.2936725</td>
 </tr>
 <tr class="even">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.0004183</td>
 <td align="right">0.2417416</td>
 <td align="right">0.1288247</td>
@@ -3333,11 +3895,22 @@ div.tocify {
 </div>
 <div id="s.d-markets-1-5" class="section level3">
 <h3><span class="header-section-number">6.1.4</span> S.D Markets 1</h3>
-<table>
+<table style="width:100%;">
 <caption>S.D</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -3350,7 +3923,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.2113526</td>
 <td align="right">0.0490347</td>
 <td align="right">0.1187441</td>
@@ -3361,7 +3934,7 @@ div.tocify {
 <td align="right">0.3134284</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.2009126</td>
 <td align="right">0.0444868</td>
 <td align="right">0.1376086</td>
@@ -3372,7 +3945,7 @@ div.tocify {
 <td align="right">0.3261626</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.2126788</td>
 <td align="right">0.0531613</td>
 <td align="right">0.0953388</td>
@@ -3389,9 +3962,20 @@ div.tocify {
 <h3><span class="header-section-number">6.1.5</span> Mean - Markets 2</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -3404,7 +3988,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.3302869</td>
 <td align="right">0.0462132</td>
 <td align="right">0.0504101</td>
@@ -3415,7 +3999,7 @@ div.tocify {
 <td align="right">-0.3040255</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.2789602</td>
 <td align="right">0.0468262</td>
 <td align="right">0.0595514</td>
@@ -3426,7 +4010,7 @@ div.tocify {
 <td align="right">-0.3295973</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.3823854</td>
 <td align="right">0.0455910</td>
 <td align="right">0.0411312</td>
@@ -3437,7 +4021,7 @@ div.tocify {
 <td align="right">-0.2780692</td>
 </tr>
 <tr class="even">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.0000422</td>
 <td align="right">0.9127033</td>
 <td align="right">0.3122096</td>
@@ -3452,11 +4036,22 @@ div.tocify {
 </div>
 <div id="s.d-markets-2-5" class="section level3">
 <h3><span class="header-section-number">6.1.6</span> S.D Markets 2</h3>
-<table>
+<table style="width:100%;">
 <caption>S.D</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -3469,7 +4064,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.2092500</td>
 <td align="right">0.0921636</td>
 <td align="right">0.1490639</td>
@@ -3480,7 +4075,7 @@ div.tocify {
 <td align="right">0.3299228</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.1942559</td>
 <td align="right">0.1050162</td>
 <td align="right">0.1589599</td>
@@ -3491,7 +4086,7 @@ div.tocify {
 <td align="right">0.3749034</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.2117309</td>
 <td align="right">0.0773629</td>
 <td align="right">0.1382815</td>
@@ -3511,9 +4106,20 @@ div.tocify {
 <h3><span class="header-section-number">6.2.1</span> All Participants</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<colgroup>
+<col width="10%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -3526,7 +4132,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Market 1</td>
+<td align="left">Market 1</td>
 <td align="right">0.3452375</td>
 <td align="right">0.0285703</td>
 <td align="right">0.0350157</td>
@@ -3537,7 +4143,7 @@ div.tocify {
 <td align="right">-0.3066048</td>
 </tr>
 <tr class="even">
-<td>Market 2</td>
+<td align="left">Market 2</td>
 <td align="right">0.3302869</td>
 <td align="right">0.0462132</td>
 <td align="right">0.0504101</td>
@@ -3548,7 +4154,7 @@ div.tocify {
 <td align="right">-0.3040255</td>
 </tr>
 <tr class="odd">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.4104735</td>
 <td align="right">0.0059018</td>
 <td align="right">0.1863187</td>
@@ -3565,9 +4171,20 @@ div.tocify {
 <h3><span class="header-section-number">6.2.2</span> Traders Only</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<colgroup>
+<col width="10%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -3580,7 +4197,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Market 1</td>
+<td align="left">Market 1</td>
 <td align="right">0.3003265</td>
 <td align="right">0.0250756</td>
 <td align="right">0.0459674</td>
@@ -3591,7 +4208,7 @@ div.tocify {
 <td align="right">-0.3194414</td>
 </tr>
 <tr class="even">
-<td>Market 2</td>
+<td align="left">Market 2</td>
 <td align="right">0.2789602</td>
 <td align="right">0.0468262</td>
 <td align="right">0.0595514</td>
@@ -3602,7 +4219,7 @@ div.tocify {
 <td align="right">-0.3295973</td>
 </tr>
 <tr class="odd">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.3751688</td>
 <td align="right">0.0279504</td>
 <td align="right">0.4535082</td>
@@ -3619,9 +4236,20 @@ div.tocify {
 <h3><span class="header-section-number">6.2.3</span> Observers Only</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<colgroup>
+<col width="10%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -3634,7 +4262,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Market 1</td>
+<td align="left">Market 1</td>
 <td align="right">0.3904837</td>
 <td align="right">0.0320911</td>
 <td align="right">0.0239822</td>
@@ -3645,7 +4273,7 @@ div.tocify {
 <td align="right">-0.2936725</td>
 </tr>
 <tr class="even">
-<td>Market 2</td>
+<td align="left">Market 2</td>
 <td align="right">0.3823854</td>
 <td align="right">0.0455910</td>
 <td align="right">0.0411312</td>
@@ -3656,7 +4284,7 @@ div.tocify {
 <td align="right">-0.2780692</td>
 </tr>
 <tr class="odd">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.7554449</td>
 <td align="right">0.0981381</td>
 <td align="right">0.2396349</td>
@@ -3691,9 +4319,20 @@ div.tocify {
 <h3><span class="header-section-number">7.1.1</span> Mean - Markets 1+2</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -3706,7 +4345,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.4112494</td>
 <td align="right">0.0366079</td>
 <td align="right">0.0296675</td>
@@ -3717,7 +4356,7 @@ div.tocify {
 <td align="right">-0.1814378</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.4468662</td>
 <td align="right">0.0581617</td>
 <td align="right">0.0269642</td>
@@ -3728,7 +4367,7 @@ div.tocify {
 <td align="right">-0.0987916</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.3791943</td>
 <td align="right">0.0172095</td>
 <td align="right">0.0321005</td>
@@ -3739,7 +4378,7 @@ div.tocify {
 <td align="right">-0.2558194</td>
 </tr>
 <tr class="even">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.0000125</td>
 <td align="right">0.0000000</td>
 <td align="right">0.4453349</td>
@@ -3754,11 +4393,22 @@ div.tocify {
 </div>
 <div id="s.d-markets-12-6" class="section level3">
 <h3><span class="header-section-number">7.1.2</span> S.D Markets 1+2</h3>
-<table>
+<table style="width:100%;">
 <caption>S.D</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -3771,7 +4421,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.1879723</td>
 <td align="right">0.0790586</td>
 <td align="right">0.0795559</td>
@@ -3782,7 +4432,7 @@ div.tocify {
 <td align="right">0.2407497</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.1631133</td>
 <td align="right">0.0993701</td>
 <td align="right">0.0852122</td>
@@ -3793,7 +4443,7 @@ div.tocify {
 <td align="right">0.2192767</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.2027985</td>
 <td align="right">0.0470487</td>
 <td align="right">0.0741574</td>
@@ -3810,9 +4460,20 @@ div.tocify {
 <h3><span class="header-section-number">7.1.3</span> Mean - Markets 1</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -3825,7 +4486,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.4287233</td>
 <td align="right">0.0382472</td>
 <td align="right">0.0329715</td>
@@ -3836,7 +4497,7 @@ div.tocify {
 <td align="right">-0.1802261</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.4609331</td>
 <td align="right">0.0636196</td>
 <td align="right">0.0340961</td>
@@ -3847,7 +4508,7 @@ div.tocify {
 <td align="right">-0.0957229</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.3997345</td>
 <td align="right">0.0154121</td>
 <td align="right">0.0319592</td>
@@ -3858,7 +4519,7 @@ div.tocify {
 <td align="right">-0.2562790</td>
 </tr>
 <tr class="even">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.0075922</td>
 <td align="right">0.0000080</td>
 <td align="right">0.8456607</td>
@@ -3873,11 +4534,22 @@ div.tocify {
 </div>
 <div id="s.d-markets-1-6" class="section level3">
 <h3><span class="header-section-number">7.1.4</span> S.D Markets 1</h3>
-<table>
+<table style="width:100%;">
 <caption>S.D</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -3890,7 +4562,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.1951938</td>
 <td align="right">0.0879087</td>
 <td align="right">0.0909213</td>
@@ -3901,7 +4573,7 @@ div.tocify {
 <td align="right">0.2516062</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.1799753</td>
 <td align="right">0.1146694</td>
 <td align="right">0.1038547</td>
@@ -3912,7 +4584,7 @@ div.tocify {
 <td align="right">0.2482216</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.2042182</td>
 <td align="right">0.0423817</td>
 <td align="right">0.0778106</td>
@@ -3929,9 +4601,20 @@ div.tocify {
 <h3><span class="header-section-number">7.1.5</span> Mean - Markets 2</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between traders and observers</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -3944,7 +4627,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.3937754</td>
 <td align="right">0.0349686</td>
 <td align="right">0.0263636</td>
@@ -3955,7 +4638,7 @@ div.tocify {
 <td align="right">-0.1826495</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.4327993</td>
 <td align="right">0.0527037</td>
 <td align="right">0.0198322</td>
@@ -3966,7 +4649,7 @@ div.tocify {
 <td align="right">-0.1018603</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.3586540</td>
 <td align="right">0.0190069</td>
 <td align="right">0.0322418</td>
@@ -3977,7 +4660,7 @@ div.tocify {
 <td align="right">-0.2553598</td>
 </tr>
 <tr class="even">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.0003502</td>
 <td align="right">0.0000515</td>
 <td align="right">0.1118111</td>
@@ -3992,11 +4675,22 @@ div.tocify {
 </div>
 <div id="s.d-markets-2-6" class="section level3">
 <h3><span class="header-section-number">7.1.6</span> S.D Markets 2</h3>
-<table>
+<table style="width:100%;">
 <caption>S.D</caption>
+<colgroup>
+<col width="17%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -4009,7 +4703,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>All Participates</td>
+<td align="left">All Participates</td>
 <td align="right">0.1791037</td>
 <td align="right">0.0692041</td>
 <td align="right">0.0662720</td>
@@ -4020,7 +4714,7 @@ div.tocify {
 <td align="right">0.2298180</td>
 </tr>
 <tr class="even">
-<td>Traders</td>
+<td align="left">Traders</td>
 <td align="right">0.1435988</td>
 <td align="right">0.0813230</td>
 <td align="right">0.0607299</td>
@@ -4031,7 +4725,7 @@ div.tocify {
 <td align="right">0.1867897</td>
 </tr>
 <tr class="odd">
-<td>Observers</td>
+<td align="left">Observers</td>
 <td align="right">0.1999399</td>
 <td align="right">0.0513741</td>
 <td align="right">0.0705763</td>
@@ -4051,9 +4745,20 @@ div.tocify {
 <h3><span class="header-section-number">7.2.1</span> All Participants</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<colgroup>
+<col width="10%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -4066,7 +4771,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Market 1</td>
+<td align="left">Market 1</td>
 <td align="right">0.4287233</td>
 <td align="right">0.0382472</td>
 <td align="right">0.0329715</td>
@@ -4077,7 +4782,7 @@ div.tocify {
 <td align="right">-0.1802261</td>
 </tr>
 <tr class="even">
-<td>Market 2</td>
+<td align="left">Market 2</td>
 <td align="right">0.3937754</td>
 <td align="right">0.0349686</td>
 <td align="right">0.0263636</td>
@@ -4088,7 +4793,7 @@ div.tocify {
 <td align="right">-0.1826495</td>
 </tr>
 <tr class="odd">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.0263345</td>
 <td align="right">0.6209927</td>
 <td align="right">0.3219046</td>
@@ -4105,9 +4810,20 @@ div.tocify {
 <h3><span class="header-section-number">7.2.2</span> Traders Only</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<colgroup>
+<col width="10%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -4120,7 +4836,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Market 1</td>
+<td align="left">Market 1</td>
 <td align="right">0.4609331</td>
 <td align="right">0.0636196</td>
 <td align="right">0.0340961</td>
@@ -4131,7 +4847,7 @@ div.tocify {
 <td align="right">-0.0957229</td>
 </tr>
 <tr class="even">
-<td>Market 2</td>
+<td align="left">Market 2</td>
 <td align="right">0.4327993</td>
 <td align="right">0.0527037</td>
 <td align="right">0.0198322</td>
@@ -4142,7 +4858,7 @@ div.tocify {
 <td align="right">-0.1018603</td>
 </tr>
 <tr class="odd">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.1569022</td>
 <td align="right">0.3678484</td>
 <td align="right">0.1697623</td>
@@ -4159,9 +4875,20 @@ div.tocify {
 <h3><span class="header-section-number">7.2.3</span> Observers Only</h3>
 <table>
 <caption>Mean, P-Value represent the unpaired two-samples t-test (two-tailed tests) between Market 1 and Market 2</caption>
+<colgroup>
+<col width="10%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">Neutral</th>
 <th align="right">Happy</th>
 <th align="right">Sad</th>
@@ -4174,7 +4901,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Market 1</td>
+<td align="left">Market 1</td>
 <td align="right">0.3997345</td>
 <td align="right">0.0154121</td>
 <td align="right">0.0319592</td>
@@ -4185,7 +4912,7 @@ div.tocify {
 <td align="right">-0.2562790</td>
 </tr>
 <tr class="even">
-<td>Market 2</td>
+<td align="left">Market 2</td>
 <td align="right">0.3586540</td>
 <td align="right">0.0190069</td>
 <td align="right">0.0322418</td>
@@ -4196,7 +4923,7 @@ div.tocify {
 <td align="right">-0.2553598</td>
 </tr>
 <tr class="odd">
-<td>P-Value</td>
+<td align="left">P-Value</td>
 <td align="right">0.0793598</td>
 <td align="right">0.5090968</td>
 <td align="right">0.9737449</td>
@@ -4234,7 +4961,7 @@ div.tocify {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -4273,7 +5000,7 @@ $(document).ready(function ()  {
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
       },
       ignoreSelector: ".toc-ignore",
       scrollTo: 0

@@ -1,0 +1,145 @@
+---
+title: "Average short turm belief and prior market emotions"
+author: 
+output:
+  html_document:
+    highlight: tango
+    number_sections: yes
+    theme: united
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
+    highlight: tango
+---
+
+
+In market 1 we average emotions in "Welcome screen" across all subjects.
+In market 2 we average emotions in "Record screen15" (results of the 15th round, right befor the second market is about to start) across all subjects.
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+mydata <- read.csv(file="C:/Users/Liran/Google Drive/Study/PhD/Face_Reader/The_Experiment/Regressions/average_short_term_belief_and_prior_emotions/S1_S6_transpose_with_t-1_record_stage_emotions_short_term_market_level.csv", header=TRUE, sep=",")
+library(ggplot2)
+library(ggpubr)
+
+```
+
+# Market 1 {.tabset}
+
+## All participants 
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE, fig.width=9, fig.height=9}
+
+market1 = subset(mydata, market == 1)
+
+neutral = ggscatter(market1, x = "neutral_all", y = "avg_STB_market_all",add = "reg.line", ggtheme = theme_classic(),xlab = "Neutral",ylab = "") + stat_cor(method = "pearson") 
+happy = ggscatter(market1, x = "happy_all", y = "avg_STB_market_all",add = "reg.line", ggtheme = theme_classic(),xlab = "Happy",ylab = "") + stat_cor(method = "pearson") 
+sad = ggscatter(market1, x = "sad_all", y = "avg_STB_market_all",add = "reg.line", ggtheme = theme_classic(),xlab = "Sad",ylab = "") + stat_cor(method = "pearson") 
+angry = ggscatter(market1, x = "angry_all", y = "avg_STB_market_all",add = "reg.line", ggtheme = theme_classic(),xlab = "Angry",ylab = "") + stat_cor(method = "pearson") 
+surprised = ggscatter(market1, x = "surprised_all", y = "avg_STB_market_all",add = "reg.line", ggtheme = theme_classic(),xlab = "Surprised",ylab = "") + stat_cor(method = "pearson") 
+scared = ggscatter(market1, x = "scared_all", y = "avg_STB_market_all",add = "reg.line", ggtheme = theme_classic(),xlab = "Scared",ylab = "") + stat_cor(method = "pearson") 
+disgusted = ggscatter(market1, x = "disgusted_all", y = "avg_STB_market_all",add = "reg.line", ggtheme = theme_classic(),xlab = "Disgusted",ylab = "") + stat_cor(method = "pearson") 
+valence = ggscatter(market1, x = "valence_all", y = "avg_STB_market_all",add = "reg.line", ggtheme = theme_classic(),xlab = "Valence",ylab = "") + stat_cor(method = "pearson") 
+
+ggarrange(neutral, happy, sad, angry, surprised, scared, disgusted, valence, ncol = 3, nrow = 3)
+
+```
+
+## Traders
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE, fig.width=9, fig.height=9}
+
+market1 = subset(mydata, market == 1)
+
+neutral = ggscatter(market1, x = "neutral_traders", y = "avg_STB_market_traders",add = "reg.line", ggtheme = theme_classic(),xlab = "Neutral",ylab = "") + stat_cor(method = "pearson") 
+happy = ggscatter(market1, x = "happy_traders", y = "avg_STB_market_traders",add = "reg.line", ggtheme = theme_classic(),xlab = "Happy",ylab = "") + stat_cor(method = "pearson") 
+sad = ggscatter(market1, x = "sad_traders", y = "avg_STB_market_traders",add = "reg.line", ggtheme = theme_classic(),xlab = "Sad",ylab = "") + stat_cor(method = "pearson") 
+angry = ggscatter(market1, x = "angry_traders", y = "avg_STB_market_traders",add = "reg.line", ggtheme = theme_classic(),xlab = "Angry",ylab = "") + stat_cor(method = "pearson") 
+surprised = ggscatter(market1, x = "surprised_traders", y = "avg_STB_market_traders",add = "reg.line", ggtheme = theme_classic(),xlab = "Surprised",ylab = "") + stat_cor(method = "pearson") 
+scared = ggscatter(market1, x = "scared_traders", y = "avg_STB_market_traders",add = "reg.line", ggtheme = theme_classic(),xlab = "Scared",ylab = "") + stat_cor(method = "pearson") 
+disgusted = ggscatter(market1, x = "disgusted_traders", y = "avg_STB_market_traders",add = "reg.line", ggtheme = theme_classic(),xlab = "Disgusted",ylab = "") + stat_cor(method = "pearson") 
+valence = ggscatter(market1, x = "valence_traders", y = "avg_STB_market_traders",add = "reg.line", ggtheme = theme_classic(),xlab = "Valence",ylab = "") + stat_cor(method = "pearson") 
+
+ggarrange(neutral, happy, sad, angry, surprised, scared, disgusted, valence, ncol = 3, nrow = 3)
+
+```
+
+## Observers
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE, fig.width=9, fig.height=9}
+
+market1 = subset(mydata, market == 1)
+
+neutral = ggscatter(market1, x = "neutral_observers", y = "avg_STB_market_observers",add = "reg.line", ggtheme = theme_classic(),xlab = "Neutral",ylab = "") + stat_cor(method = "pearson") 
+happy = ggscatter(market1, x = "happy_observers", y = "avg_STB_market_observers",add = "reg.line", ggtheme = theme_classic(),xlab = "Happy",ylab = "") + stat_cor(method = "pearson") 
+sad = ggscatter(market1, x = "sad_observers", y = "avg_STB_market_observers",add = "reg.line", ggtheme = theme_classic(),xlab = "Sad",ylab = "") + stat_cor(method = "pearson") 
+angry = ggscatter(market1, x = "angry_observers", y = "avg_STB_market_observers",add = "reg.line", ggtheme = theme_classic(),xlab = "Angry",ylab = "") + stat_cor(method = "pearson") 
+surprised = ggscatter(market1, x = "surprised_observers", y = "avg_STB_market_observers",add = "reg.line", ggtheme = theme_classic(),xlab = "Surprised",ylab = "") + stat_cor(method = "pearson") 
+scared = ggscatter(market1, x = "scared_observers", y = "avg_STB_market_observers",add = "reg.line", ggtheme = theme_classic(),xlab = "Scared",ylab = "") + stat_cor(method = "pearson") 
+disgusted = ggscatter(market1, x = "disgusted_observers", y = "avg_STB_market_observers",add = "reg.line", ggtheme = theme_classic(),xlab = "Disgusted",ylab = "") + stat_cor(method = "pearson") 
+valence = ggscatter(market1, x = "valence_observers", y = "avg_STB_market_observers",add = "reg.line", ggtheme = theme_classic(),xlab = "Valence",ylab = "") + stat_cor(method = "pearson") 
+
+ggarrange(neutral, happy, sad, angry, surprised, scared, disgusted, valence, ncol = 3, nrow = 3)
+
+```
+
+# Market 2 {.tabset}
+
+## All participants 
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE, fig.width=9, fig.height=9}
+
+market1 = subset(mydata, market == 2)
+
+neutral = ggscatter(market1, x = "neutral_all", y = "avg_STB_market_all",add = "reg.line", ggtheme = theme_classic(),xlab = "Neutral",ylab = "") + stat_cor(method = "pearson") 
+happy = ggscatter(market1, x = "happy_all", y = "avg_STB_market_all",add = "reg.line", ggtheme = theme_classic(),xlab = "Happy",ylab = "") + stat_cor(method = "pearson") 
+sad = ggscatter(market1, x = "sad_all", y = "avg_STB_market_all",add = "reg.line", ggtheme = theme_classic(),xlab = "Sad",ylab = "") + stat_cor(method = "pearson") 
+angry = ggscatter(market1, x = "angry_all", y = "avg_STB_market_all",add = "reg.line", ggtheme = theme_classic(),xlab = "Angry",ylab = "") + stat_cor(method = "pearson") 
+surprised = ggscatter(market1, x = "surprised_all", y = "avg_STB_market_all",add = "reg.line", ggtheme = theme_classic(),xlab = "Surprised",ylab = "") + stat_cor(method = "pearson") 
+scared = ggscatter(market1, x = "scared_all", y = "avg_STB_market_all",add = "reg.line", ggtheme = theme_classic(),xlab = "Scared",ylab = "") + stat_cor(method = "pearson") 
+disgusted = ggscatter(market1, x = "disgusted_all", y = "avg_STB_market_all",add = "reg.line", ggtheme = theme_classic(),xlab = "Disgusted",ylab = "") + stat_cor(method = "pearson") 
+valence = ggscatter(market1, x = "valence_all", y = "avg_STB_market_all",add = "reg.line", ggtheme = theme_classic(),xlab = "Valence",ylab = "") + stat_cor(method = "pearson") 
+
+ggarrange(neutral, happy, sad, angry, surprised, scared, disgusted, valence, ncol = 3, nrow = 3)
+
+```
+
+## Traders
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE, fig.width=9, fig.height=9}
+
+market1 = subset(mydata, market == 2)
+
+neutral = ggscatter(market1, x = "neutral_traders", y = "avg_STB_market_traders",add = "reg.line", ggtheme = theme_classic(),xlab = "Neutral",ylab = "") + stat_cor(method = "pearson") 
+happy = ggscatter(market1, x = "happy_traders", y = "avg_STB_market_traders",add = "reg.line", ggtheme = theme_classic(),xlab = "Happy",ylab = "") + stat_cor(method = "pearson") 
+sad = ggscatter(market1, x = "sad_traders", y = "avg_STB_market_traders",add = "reg.line", ggtheme = theme_classic(),xlab = "Sad",ylab = "") + stat_cor(method = "pearson") 
+angry = ggscatter(market1, x = "angry_traders", y = "avg_STB_market_traders",add = "reg.line", ggtheme = theme_classic(),xlab = "Angry",ylab = "") + stat_cor(method = "pearson") 
+surprised = ggscatter(market1, x = "surprised_traders", y = "avg_STB_market_traders",add = "reg.line", ggtheme = theme_classic(),xlab = "Surprised",ylab = "") + stat_cor(method = "pearson") 
+scared = ggscatter(market1, x = "scared_traders", y = "avg_STB_market_traders",add = "reg.line", ggtheme = theme_classic(),xlab = "Scared",ylab = "") + stat_cor(method = "pearson") 
+disgusted = ggscatter(market1, x = "disgusted_traders", y = "avg_STB_market_traders",add = "reg.line", ggtheme = theme_classic(),xlab = "Disgusted",ylab = "") + stat_cor(method = "pearson") 
+valence = ggscatter(market1, x = "valence_traders", y = "avg_STB_market_traders",add = "reg.line", ggtheme = theme_classic(),xlab = "Valence",ylab = "") + stat_cor(method = "pearson") 
+
+ggarrange(neutral, happy, sad, angry, surprised, scared, disgusted, valence, ncol = 3, nrow = 3)
+
+```
+
+## Observers
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE, fig.width=9, fig.height=9}
+
+market1 = subset(mydata, market == 2)
+
+neutral = ggscatter(market1, x = "neutral_observers", y = "avg_STB_market_observers",add = "reg.line", ggtheme = theme_classic(),xlab = "Neutral",ylab = "") + stat_cor(method = "pearson") 
+happy = ggscatter(market1, x = "happy_observers", y = "avg_STB_market_observers",add = "reg.line", ggtheme = theme_classic(),xlab = "Happy",ylab = "") + stat_cor(method = "pearson") 
+sad = ggscatter(market1, x = "sad_observers", y = "avg_STB_market_observers",add = "reg.line", ggtheme = theme_classic(),xlab = "Sad",ylab = "") + stat_cor(method = "pearson") 
+angry = ggscatter(market1, x = "angry_observers", y = "avg_STB_market_observers",add = "reg.line", ggtheme = theme_classic(),xlab = "Angry",ylab = "") + stat_cor(method = "pearson") 
+surprised = ggscatter(market1, x = "surprised_observers", y = "avg_STB_market_observers",add = "reg.line", ggtheme = theme_classic(),xlab = "Surprised",ylab = "") + stat_cor(method = "pearson") 
+scared = ggscatter(market1, x = "scared_observers", y = "avg_STB_market_observers",add = "reg.line", ggtheme = theme_classic(),xlab = "Scared",ylab = "") + stat_cor(method = "pearson") 
+disgusted = ggscatter(market1, x = "disgusted_observers", y = "avg_STB_market_observers",add = "reg.line", ggtheme = theme_classic(),xlab = "Disgusted",ylab = "") + stat_cor(method = "pearson") 
+valence = ggscatter(market1, x = "valence_observers", y = "avg_STB_market_observers",add = "reg.line", ggtheme = theme_classic(),xlab = "Valence",ylab = "") + stat_cor(method = "pearson") 
+
+ggarrange(neutral, happy, sad, angry, surprised, scared, disgusted, valence, ncol = 3, nrow = 3)
+
+```

@@ -746,8 +746,8 @@ Mean and standard deviation of emotions across subjects and 10-s interbals (in t
 ```{r, echo= FALSE, message=FALSE, warning=FALSE}
 
 emotions_progression = subset(mydata, s_num=="S1")
-market_prices_1 = unfactor(data.frame(S1 %>% filter(V3=="subjects", V5==1))[c(1:15),57])
-market_prices_2 = unfactor(data.frame(S1 %>% filter(V3=="subjects", V5==1))[c(16:30),57])
+market_prices_1 = unfactor(as.factor(data.frame(S1 %>% filter(V3=="subjects", V5==1))[c(1:15),57]))
+market_prices_2 = unfactor(as.factor(data.frame(S1 %>% filter(V3=="subjects", V5==1))[c(16:30),57]))
 max1 = which.is.max(market_prices_1)
 max2 = which.is.max(market_prices_2)
 
@@ -1496,8 +1496,8 @@ Mean and standard deviation of emotions across subjects and 10-s interbals (in t
 ```{r, echo= FALSE, message=FALSE, warning=FALSE}
 
 emotions_progression = subset(mydata, s_num=="S2")
-market_prices_1 = unfactor(data.frame(S2 %>% filter(V3=="subjects", V5==1))[c(1:15),57])
-market_prices_2 = unfactor(data.frame(S2 %>% filter(V3=="subjects", V5==1))[c(16:30),57])
+market_prices_1 = unfactor(as.factor(data.frame(S2 %>% filter(V3=="subjects", V5==1))[c(1:15),57]))
+market_prices_2 = unfactor(as.factor(data.frame(S2 %>% filter(V3=="subjects", V5==1))[c(16:30),57]))
 max1 = which.is.max(market_prices_1)
 max2 = which.is.max(market_prices_2)
 
@@ -2246,8 +2246,8 @@ Mean and standard deviation of emotions across subjects and 10-s interbals (in t
 ```{r, echo= FALSE, message=FALSE, warning=FALSE}
 
 emotions_progression = subset(mydata, s_num=="S3")
-market_prices_1 = unfactor(data.frame(S3 %>% filter(V3=="subjects", V5==1))[c(1:15),57])
-market_prices_2 = unfactor(data.frame(S3 %>% filter(V3=="subjects", V5==1))[c(16:30),57])
+market_prices_1 = unfactor(as.factor(data.frame(S3 %>% filter(V3=="subjects", V5==1))[c(1:15),57]))
+market_prices_2 = unfactor(as.factor(data.frame(S3 %>% filter(V3=="subjects", V5==1))[c(16:30),57]))
 max1 = which.is.max(market_prices_1)
 max2 = which.is.max(market_prices_2)
 
@@ -2997,8 +2997,8 @@ Mean and standard deviation of emotions across subjects and 10-s interbals (in t
 ```{r, echo= FALSE, message=FALSE, warning=FALSE}
 
 emotions_progression = subset(mydata, s_num=="S4")
-market_prices_1 = unfactor(data.frame(S4 %>% filter(V3=="subjects", V5==1))[c(1:15),57])
-market_prices_2 = unfactor(data.frame(S4 %>% filter(V3=="subjects", V5==1))[c(16:30),57])
+market_prices_1 = unfactor(as.factor(data.frame(S4 %>% filter(V3=="subjects", V5==1))[c(1:15),57]))
+market_prices_2 = unfactor(as.factor(data.frame(S4 %>% filter(V3=="subjects", V5==1))[c(16:30),57]))
 max1 = which.is.max(market_prices_1)
 max2 = which.is.max(market_prices_2)
 
@@ -3748,8 +3748,8 @@ Mean and standard deviation of emotions across subjects and 10-s interbals (in t
 ```{r, echo= FALSE, message=FALSE, warning=FALSE}
 
 emotions_progression = subset(mydata, s_num=="S5")
-market_prices_1 = unfactor(data.frame(S5 %>% filter(V3=="subjects", V5==1))[c(1:15),57])
-market_prices_2 = unfactor(data.frame(S5 %>% filter(V3=="subjects", V5==1))[c(16:30),57])
+market_prices_1 = unfactor(as.factor(data.frame(S5 %>% filter(V3=="subjects", V5==1))[c(1:15),57]))
+market_prices_2 = unfactor(as.factor(data.frame(S5 %>% filter(V3=="subjects", V5==1))[c(16:30),57]))
 max1 = which.is.max(market_prices_1)
 max2 = which.is.max(market_prices_2)
 
@@ -4499,8 +4499,8 @@ Mean and standard deviation of emotions across subjects and 10-s interbals (in t
 ```{r, echo= FALSE, message=FALSE, warning=FALSE}
 
 emotions_progression = subset(mydata, s_num=="S6")
-market_prices_1 = unfactor(data.frame(S6 %>% filter(V3=="subjects", V5==1))[c(1:15),57])
-market_prices_2 = unfactor(data.frame(S6 %>% filter(V3=="subjects", V5==1))[c(16:30),57])
+market_prices_1 = unfactor(as.factor(data.frame(S6 %>% filter(V3=="subjects", V5==1))[c(1:15),57]))
+market_prices_2 = unfactor(as.factor(data.frame(S6 %>% filter(V3=="subjects", V5==1))[c(16:30),57]))
 max1 = which.is.max(market_prices_1)
 max2 = which.is.max(market_prices_2)
 

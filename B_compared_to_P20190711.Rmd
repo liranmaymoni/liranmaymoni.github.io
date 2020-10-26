@@ -188,8 +188,10 @@ Fixed_effects1 = plm(B_P ~ neutral + happy + sad + angry + surprised + scared + 
 #Fix effect market 2
 Fixed_effects2 = plm(B_P ~ neutral + happy + sad + angry + surprised + scared + disgusted, data=market2, index = c("id","t_k") , model="within")
 
-export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
-             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Neutrality" = "neutral" , "Happiness" = "happy", "Sadness" = "sad", "Anger" = "angry","Surprise" = "surprised", "Fear" = "scared", "Disgust" = "disgusted" ),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
+x = "Error. need to fix"
+x
+#export_summs(Fixed_effects1, Fixed_effects2,scale = TRUE,
+#             model.names = c("Market1", "Market2"),statistics = c(N = "nobs", R2 = "r.squared") , coefs =  c("Neutrality" = "neutral" , "Happiness" = "happy", "Sadness" = "sad", "Anger" = "angry","Surprise" = "surprised", "Fear" = "scared", "Disgust" = "disgusted" ),error_format = "({p.value})", stars = c(`***` = 0.01, `**` = 0.05, `*` = 0.1))
 
 ```
 

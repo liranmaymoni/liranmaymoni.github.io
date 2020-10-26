@@ -4,6 +4,18 @@ author: "Afik, Lahav, Maymoni & Noussair"
 output: html_document
 ---
 
+**Update: 10/26/2020**
+
+Added "Average short turm belief and prior market emotions"
+
+Updated "Ztree Summary" with 4 CDA sessions"
+
+Added "CDA" section:
+
+  1. Added "Emotions Summary"
+  2. Added "Regressions - Period beliefs as a function of Period and Market trends (without emotions)"
+  3. Added "Period beliefs as a function of Period and Market trends (with record stage emotions of t-1)"
+
 **Update: 06/21/2020**
 
 Edited "Regressions - Period beliefs as a function of Period and Market trends (with emotions - same belief stage emotions)"
