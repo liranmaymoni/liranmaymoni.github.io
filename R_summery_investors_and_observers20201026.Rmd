@@ -3,7 +3,6 @@ title: "Emotional State and Traders' Expectations in Asset Markets - Experimenta
 author: "Afik, Lahav, Maymoni & Noussair"
 output:
   html_document:
-    highlight: tango
     number_sections: yes
     theme: united
     toc: yes
@@ -12,7 +11,6 @@ output:
   pdf_document:
     toc: yes
     toc_depth: '3'
-    highlight: tango
 ---
 ```{r, echo= FALSE, message=FALSE,warning = FALSE}
 library(tidyverse)

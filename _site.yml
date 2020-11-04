@@ -4,21 +4,13 @@ navbar:
   left:
     - text: "Ztree Summary"
       href: R_summery_investors_and_observers20201026.html
-    - text: "Belief Stage"
+    - text: "CM Sessions"
       icon: fa-gear
       menu:
-      - text: "Emotions Summary"
+      - text: "Beliefs Stage - Emotions Summary"
         href: emotional_state_summery20190706.html
-      - text: "Regressions - Period beliefs as a function of subjects' average emotions"
-        href: emotions_without_p_m_trend.html
       - text: "Regressions - Period beliefs as a function of Period and Market trends (without emotions)"
         href: p_m_trend.html
-      - text: "Regressions - Period beliefs as a function of Period and Market trends (with emotions - same belief stage emotions)"
-        href: p_m_trend_with_emotions20200621.html
-      - text: "Regressions - Upcoming period beliefs as a function of subjects' average emotions"
-        href: B_compared_to_P20190711.html
-      - text: "Regressions - Upcoming period beliefs as a function of subjects' average emotions - percentage difference"
-        href: B_compared_to_P_pct.html
       - text: "Regressions - Percision in beliefs as a function of subjects' average emotions"
         href: Belief_percision_belief_stage.html
       - text: "Beliefs as a function of fundamental value"
@@ -35,13 +27,16 @@ navbar:
         href: p_t_p_t_1.html
       - text: "Average short turm belief and prior market emotions"
         href: average_short_term_belief_and_prior_emotions.html
-    - text: "Record Stage"
-      icon: fa-gear
-      menu:
-      - text: "Emotions Summary"
+      - text: "Average prices and prior market emotions"
+        href: Average_prices_and_prior_market_emotions.html
+      - text: "Percision in beliefs as a function of subjects’ average emotions (in t-1 record stage)"
+        href: Belief_percision_record_stage20201102.html
+      - text: "Percision in beliefs as a function of subjects’ average emotions (in t belief stage)"
+        href: Belief_percision_belief_stage20201102.html
+      - text: "b(t) - P(t-1)"
+        href: b_t_p_t_1.html
+      - text: "Record Stage - Emotions Summary"
         href: emotional_state_summery_record_stage.html
-      - text: "Regressions - Percision in beliefs as a function of subjects' average emotions"
-        href: Belief_percision_record_stage.html        
       - text: "Regressions - Total dividends received as a function of subjects' average emotions (traders only)"
         href: Div_and_shares.html
       - text: "Regression - Protfolio value as a function of subjects' average emotions (Traders only)"
@@ -49,12 +44,17 @@ navbar:
     - text: "CDA Sessions"
       icon: fa-gear
       menu:
-      - text: "Emotions Summary"
-        href: emotional_state_summery_record_stage.html
       - text: "Regressions - Period beliefs as a function of Period and Market trends (without emotions)"
         href: CDA_p_m_trend.html    
       - text: "Period beliefs as a function of Period and Market trends (with record stage emotions of t-1)"
         href: CDA_p_m_trend_with_emotions_using_record_stage_emotions_of_t_1.html    
+    - text: "Backups"
+      icon: fa-gear
+      menu:
+      - text: "b(t) - b(t-1) regression"
+        href: b_t_b_t_1.html
+      - text: "Regressions - Percision in beliefs as a function of subjects' average emotions"
+        href: Belief_percision_record_stage.html  
 output:
   html_document:
     theme: cosmo

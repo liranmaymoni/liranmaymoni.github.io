@@ -4,6 +4,18 @@ author: "Afik, Lahav, Maymoni & Noussair"
 output: html_document
 ---
 
+**Update: 11/03/2020**
+
+Added "Average prices and prior market emotions"
+
+Added "Percision in beliefs as a function of subjects’ average emotions (in t-1 record stage)"
+
+Added "Percision in beliefs as a function of subjects’ average emotions (in t belief stage)"
+
+Added "b(t) - P(t-1)"
+
+
+
 **Update: 10/26/2020**
 
 Added "Average short turm belief and prior market emotions"
