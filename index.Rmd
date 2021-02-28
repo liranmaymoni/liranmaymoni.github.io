@@ -4,6 +4,10 @@ author: "Afik, Lahav, Maymoni & Noussair"
 output: html_document
 ---
 
+**Update: 28/02/2021**
+
+Fixed some bugs
+
 **Update: 11/03/2020**
 
 Added "Average prices and prior market emotions"

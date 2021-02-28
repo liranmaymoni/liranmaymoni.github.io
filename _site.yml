@@ -11,8 +11,6 @@ navbar:
         href: emotional_state_summery20190706.html
       - text: "Regressions - Period beliefs as a function of Period and Market trends (without emotions)"
         href: p_m_trend.html
-      - text: "Regressions - Percision in beliefs as a function of subjects' average emotions"
-        href: Belief_percision_belief_stage.html
       - text: "Beliefs as a function of fundamental value"
         href: belief_fundamental.html
       - text: "Long term beliefs using record stage emotions of t-1"
@@ -31,8 +29,6 @@ navbar:
         href: Average_prices_and_prior_market_emotions.html
       - text: "Percision in beliefs as a function of subjects’ average emotions (in t-1 record stage)"
         href: Belief_percision_record_stage20201102.html
-      - text: "Percision in beliefs as a function of subjects’ average emotions (in t belief stage)"
-        href: Belief_percision_belief_stage20201102.html
       - text: "b(t) - P(t-1)"
         href: b_t_p_t_1.html
       - text: "Record Stage - Emotions Summary"
