@@ -4,6 +4,10 @@ author: "Afik, Lahav, Maymoni & Noussair"
 output: html_document
 ---
 
+**Update: 04/04/2022**
+
+Added HL, CRT and Gender section
+
 **Update: 28/02/2021**
 
 Fixed some bugs

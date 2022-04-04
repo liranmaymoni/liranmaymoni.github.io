@@ -44,6 +44,19 @@ navbar:
         href: CDA_p_m_trend.html    
       - text: "Period beliefs as a function of Period and Market trends (with record stage emotions of t-1)"
         href: CDA_p_m_trend_with_emotions_using_record_stage_emotions_of_t_1.html    
+    - text: "HL, CRT and Gender"
+      icon: fa-gear
+      menu:
+      - text: "Period beliefs as a function of Period and Market trends (without emotions)"
+        href: p_m_trend_HL_CRT_gender20220404.html  
+      - text: "Period beliefs as a function of Period and Market trends (with emotions)"
+        href: p_m_trend_with_emotions_using_record_stage_emotions_of_t_1_HL_CRT_gender.html 
+      - text: "Short term beliefs"
+        href: short_term_using_record_stage_emotions_of_t_1_HL_CRT_gender.html 
+      - text: "Long term beliefs"
+        href: long_term_using_record_stage_emotions_of_t_1_HL_CRT_gender.html 
+      - text: "b(t) - b(t-1) regression"
+        href: b_t_b_t_1_HL_CRT_gender.html
     - text: "Backups"
       icon: fa-gear
       menu:
